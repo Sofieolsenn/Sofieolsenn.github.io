@@ -129,6 +129,30 @@
   color: var(--color-heading);
 }
 
+/* Personal tab: one large drawing with a link to the drawing Instagram */
+.drawingImage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-panel);
+  background: var(--color-surface-strong);
+}
+
+.drawingImage img {
+  object-fit: cover;
+}
+
+.drawingsFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: 16px;
+  font-size: var(--fs-field);
+  color: var(--color-heading);
+}
+
 .photos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

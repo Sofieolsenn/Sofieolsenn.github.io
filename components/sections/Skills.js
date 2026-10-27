@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Tag from "@/components/ui/Tag";
 import { skills, skillsIntro } from "@/data/content";
@@ -44,6 +45,24 @@ export default function Skills() {
           <p className={styles.intro}>{skill.intro}</p>
           {skill.detail && <p className={styles.detail}>{skill.detail}</p>}
         </div>
+
+        {skill.drawings && (
+          <div className={styles.drawings}>
+            <div className={styles.drawingImage}>
+              {skill.drawings.src && (
+                <Image src={withBasePath(skill.drawings.src)} alt={skill.drawings.alt} fill sizes="(max-width: 900px) 100vw, 820px" />
+              )}
+            </div>
+            <div className={styles.drawingsFooter}>
+              <p>{skill.drawings.text}</p>
+              {skill.drawings.instagram && (
+                <Button href={skill.drawings.instagram} variant="outline" target="_blank" rel="noopener noreferrer">
+                  See my drawings on Instagram ↗
+                </Button>
+              )}
+            </div>
+          </div>
+        )}
 
         {skill.photos ? (
           <ul className={styles.photos}>

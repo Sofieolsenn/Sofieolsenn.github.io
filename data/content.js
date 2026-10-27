@@ -157,6 +157,14 @@ export const skills = [
       "When I’m not developing or creating, you’ll probably find me drawing, enjoying good food, or adding yet another Pokémon card to my collection.",
     detail:
       "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
+    // Large drawing shown above the photos, with a link to the drawing Instagram.
+    // The link is hidden until `instagram` has a URL.
+    drawings: {
+      src: "",
+      alt: "",
+      text: "I share my drawings on Instagram. Take a look if you’re curious!",
+      instagram: "",
+    },
     // Photos instead of tags. Put images in /public/images and fill in `src`
     // (e.g. "/images/drawing.jpg"). Empty slots show as grey boxes.
     // `caption` is the text shown under the photo; leave it empty to hide it.
