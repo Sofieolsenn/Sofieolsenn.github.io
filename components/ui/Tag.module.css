@@ -9,16 +9,16 @@
 }
 
 .sm {
-  min-height: 28px;
-  padding: 0 18px;
+  min-height: 32px;
+  padding: 0 24px;
   background: var(--color-tag);
   color: var(--color-tag-text-light);
   font-size: var(--fs-tag);
 }
 
 .md {
-  min-height: 30px;
-  padding: 0 14px;
+  min-height: 34px;
+  padding: 0 18px;
   background: var(--color-surface-strong);
   color: var(--color-tag-text);
   font-size: var(--fs-skill);

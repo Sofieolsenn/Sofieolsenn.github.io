@@ -2,8 +2,7 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  /* Two rows of cards plus the label fit on one screen */
-  min-height: clamp(240px, calc((var(--screen-fit) - 70px) / 2), 420px);
+  min-height: clamp(420px, 42vw, 598px);
   overflow: hidden;
   border-radius: var(--radius-card);
   background: var(--color-surface);
@@ -20,7 +19,7 @@ a.card:hover {
 
 .content {
   position: relative;
-  padding: 0 32px 26px;
+  padding: 0 40px 33px;
 }
 
 .kind {
@@ -46,8 +45,8 @@ a.card:hover {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 @media (max-width: 600px) {

@@ -1,13 +1,13 @@
 .contact {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 96px;
-  align-items: center;
+  grid-template-columns: minmax(0, 627fr) minmax(0, 525fr);
+  gap: 120px;
+  align-items: start;
 }
 
 .heading {
-  max-width: 440px;
-  margin-top: 20px;
+  max-width: 487px;
+  margin-top: 38px;
   font-family: var(--font-display);
   font-size: var(--fs-heading);
   letter-spacing: var(--ls-heading);
@@ -16,19 +16,17 @@
 }
 
 .intro {
-  max-width: 400px;
-  margin-top: 24px;
+  max-width: 420px;
+  margin-top: 40px;
   line-height: 1.5;
   color: var(--color-body);
 }
 
-/* Same proportions as in Figma, capped at the screen height */
 .photo {
   position: relative;
-  height: min(720px, var(--screen-fit));
   aspect-ratio: 525 / 787;
   overflow: hidden;
-  border-radius: 48px;
+  border-radius: 53px;
 }
 
 .photo img {
@@ -42,8 +40,6 @@
   }
 
   .photo {
-    width: 100%;
-    height: auto;
     max-height: 560px;
     aspect-ratio: 4 / 5;
     border-radius: var(--radius-photo);

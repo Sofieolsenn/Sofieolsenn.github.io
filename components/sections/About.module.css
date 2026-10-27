@@ -1,14 +1,12 @@
 .about {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 64px;
-  align-items: center;
+  grid-template-columns: 672fr 548fr;
+  gap: 54px;
+  align-items: start;
 }
 
-/* The photo keeps its Figma proportions but never gets taller than the screen */
 .photo {
   position: relative;
-  height: min(760px, var(--screen-fit));
   aspect-ratio: 672 / 1007;
   overflow: hidden;
   border-radius: var(--radius-photo);
@@ -19,11 +17,11 @@
 }
 
 .copy {
-  max-width: 560px;
+  padding-top: 23px;
 }
 
 .heading {
-  margin-top: 12px;
+  margin-top: 16px;
   font-family: var(--font-display);
   font-size: var(--fs-heading);
   letter-spacing: var(--ls-heading);
@@ -33,18 +31,18 @@
 
 .body {
   display: grid;
-  gap: 1em;
-  margin-top: 28px;
+  gap: 1.5em;
+  margin-top: 40px;
   font-size: var(--fs-lead);
-  line-height: 1.55;
+  line-height: 1.5;
   color: var(--color-body);
 }
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 32px;
+  gap: 24px;
+  margin-top: 44px;
 }
 
 @media (max-width: 900px) {
@@ -54,9 +52,11 @@
   }
 
   .photo {
-    width: 100%;
-    height: auto;
-    max-height: 560px;
+    max-height: 640px;
     aspect-ratio: 4 / 5;
+  }
+
+  .copy {
+    padding-top: 0;
   }
 }
