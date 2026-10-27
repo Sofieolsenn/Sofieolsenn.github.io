@@ -14,6 +14,15 @@
   display: none;
 }
 
+/* Auto margins centre the tabs but still let them scroll if they overflow */
+.tab:first-child {
+  margin-left: auto;
+}
+
+.tab:last-child {
+  margin-right: auto;
+}
+
 .tab {
   flex: none;
   min-height: 44px;
@@ -78,18 +87,42 @@
   color: var(--color-muted);
 }
 
-/* Tags sit in the middle of their column, next to the text */
 .tags {
   display: flex;
   flex-wrap: wrap;
-  align-self: center;
-  justify-content: center;
+  align-content: start;
   gap: 12px 10px;
+  padding-top: 52px;
 }
 
 @media (max-width: 900px) {
+  /* On small screens the tabs wrap into centred rows of pills */
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .tab:first-child,
+  .tab:last-child {
+    margin-inline: 0;
+  }
+
+  .activeTab,
+  .activeTab:hover {
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: var(--radius-tab);
+    background: var(--color-button);
+    color: var(--color-white);
+  }
+
   .panel {
     grid-template-columns: 1fr;
-    padding: 56px 24px 32px;
+    padding: 40px 24px 24px;
+  }
+
+  .tags {
+    padding-top: 0;
   }
 }
