@@ -63,9 +63,9 @@ export const skills = [
     tab: "Frontend",
     heading: "Frontend development",
     intro:
-      "I enjoy bringing designs to life through clean, responsive, and interactive web experiences. With my background in UX/UI design, I care just as much about how a website feels to use as how it looks.",
+      "I love bringing ideas and designs to life through websites that are both visually appealing and easy to use.",
     detail:
-      "Frontend development is where I have the most experience. I focus on accessibility, semantic HTML, performance, and creating maintainable solutions that work across different devices.",
+      "Frontend development is where I have the most experience, with a focus on creating accessible, responsive, and user-friendly experiences.",
     tags: [
       "HTML5",
       "CSS3",
