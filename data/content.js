@@ -192,21 +192,27 @@ export const businessSkills = [
     tab: "Project Management",
     heading: "Project management",
     intro:
-      "I’ve gained experience planning and managing projects through both my studies and collaborative projects. I’ve worked with agile methods, task prioritization, timelines, and teamwork to keep projects organized and moving forward.",
+      "I’ve gained experience planning and managing projects through both my studies and collaborative projects.",
+    detail:
+      "I’ve worked with agile methods, task prioritization, timelines, and teamwork to keep projects organized and moving forward.",
     tags: ["Agile Development", "Scrum", "Kanban", "Workshop Facilitation", "Project Planning", "Task Prioritization", "Team Collaboration", "Stakeholder Communication", "Jira"],
   },
   {
     tab: "Concept Development",
     heading: "Concept development",
     intro:
-      "I enjoy exploring ideas and figuring out how to turn them into something meaningful and useful. Through different projects, I’ve gained experience with brainstorming, workshops, research, and developing concepts from early ideas into prototypes and MVPs.",
+      "I enjoy exploring ideas and figuring out how to turn them into something meaningful and useful.",
+    detail:
+      "Through different projects, I’ve gained experience with brainstorming, workshops, research, and developing concepts from early ideas into prototypes and MVPs.",
     tags: ["Concept Development", "Ideation", "Brainstorming", "Design Thinking", "Workshop Planning", "Problem Identification", "User Needs Analysis", "Value Proposition", "Concept Validation", "MVP Planning"],
   },
   {
     tab: "Entrepreneurship",
     heading: "Entrepreneurship",
     intro:
-      "I’ve gained hands-on experience with entrepreneurship through startup projects, where I’ve worked with everything from market research and competitor analysis to branding, pitching, and MVP development. It’s given me a better understanding of what it takes to turn an idea into something real.",
+      "I’ve gained hands-on experience with entrepreneurship through startup projects, where I’ve worked with everything from market research and competitor analysis to branding, pitching, and MVP development.",
+    detail:
+      "It’s given me a better understanding of what it takes to turn an idea into something real.",
     tags: ["Entrepreneurship", "Startup Development", "Market Research", "Competitor Analysis", "Business Model Canvas", "Business Planning", "Product Strategy", "MVP Development", "Pitching", "Brand Development"],
   },
   // The personal tab is shown in both groups
