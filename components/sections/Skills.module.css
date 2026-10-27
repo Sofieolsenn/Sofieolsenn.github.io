@@ -3,7 +3,7 @@
   z-index: 1;
   display: flex;
   align-items: flex-end;
-  gap: 18px;
+  gap: 8px;
   margin-top: 30px;
   margin-bottom: -18px;
   overflow-x: auto;
@@ -17,12 +17,13 @@
 .tab {
   flex: none;
   min-height: 44px;
-  padding: 0 22px;
+  padding: 0 14px;
   border: 0;
   border-radius: var(--radius-tab);
   background: var(--color-tag);
   color: var(--color-tag-text);
-  font-size: var(--fs-skill);
+  /* Small enough for all seven tabs to fit the 950px content width */
+  font-size: 0.8125rem; /* 13px */
   font-weight: 500;
   white-space: nowrap;
   cursor: pointer;
@@ -36,7 +37,7 @@
 .activeTab,
 .activeTab:hover {
   min-height: 61px;
-  padding: 0 26px 14px;
+  padding: 0 16px 14px;
   border-radius: var(--radius-panel) var(--radius-panel) 0 0;
   background: var(--color-surface);
   color: #8d8982;
@@ -78,15 +79,11 @@
 }
 
 .tags {
-  display: grid;
-  grid-template-columns: 1.5fr 1.1fr 0.85fr;
+  display: flex;
+  flex-wrap: wrap;
   align-content: start;
-  gap: 12px 17px;
+  gap: 12px 10px;
   padding-top: 52px;
-}
-
-.tags li > * {
-  width: 100%;
 }
 
 .related {
@@ -129,13 +126,7 @@
   }
 
   .tags {
-    display: flex;
-    flex-wrap: wrap;
     padding-top: 0;
-  }
-
-  .tags li > * {
-    width: auto;
   }
 
   .related {

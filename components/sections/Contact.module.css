@@ -1,8 +1,7 @@
 .contact {
   display: grid;
-  grid-template-columns: minmax(0, 627px) minmax(0, 420px);
-  justify-content: space-between;
-  gap: 80px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
+  gap: 64px;
   align-items: start;
 }
 

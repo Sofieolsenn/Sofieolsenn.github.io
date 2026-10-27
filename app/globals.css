@@ -57,7 +57,7 @@
   --radius-pill: 999px;
 
   /* Layout */
-  --container: 1274px;
+  --container: 950px;
   --gutter: clamp(20px, 5vw, 48px);
   --section-space: clamp(96px, 12vw, 190px);
   --gap: 16px;
