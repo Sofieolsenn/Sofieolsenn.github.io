@@ -9,7 +9,7 @@ export const site = {
   // Change this to your real address once the site is live.
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://sofieolsenn.github.io",
   // Fill these in. Empty values are hidden on the site.
-  email: "",
+  email: "sofievennickolsen@gmail.com",
   linkedin: "",
   github: "https://github.com/Sofieolsenn",
   // Put your CV in /public/cv.pdf
