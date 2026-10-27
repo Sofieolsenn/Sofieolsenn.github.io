@@ -154,10 +154,19 @@ export const skills = [
     tab: "Personal / other skills",
     heading: "Personal skills",
     intro:
-      "I bring curiosity, structure, and an open mindset to every team and every new challenge.",
+      "When I’m not coding, you’ll probably find me drawing, enjoying good food, or adding yet another Pokémon card to my collection.",
     detail:
-      "I value clear communication, honest collaboration, and continuously learning from others.",
-    tags: ["Drawing", "Pokémon cards", "Dogs", "Food"],
+      "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
+    // Photos instead of tags. Put images in /public/images and fill in `src`
+    // (e.g. "/images/drawing.jpg"). Empty slots show as grey boxes.
+    photos: [
+      { src: "", alt: "" },
+      { src: "", alt: "" },
+      { src: "", alt: "" },
+      { src: "", alt: "" },
+      { src: "", alt: "" },
+      { src: "", alt: "" },
+    ],
   },
 ];
 

@@ -109,6 +109,25 @@
   gap: 12px 10px;
 }
 
+/* Photo grid used instead of tags (Personal tab); empty slots stay grey */
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-field);
+  background: var(--color-surface-strong);
+}
+
+.photo img {
+  object-fit: cover;
+}
+
 @media (max-width: 900px) {
   /* On small screens the tabs wrap into centred rows of pills */
   .tabs {

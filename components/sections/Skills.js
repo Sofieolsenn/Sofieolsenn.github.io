@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Tag from "@/components/ui/Tag";
 import { skills, skillsIntro } from "@/data/content";
+import { withBasePath } from "@/lib/paths";
 import styles from "./Skills.module.css";
 
 export default function Skills() {
@@ -41,13 +43,25 @@ export default function Skills() {
           {skill.detail && <p className={styles.detail}>{skill.detail}</p>}
         </div>
 
-        <ul className={styles.tags}>
-          {skill.tags.map((tag) => (
-            <li key={tag}>
-              <Tag size="md">{tag}</Tag>
-            </li>
-          ))}
-        </ul>
+        {skill.photos ? (
+          <ul className={styles.photos}>
+            {skill.photos.map((photo, index) => (
+              <li key={index} className={styles.photo}>
+                {photo.src && (
+                  <Image src={withBasePath(photo.src)} alt={photo.alt} fill sizes="(max-width: 900px) 33vw, 180px" />
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <ul className={styles.tags}>
+            {skill.tags.map((tag) => (
+              <li key={tag}>
+                <Tag size="md">{tag}</Tag>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   );
