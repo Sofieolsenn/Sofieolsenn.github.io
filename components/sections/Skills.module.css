@@ -196,13 +196,32 @@
     color: var(--color-white);
   }
 
+  /* minmax(0, 1fr) lets the column shrink below its content's width */
   .panel {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding: 40px 24px 24px;
   }
 
+  /* Long tags like "Low & High-Fidelity Prototyping" wrap on narrow phones */
+  .tags li {
+    max-width: 100%;
+  }
+
+  .tags li > * {
+    padding-block: 6px;
+    white-space: normal;
+  }
+
+  /* The long Instagram button may wrap instead of pushing the panel wider */
+  .drawingsText > a {
+    max-width: 100%;
+    padding-block: 10px;
+    white-space: normal;
+    text-align: center;
+  }
+
   .drawings {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 20px;
   }
 
