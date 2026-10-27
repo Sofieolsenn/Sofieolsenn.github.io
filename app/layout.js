@@ -31,7 +31,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${display.variable} ${text.variable}`}>
+    // suppressHydrationWarning: browser extensions (e.g. LocatorJS) add attributes
+    // to <html> before React loads. This only silences that one element.
+    <html lang="en" className={`${display.variable} ${text.variable}`} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );
