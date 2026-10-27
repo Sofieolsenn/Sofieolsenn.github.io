@@ -132,7 +132,7 @@
 /* Personal tab: a large drawing next to a link to the drawing Instagram */
 .drawings {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
   gap: 32px;
   align-items: center;
 }
@@ -151,9 +151,8 @@
 
 .drawingsText {
   display: grid;
-  justify-items: end;
+  justify-items: start;
   gap: 20px;
-  text-align: right;
   font-size: var(--fs-lead);
   line-height: 1.5;
   color: var(--color-heading);

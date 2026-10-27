@@ -48,17 +48,17 @@ export default function Skills() {
 
         {skill.drawings && (
           <div className={styles.drawings}>
-            <div className={styles.drawingImage}>
-              {skill.drawings.src && (
-                <Image src={withBasePath(skill.drawings.src)} alt={skill.drawings.alt} fill sizes="(max-width: 900px) 100vw, 820px" />
-              )}
-            </div>
             <div className={styles.drawingsText}>
               <p>{skill.drawings.text}</p>
               {skill.drawings.instagram && (
                 <Button href={skill.drawings.instagram} variant="outline" target="_blank" rel="noopener noreferrer">
                   See my drawings on Instagram ↗
                 </Button>
+              )}
+            </div>
+            <div className={styles.drawingImage}>
+              {skill.drawings.src && (
+                <Image src={withBasePath(skill.drawings.src)} alt={skill.drawings.alt} fill sizes="(max-width: 900px) 100vw, 480px" />
               )}
             </div>
           </div>
