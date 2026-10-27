@@ -3,7 +3,7 @@
 import { useState } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Tag from "@/components/ui/Tag";
-import { skills } from "@/data/content";
+import { skills, skillsIntro } from "@/data/content";
 import styles from "./Skills.module.css";
 
 export default function Skills() {
@@ -12,7 +12,10 @@ export default function Skills() {
 
   return (
     <section className="container section" id="skills" aria-labelledby="skills-label">
-      <SectionLabel id="skills-label">Skills</SectionLabel>
+      <div className={styles.header}>
+        <SectionLabel id="skills-label">Skills</SectionLabel>
+        <p className={styles.sectionIntro}>{skillsIntro}</p>
+      </div>
 
       <div className={styles.tabs} role="tablist" aria-label="Skill categories">
         {skills.map((item, index) => (

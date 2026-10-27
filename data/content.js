@@ -58,6 +58,9 @@ export const about = {
   ],
 };
 
+export const skillsIntro =
+  "My diverse skill set allows me to fit into different projects, take on new challenges, and adapt to whatever comes my way.";
+
 export const skills = [
   {
     tab: "Frontend",
