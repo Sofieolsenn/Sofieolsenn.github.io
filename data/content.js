@@ -99,10 +99,10 @@ export const skills = [
     tab: "Database",
     heading: "Databases",
     intro:
-      "I work with structured data and relationships to create products that stay clear as they grow.",
+      "I have experience with relational, document, and graph databases, giving me a good understanding of how data is structured and connected.",
     detail:
-      "I focus on practical data models, reliable queries, and thoughtful integration.",
-    tags: ["MariaDB", "MySQL", "SQL", "Database design"],
+      "Combined with my frontend and backend experience, this helps me understand how all the different layers of a web application work together.",
+    tags: ["SQL", "MariaDB", "ArangoDB", "Relational Databases", "Document Databases", "Graph Databases", "Database Design"],
   },
   {
     tab: "Tools & DevOps",
