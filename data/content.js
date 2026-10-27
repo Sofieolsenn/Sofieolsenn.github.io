@@ -61,6 +61,7 @@ export const about = {
 export const skillsIntro =
   "My diverse skill set allows me to fit into different projects, take on new challenges, and adapt to whatever comes my way.";
 
+// Development and design skills (one tab each)
 export const skills = [
   {
     tab: "Frontend",
@@ -183,6 +184,31 @@ export const skills = [
       { src: "", alt: "", caption: "Caption" },
     ],
   },
+];
+
+// Entrepreneurship and business skills (one tab each)
+export const businessSkills = [
+  {
+    tab: "Project Management",
+    heading: "Project management",
+    tags: ["Agile Development", "Scrum", "Kanban", "Workshop Facilitation", "Project Planning", "Task Prioritization", "Team Collaboration", "Stakeholder Communication", "Jira"],
+  },
+  {
+    tab: "Concept Development",
+    heading: "Concept development",
+    tags: ["Concept Development", "Ideation", "Brainstorming", "Design Thinking", "Workshop Planning", "Problem Identification", "User Needs Analysis", "Value Proposition", "Concept Validation", "MVP Planning"],
+  },
+  {
+    tab: "Entrepreneurship",
+    heading: "Entrepreneurship",
+    tags: ["Entrepreneurship", "Startup Development", "Market Research", "Competitor Analysis", "Business Model Canvas", "Business Planning", "Product Strategy", "MVP Development", "Pitching", "Brand Development"],
+  },
+];
+
+// The switch above the skill tabs
+export const skillGroups = [
+  { label: "Development and design", skills },
+  { label: "Entrepreneurship and business", skills: businessSkills },
 ];
 
 export const otherProjects = {

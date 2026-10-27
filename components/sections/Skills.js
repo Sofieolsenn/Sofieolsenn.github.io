@@ -5,19 +5,40 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Tag from "@/components/ui/Tag";
-import { skills, skillsIntro } from "@/data/content";
+import { skillGroups, skillsIntro } from "@/data/content";
 import { withBasePath } from "@/lib/paths";
 import styles from "./Skills.module.css";
 
 export default function Skills() {
+  const [group, setGroup] = useState(0);
   const [active, setActive] = useState(0);
+  const skills = skillGroups[group].skills;
   const skill = skills[active];
+
+  function selectGroup(index) {
+    setGroup(index);
+    setActive(0);
+  }
 
   return (
     <section className="container section" id="skills" aria-labelledby="skills-label">
       <div className={styles.header}>
         <SectionLabel id="skills-label">Skills</SectionLabel>
         <p className={styles.sectionIntro}>{skillsIntro}</p>
+      </div>
+
+      <div className={styles.groups} role="group" aria-label="Skill areas">
+        {skillGroups.map((item, index) => (
+          <button
+            key={item.label}
+            type="button"
+            aria-pressed={index === group}
+            className={`${styles.group} ${index === group ? styles.activeGroup : ""}`}
+            onClick={() => selectGroup(index)}
+          >
+            {item.label}
+          </button>
+        ))}
       </div>
 
       <div className={styles.tabs} role="tablist" aria-label="Skill categories">
@@ -42,7 +63,7 @@ export default function Skills() {
         role="tabpanel" id="skill-panel" aria-labelledby={`skill-tab-${active}`}>
         <div className={styles.text}>
           <h3 className={styles.heading}>{skill.heading}</h3>
-          <p className={styles.intro}>{skill.intro}</p>
+          {skill.intro && <p className={styles.intro}>{skill.intro}</p>}
           {skill.detail && <p className={styles.detail}>{skill.detail}</p>}
         </div>
 

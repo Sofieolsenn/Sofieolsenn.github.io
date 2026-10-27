@@ -6,7 +6,7 @@ import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import OtherProjects from "@/components/sections/OtherProjects";
 import Contact from "@/components/sections/Contact";
-import { site, skills } from "@/data/content";
+import { site, skillGroups } from "@/data/content";
 
 // Structured data helps search engines and AI assistants understand who you are.
 const personSchema = {
@@ -16,7 +16,7 @@ const personSchema = {
   url: site.url,
   jobTitle: "Frontend developer",
   description: site.description,
-  knowsAbout: skills[0].tags,
+  knowsAbout: skillGroups.flatMap((group) => group.skills.flatMap((skill) => skill.tags || [])),
   sameAs: [site.linkedin, site.github].filter(Boolean),
 };
 
