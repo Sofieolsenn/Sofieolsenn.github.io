@@ -34,3 +34,16 @@
 .active {
   font-weight: 700;
 }
+
+/* Keep all five links on one line on narrow phones */
+@media (max-width: 480px) {
+  .header {
+    padding-inline: 12px;
+  }
+
+  .nav {
+    gap: 14px;
+    padding: 12px 18px;
+    font-size: 0.875rem;
+  }
+}
