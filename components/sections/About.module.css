@@ -1,6 +1,7 @@
 .about {
   display: grid;
-  grid-template-columns: 672fr 548fr;
+  grid-template-columns: minmax(0, 540px) minmax(0, 548px);
+  justify-content: space-between;
   gap: 54px;
   align-items: start;
 }

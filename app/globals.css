@@ -30,7 +30,7 @@
   --fs-subheading: clamp(1.625rem, 1.2rem + 1.2vw, 2.125rem); /* 34px */
   --fs-title: clamp(1.5rem, 1.1rem + 1.1vw, 2.1rem); /* 33.7px */
   --fs-title-sm: clamp(1.375rem, 1.1rem + 0.8vw, 1.714rem); /* 27.4px */
-  --fs-label: clamp(1.25rem, 1rem + 0.8vw, 1.714rem); /* 27.4px */
+  --fs-label: var(--fs-button); /* same as button text */
   --fs-nav: clamp(1rem, 0.85rem + 0.5vw, 1.333rem); /* 21.3px */
   --fs-lead: 1.25rem; /* 20px */
   --fs-body: 1.1875rem; /* 19px */
@@ -44,7 +44,7 @@
   --ls-hero: -0.045em;
   --ls-heading: -0.035em;
   --ls-title: -0.025em;
-  --ls-label: 0.02em;
+  --ls-label: 0.08em;
   --ls-text: 0.03em;
 
   /* Radii */
