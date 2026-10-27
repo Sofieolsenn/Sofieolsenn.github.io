@@ -116,6 +116,21 @@
 
 .photoPanel .text {
   max-width: 600px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.caption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 1;
+}
+
+/* Light background so the tag stays readable on top of any photo */
+.caption > * {
+  background: rgb(255 255 255 / 0.85);
+  color: var(--color-heading);
 }
 
 .photos {

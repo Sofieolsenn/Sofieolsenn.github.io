@@ -52,6 +52,11 @@ export default function Skills() {
                 {photo.src && (
                   <Image src={withBasePath(photo.src)} alt={photo.alt} fill sizes="(max-width: 900px) 50vw, 270px" />
                 )}
+                {photo.caption && (
+                  <span className={styles.caption}>
+                    <Tag>{photo.caption}</Tag>
+                  </span>
+                )}
               </li>
             ))}
           </ul>

@@ -159,16 +159,17 @@ export const skills = [
       "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
     // Photos instead of tags. Put images in /public/images and fill in `src`
     // (e.g. "/images/drawing.jpg"). Empty slots show as grey boxes.
+    // `caption` is the small tag shown on the photo; leave it empty to hide it.
     photos: [
-      { src: "", alt: "" },
-      { src: "", alt: "" },
-      { src: "", alt: "" },
-      { src: "", alt: "" },
-      { src: "", alt: "" },
-      { src: "", alt: "" },
-      { src: "", alt: "" },
-      { src: "", alt: "" },
-      { src: "", alt: "" },
+      { src: "", alt: "", caption: "Drawing" },
+      { src: "", alt: "", caption: "Good food" },
+      { src: "", alt: "", caption: "Pokémon cards" },
+      { src: "", alt: "", caption: "Game of Thrones" },
+      { src: "", alt: "", caption: "Harry Potter" },
+      { src: "", alt: "", caption: "Twilight" },
+      { src: "", alt: "", caption: "Tag" },
+      { src: "", alt: "", caption: "Tag" },
+      { src: "", alt: "", caption: "Tag" },
     ],
   },
 ];
