@@ -174,14 +174,14 @@ export const skills = [
     // (e.g. "/images/drawing.jpg"). Empty slots show as grey boxes.
     // `caption` is the text shown under the photo; leave it empty to hide it.
     photos: [
+      { src: "/images/personal/japan-goldfish.jpg", alt: "A street in Japan lined with tanks full of goldfish", caption: "Goldfish tanks on a street in Japan" },
+      { src: "/images/personal/japan-beach.jpg", alt: "Waves rolling onto a dark sand beach in Japan", caption: "Dark sand beach in Japan" },
+      { src: "/images/personal/samos-horses.jpg", alt: "Two saddled horses resting by a brick wall on Samos", caption: "Horses on Samos, Greece" },
+      { src: "/images/personal/lemur.jpg", alt: "Sofie smiling next to a lemur", caption: "Making friends with a lemur" },
+      { src: "/images/personal/sweden-hike.jpg", alt: "Hiking on mossy rocks in a Swedish forest", caption: "Hiking in Sweden" },
       { src: "", alt: "", caption: "Drawing" },
       { src: "", alt: "", caption: "Good food" },
       { src: "", alt: "", caption: "Pokémon cards" },
-      { src: "", alt: "", caption: "Game of Thrones" },
-      { src: "", alt: "", caption: "Harry Potter" },
-      { src: "", alt: "", caption: "Twilight" },
-      { src: "", alt: "", caption: "Caption" },
-      { src: "", alt: "", caption: "Caption" },
       { src: "", alt: "", caption: "Caption" },
     ],
   },
