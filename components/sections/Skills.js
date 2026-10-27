@@ -38,7 +38,7 @@ export default function Skills() {
         <div className={styles.text}>
           <h3 className={styles.heading}>{skill.heading}</h3>
           <p className={styles.intro}>{skill.intro}</p>
-          <p className={styles.detail}>{skill.detail}</p>
+          {skill.detail && <p className={styles.detail}>{skill.detail}</p>}
         </div>
 
         <ul className={styles.tags}>

@@ -90,10 +90,10 @@ export const skills = [
     tab: "Backend",
     heading: "Backend development",
     intro:
-      "I build dependable foundations that make digital products useful, maintainable, and easy to extend.",
+      "While frontend is my main focus, I’ve also gained hands-on backend experience through various projects.",
     detail:
-      "My backend experience lets me understand and contribute to the complete product.",
-    tags: ["Node.js", "REST APIs", "Authentication", "Express", "Server actions", "Validation", "Testing", "API design"],
+      "I’ve worked with APIs, data, and connecting frontend and backend to build functional web applications.",
+    tags: ["Python", "Flask", "REST APIs", "Frontend-backend integration"],
   },
   {
     tab: "Database",
@@ -102,7 +102,14 @@ export const skills = [
       "I work with structured data and relationships to create products that stay clear as they grow.",
     detail:
       "I focus on practical data models, reliable queries, and thoughtful integration.",
-    tags: ["PostgreSQL", "MySQL", "MongoDB", "Data modeling", "Queries", "Migrations", "Relationships", "Supabase"],
+    tags: ["MariaDB", "MySQL", "SQL", "Database design"],
+  },
+  {
+    tab: "Tools & DevOps",
+    heading: "Development tools & DevOps",
+    intro:
+      "I’ve worked with tools that help me organize, test, and manage development projects, from writing code to getting applications ready for deployment.",
+    tags: ["Git", "GitHub", "Docker", "CI/CD", "Postman", "Swagger", "Jira"],
   },
   {
     tab: "UX/UI design",
@@ -111,7 +118,7 @@ export const skills = [
       "I care about how a product feels as much as how it works, from early flows to the final interface.",
     detail:
       "Design helps me connect user needs with clear, accessible frontend solutions.",
-    tags: ["Figma", "Wireframes", "Prototyping", "User flows", "Design systems", "Accessibility", "Responsive UI", "Interaction design"],
+    tags: ["Figma", "Prototyping", "User research", "Usability testing"],
   },
   {
     tab: "CMS systems",
@@ -120,16 +127,7 @@ export const skills = [
       "I create flexible content setups that are straightforward for editors and reliable for developers.",
     detail:
       "A good CMS should make everyday publishing feel simple without limiting the product.",
-    tags: ["Umbraco", "Webflow", "Payload", "Content modeling", "Components", "Editor experience", "Integrations", "SEO"],
-  },
-  {
-    tab: "Concept development",
-    heading: "Concept development",
-    intro:
-      "I enjoy shaping early ideas into focused concepts that can be tested, discussed, and built.",
-    detail:
-      "I use research, sketches, and prototypes to make abstract ideas concrete.",
-    tags: ["Research", "Ideation", "Workshops", "Prototyping", "User journeys", "MVP planning", "Testing", "Iteration"],
+    tags: ["Webflow", "Umbraco", "WordPress"],
   },
   {
     tab: "Personal / other skills",
@@ -138,7 +136,7 @@ export const skills = [
       "I bring curiosity, structure, and an open mindset to every team and every new challenge.",
     detail:
       "I value clear communication, honest collaboration, and continuously learning from others.",
-    tags: ["Communication", "Collaboration", "Curiosity", "Problem-solving", "Adaptability", "Ownership", "Structure", "Learning"],
+    tags: ["Drawing", "Pokémon cards", "Dogs", "Food"],
   },
 ];
 
