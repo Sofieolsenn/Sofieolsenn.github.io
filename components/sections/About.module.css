@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
   gap: 54px;
-  align-items: start;
+  align-items: center;
 }
 
 .photo {
@@ -14,10 +14,6 @@
 
 .photo img {
   object-fit: cover;
-}
-
-.copy {
-  padding-top: 23px;
 }
 
 .heading {
@@ -54,9 +50,5 @@
   .photo {
     max-height: 640px;
     aspect-ratio: 4 / 5;
-  }
-
-  .copy {
-    padding-top: 0;
   }
 }
