@@ -54,7 +54,9 @@ export default function Skills() {
               )}
             </div>
             <div className={styles.drawingsText}>
-              <p>{skill.drawings.text}</p>
+              {skill.drawings.text.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
               {skill.drawings.instagram && (
                 <Button href={skill.drawings.instagram} variant="outline" target="_blank" rel="noopener noreferrer">
                   See my drawings on Instagram ↗

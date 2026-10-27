@@ -162,7 +162,10 @@ export const skills = [
     drawings: {
       src: "",
       alt: "",
-      text: "I’ve always loved to draw. I love Studio Ghibli, the Spider-Verse and all that stuff. I share my drawings on Instagram, so take a look if you’re curious!",
+      text: [
+        "I’ve loved drawing for as long as I can remember, and I find inspiration in everything from Studio Ghibli and Spider-Verse to the Star Wars universe, and pretty much anything in between!",
+        "I also share some of my own drawings on Instagram, so feel free to take a look if you’re curious!",
+      ],
       instagram: "https://www.instagram.com/sofieevoi/",
     },
     // Photos instead of tags. Put images in /public/images and fill in `src`
