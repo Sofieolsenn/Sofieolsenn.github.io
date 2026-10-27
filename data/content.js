@@ -93,7 +93,7 @@ export const skills = [
       "While frontend is my main focus, I’ve also gained hands-on backend experience through various projects.",
     detail:
       "I’ve worked with APIs, data, and connecting frontend and backend to build functional web applications.",
-    tags: ["Python", "Flask", "REST APIs", "Frontend-backend integration"],
+    tags: ["Python", "Flask", "PHP", "REST APIs", "Frontend-backend integration"],
   },
   {
     tab: "Database",
@@ -154,7 +154,7 @@ export const skills = [
     tab: "Personal / other skills",
     heading: "Personal skills",
     intro:
-      "When I’m not coding, you’ll probably find me drawing, enjoying good food, or adding yet another Pokémon card to my collection.",
+      "When I’m not developing or creating, you’ll probably find me drawing, enjoying good food, or adding yet another Pokémon card to my collection.",
     detail:
       "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
     // Photos instead of tags. Put images in /public/images and fill in `src`
