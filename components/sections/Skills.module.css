@@ -78,21 +78,18 @@
   color: var(--color-muted);
 }
 
+/* Tags sit in the middle of their column, next to the text */
 .tags {
   display: flex;
   flex-wrap: wrap;
-  align-content: start;
+  align-self: center;
+  justify-content: center;
   gap: 12px 10px;
-  padding-top: 52px;
 }
 
 @media (max-width: 900px) {
   .panel {
     grid-template-columns: 1fr;
-    padding: 56px 24px 24px;
-  }
-
-  .tags {
-    padding-top: 0;
+    padding: 56px 24px 32px;
   }
 }
