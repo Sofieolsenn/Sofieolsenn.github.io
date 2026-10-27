@@ -73,16 +73,15 @@
 .intro {
   margin-top: 20px;
   font-family: var(--font-display);
-  font-size: 1.0625rem; /* 17px */
+  font-size: 0.9375rem; /* 15px */
   letter-spacing: var(--ls-text);
   line-height: 1.4;
   color: var(--color-black);
 }
 
 .detail {
-  max-width: 290px;
-  margin-top: 24px;
-  font-size: 1rem; /* 16px */
+  margin-top: 18px;
+  font-size: 0.875rem; /* 14px */
   letter-spacing: var(--ls-text);
   line-height: 1.4;
   color: var(--color-muted);

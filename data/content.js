@@ -63,9 +63,9 @@ export const skills = [
     tab: "Frontend",
     heading: "Frontend development",
     intro:
-      "My diverse skill set allows me to fit into different projects, take on new challenges, and adapt to whatever comes my way.",
+      "I enjoy bringing designs to life through clean, responsive, and interactive web experiences. With my background in UX/UI design, I care just as much about how a website feels to use as how it looks.",
     detail:
-      "Frontend development is my strongest skill which I have done most projects in.",
+      "Frontend development is where I have the most experience. I focus on accessibility, semantic HTML, performance, and creating maintainable solutions that work across different devices.",
     tags: [
       "HTML5",
       "CSS3",
