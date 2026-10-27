@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import ContactForm from "@/components/sections/ContactForm";
-import { contact } from "@/data/content";
+import { contact, site } from "@/data/content";
 import { withBasePath } from "@/lib/paths";
 import styles from "./Contact.module.css";
 
@@ -11,7 +11,13 @@ export default function Contact() {
       <div>
         <SectionLabel id="contact-label">Contact</SectionLabel>
         <p className={styles.heading}>{contact.heading}</p>
-        <p className={styles.intro}>{contact.intro}</p>
+        <p className={styles.intro}>
+          {contact.intro} Write to me below or at{" "}
+          <a className={styles.email} href={`mailto:${site.email}`}>
+            {site.email}
+          </a>
+          .
+        </p>
         <ContactForm />
       </div>
       <div className={styles.photo}>

@@ -45,13 +45,6 @@ export default function Skills() {
             </li>
           ))}
         </ul>
-
-        {skill.relatedProject && (
-          <a className={styles.related} href="#projects">
-            <span className={styles.relatedLabel}>View related projects</span>
-            <span className={styles.relatedTitle}>{skill.relatedProject}</span>
-          </a>
-        )}
       </div>
     </section>
   );

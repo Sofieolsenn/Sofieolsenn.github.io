@@ -86,7 +86,6 @@ export const skills = [
       "Webflow & Umbraco",
       "Vite",
     ],
-    relatedProject: "Hack your future website",
   },
   {
     tab: "Backend",
@@ -114,7 +113,6 @@ export const skills = [
     detail:
       "Design helps me connect user needs with clear, accessible frontend solutions.",
     tags: ["Figma", "Wireframes", "Prototyping", "User flows", "Design systems", "Accessibility", "Responsive UI", "Interaction design"],
-    relatedProject: "Stuganibacken martemeo",
   },
   {
     tab: "CMS systems",
@@ -124,7 +122,6 @@ export const skills = [
     detail:
       "A good CMS should make everyday publishing feel simple without limiting the product.",
     tags: ["Umbraco", "Webflow", "Payload", "Content modeling", "Components", "Editor experience", "Integrations", "SEO"],
-    relatedProject: "Hack your future website",
   },
   {
     tab: "Concept development",
