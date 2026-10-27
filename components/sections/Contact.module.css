@@ -1,0 +1,47 @@
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 627fr) minmax(0, 525fr);
+  gap: 120px;
+  align-items: start;
+}
+
+.heading {
+  max-width: 487px;
+  margin-top: 38px;
+  font-family: var(--font-display);
+  font-size: var(--fs-heading);
+  letter-spacing: var(--ls-heading);
+  line-height: 1.12;
+  color: var(--color-ink);
+}
+
+.intro {
+  max-width: 420px;
+  margin-top: 40px;
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 525 / 787;
+  overflow: hidden;
+  border-radius: 53px;
+}
+
+.photo img {
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .photo {
+    max-height: 560px;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-photo);
+  }
+}

@@ -1,0 +1,24 @@
+.hero {
+  padding-top: clamp(96px, 12vw, 190px);
+}
+
+.heading {
+  max-width: 1024px;
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: 400;
+  letter-spacing: var(--ls-hero);
+  line-height: 1.1;
+  color: var(--color-ink);
+}
+
+.greeting {
+  color: var(--color-greeting);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+  margin-top: 40px;
+}

@@ -1,0 +1,15 @@
+.link {
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: var(--fs-body);
+  letter-spacing: var(--ls-text);
+  line-height: 1.4;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.link:hover {
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}

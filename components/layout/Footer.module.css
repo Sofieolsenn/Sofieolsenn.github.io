@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 40px;
+  margin-top: var(--section-space);
+  padding: 26px 0 48px;
+  border-top: 1px solid var(--color-line);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-heading);
+}
+
+.footer strong {
+  font-weight: 700;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+}
+
+.links a:hover {
+  color: var(--color-ink);
+  text-decoration: underline;
+}

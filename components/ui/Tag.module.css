@@ -1,0 +1,25 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-text);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.sm {
+  min-height: 32px;
+  padding: 0 24px;
+  background: var(--color-tag);
+  color: var(--color-tag-text-light);
+  font-size: var(--fs-tag);
+}
+
+.md {
+  min-height: 34px;
+  padding: 0 18px;
+  background: var(--color-surface-strong);
+  color: var(--color-tag-text);
+  font-size: var(--fs-skill);
+}

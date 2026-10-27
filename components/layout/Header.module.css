@@ -1,0 +1,36 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 24px var(--gutter) 0;
+  pointer-events: none;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(20px, 4vw, 64px);
+  padding: 22px clamp(24px, 3.5vw, 46px);
+  border-radius: var(--radius-pill);
+  background: rgb(246 242 236 / 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  font-family: var(--font-display);
+  font-size: var(--fs-nav);
+  line-height: 1.25;
+  color: var(--color-black);
+  pointer-events: auto;
+}
+
+.nav a {
+  transition: opacity 0.2s;
+}
+
+.nav a:hover {
+  opacity: 0.55;
+}
+
+.active {
+  font-weight: 700;
+}
