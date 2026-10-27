@@ -48,15 +48,13 @@ export default function Skills() {
         {skill.photos ? (
           <ul className={styles.photos}>
             {skill.photos.map((photo, index) => (
-              <li key={index} className={styles.photo}>
-                {photo.src && (
-                  <Image src={withBasePath(photo.src)} alt={photo.alt} fill sizes="(max-width: 900px) 50vw, 270px" />
-                )}
-                {photo.caption && (
-                  <span className={styles.caption}>
-                    <Tag>{photo.caption}</Tag>
-                  </span>
-                )}
+              <li key={index} className={styles.post}>
+                <div className={styles.photo}>
+                  {photo.src && (
+                    <Image src={withBasePath(photo.src)} alt={photo.alt} fill sizes="(max-width: 900px) 50vw, 270px" />
+                  )}
+                </div>
+                {photo.caption && <p className={styles.caption}>{photo.caption}</p>}
               </li>
             ))}
           </ul>
