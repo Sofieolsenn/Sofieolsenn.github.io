@@ -109,11 +109,19 @@
   gap: 12px 10px;
 }
 
-/* Photo grid used instead of tags (Personal tab); empty slots stay grey */
+/* Personal tab: text on top, a large photo grid underneath; empty slots stay grey */
+.photoPanel {
+  grid-template-columns: 1fr;
+}
+
+.photoPanel .text {
+  max-width: 600px;
+}
+
 .photos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 16px;
 }
 
 .photo {
@@ -153,5 +161,16 @@
   .panel {
     grid-template-columns: 1fr;
     padding: 40px 24px 24px;
+  }
+
+  .photos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* An odd last photo fills the whole row instead of leaving a gap */
+  .photo:last-child:nth-child(odd) {
+    grid-column: span 2;
+    aspect-ratio: 2 / 1;
   }
 }

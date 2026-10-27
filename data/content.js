@@ -166,6 +166,9 @@ export const skills = [
       { src: "", alt: "" },
       { src: "", alt: "" },
       { src: "", alt: "" },
+      { src: "", alt: "" },
+      { src: "", alt: "" },
+      { src: "", alt: "" },
     ],
   },
 ];

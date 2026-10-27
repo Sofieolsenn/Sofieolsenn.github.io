@@ -36,7 +36,9 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className={styles.panel} role="tabpanel" id="skill-panel" aria-labelledby={`skill-tab-${active}`}>
+      <div
+        className={`${styles.panel} ${skill.photos ? styles.photoPanel : ""}`}
+        role="tabpanel" id="skill-panel" aria-labelledby={`skill-tab-${active}`}>
         <div className={styles.text}>
           <h3 className={styles.heading}>{skill.heading}</h3>
           <p className={styles.intro}>{skill.intro}</p>
@@ -48,7 +50,7 @@ export default function Skills() {
             {skill.photos.map((photo, index) => (
               <li key={index} className={styles.photo}>
                 {photo.src && (
-                  <Image src={withBasePath(photo.src)} alt={photo.alt} fill sizes="(max-width: 900px) 33vw, 180px" />
+                  <Image src={withBasePath(photo.src)} alt={photo.alt} fill sizes="(max-width: 900px) 50vw, 270px" />
                 )}
               </li>
             ))}
