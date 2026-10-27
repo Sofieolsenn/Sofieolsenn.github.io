@@ -163,7 +163,7 @@ export const skills = [
       src: "",
       alt: "",
       text: "I share my drawings on Instagram. Take a look if you’re curious!",
-      instagram: "",
+      instagram: "https://www.instagram.com/sofieevoi/",
     },
     // Photos instead of tags. Put images in /public/images and fill in `src`
     // (e.g. "/images/drawing.jpg"). Empty slots show as grey boxes.
