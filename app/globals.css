@@ -24,21 +24,21 @@
   --font-display: var(--font-wix-display), system-ui, sans-serif;
   --font-text: var(--font-wix-text), system-ui, sans-serif;
 
-  /* Font sizes: desktop values from Figma, scaled down on small screens */
-  --fs-hero: clamp(2.375rem, 1.6rem + 2.4vw, 3.575rem); /* 57px */
-  --fs-heading: clamp(2rem, 1.4rem + 1.9vw, 3.0625rem); /* 49px */
-  --fs-subheading: clamp(1.625rem, 1.2rem + 1.2vw, 2.125rem); /* 34px */
-  --fs-title: clamp(1.5rem, 1.1rem + 1.1vw, 2.1rem); /* 33.7px */
-  --fs-title-sm: clamp(1.375rem, 1.1rem + 0.8vw, 1.714rem); /* 27.4px */
-  --fs-label: clamp(1.25rem, 1rem + 0.8vw, 1.714rem); /* 27.4px */
-  --fs-nav: clamp(1rem, 0.85rem + 0.5vw, 1.333rem); /* 21.3px */
-  --fs-lead: 1.25rem; /* 20px */
-  --fs-body: 1.1875rem; /* 19px */
-  --fs-kind: 1rem; /* 16px */
-  --fs-button: 1rem; /* 16px */
-  --fs-skill: 1.034rem; /* 16.55px */
-  --fs-field: 0.9375rem; /* 15px */
-  --fs-tag: 0.83rem; /* 13.3px */
+  /* Font sizes: Figma proportions, scaled so each section fits one screen */
+  --fs-hero: clamp(2.25rem, 1.6rem + 1.9vw, 3rem); /* 48px */
+  --fs-heading: clamp(1.875rem, 1.4rem + 1.4vw, 2.5rem); /* 40px */
+  --fs-subheading: clamp(1.5rem, 1.2rem + 0.9vw, 1.75rem); /* 28px */
+  --fs-title: clamp(1.375rem, 1.1rem + 0.8vw, 1.75rem); /* 28px */
+  --fs-title-sm: clamp(1.25rem, 1.05rem + 0.6vw, 1.4375rem); /* 23px */
+  --fs-label: clamp(1.125rem, 0.95rem + 0.5vw, 1.375rem); /* 22px */
+  --fs-nav: clamp(0.9375rem, 0.85rem + 0.3vw, 1.0625rem); /* 17px */
+  --fs-lead: 1.125rem; /* 18px */
+  --fs-body: 1.0625rem; /* 17px */
+  --fs-kind: 0.875rem; /* 14px */
+  --fs-button: 0.9375rem; /* 15px */
+  --fs-skill: 0.9375rem; /* 15px */
+  --fs-field: 0.875rem; /* 14px */
+  --fs-tag: 0.78rem; /* 12.5px */
 
   /* Letter spacing */
   --ls-hero: -0.045em;
@@ -59,7 +59,10 @@
   /* Layout */
   --container: 1274px;
   --gutter: clamp(20px, 5vw, 48px);
-  --section-space: clamp(96px, 12vw, 190px);
+  --section-space: clamp(72px, 12vh, 128px);
+  --header-height: 72px;
+  /* Tallest a section's main visual may be so it fits on one screen */
+  --screen-fit: calc(100svh - var(--header-height) - 72px);
   --gap: 16px;
 }
 
@@ -69,7 +72,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px;
+  scroll-padding-top: var(--header-height);
 }
 
 body {

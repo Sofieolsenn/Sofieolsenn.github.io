@@ -1,9 +1,14 @@
+/* The hero fills the first screen, with the text centred vertically. */
 .hero {
-  padding-top: clamp(96px, 12vw, 190px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100svh - var(--header-height));
+  padding-block: 48px;
 }
 
 .heading {
-  max-width: 1024px;
+  max-width: 860px;
   font-family: var(--font-display);
   font-size: var(--fs-hero);
   font-weight: 400;
@@ -19,6 +24,6 @@
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 23px;
-  margin-top: 40px;
+  gap: 16px;
+  margin-top: 32px;
 }

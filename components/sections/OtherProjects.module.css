@@ -1,18 +1,20 @@
 .other {
   display: grid;
-  grid-template-columns: minmax(0, 690fr) minmax(0, 528fr);
-  gap: 56px;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 64px;
   align-items: center;
 }
 
+/* Two rows of tiles never get taller than the screen */
 .tiles {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px 19px;
+  gap: 14px 16px;
+  width: min(620px, (var(--screen-fit) - 14px) * 1.1);
 }
 
 .heading {
-  margin-top: 30px;
+  margin-top: 20px;
   font-family: var(--font-display);
   font-size: var(--fs-subheading);
   letter-spacing: var(--ls-text);
@@ -23,8 +25,8 @@
 .list {
   display: grid;
   justify-items: start;
-  gap: 16px;
-  margin-top: 44px;
+  gap: 12px;
+  margin-top: 32px;
 }
 
 .list a,
@@ -45,9 +47,11 @@
 @media (max-width: 900px) {
   .other {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
-  .other > :first-child {
+  .tiles {
     order: 1;
+    width: 100%;
   }
 }

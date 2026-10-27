@@ -1,8 +1,8 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px 20px;
-  margin-top: 24px;
+  gap: 16px;
+  margin-top: 20px;
 }
 
 .grid > :first-child {

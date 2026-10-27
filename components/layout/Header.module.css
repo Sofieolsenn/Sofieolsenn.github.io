@@ -4,14 +4,14 @@
   z-index: 10;
   display: flex;
   justify-content: center;
-  padding: 24px var(--gutter) 0;
+  padding: 18px var(--gutter) 0;
   pointer-events: none;
 }
 
 .nav {
   display: flex;
-  gap: clamp(20px, 4vw, 64px);
-  padding: 22px clamp(24px, 3.5vw, 46px);
+  gap: clamp(20px, 3.5vw, 48px);
+  padding: 16px clamp(24px, 3vw, 38px);
   border-radius: var(--radius-pill);
   background: rgb(246 242 236 / 0.85);
   backdrop-filter: blur(24px);
