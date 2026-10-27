@@ -145,10 +145,10 @@ export const skills = [
     tab: "CMS systems",
     heading: "CMS systems",
     intro:
-      "I create flexible content setups that are straightforward for editors and reliable for developers.",
+      "I’ve mainly worked with Umbraco and Webflow, creating and maintaining websites that are easy to understand, update, and manage.",
     detail:
-      "A good CMS should make everyday publishing feel simple without limiting the product.",
-    tags: ["Webflow", "Umbraco", "WordPress"],
+      "I focus on building clear, well-organized systems that make everyday content management simple for others.",
+    tags: ["Umbraco", "Webflow", "WordPress", "CMS Customization", "Content Structure", "Website Maintenance"],
   },
   {
     tab: "Personal / other skills",
