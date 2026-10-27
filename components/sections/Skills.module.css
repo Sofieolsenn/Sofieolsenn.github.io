@@ -129,10 +129,17 @@
   color: var(--color-heading);
 }
 
-/* Personal tab: one large drawing with a link to the drawing Instagram */
+/* Personal tab: a large drawing next to a link to the drawing Instagram */
+.drawings {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
 .drawingImage {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--radius-panel);
   background: var(--color-surface-strong);
@@ -142,14 +149,12 @@
   object-fit: cover;
 }
 
-.drawingsFooter {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px 24px;
-  margin-top: 16px;
-  font-size: var(--fs-field);
+.drawingsText {
+  display: grid;
+  justify-items: start;
+  gap: 20px;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
   color: var(--color-heading);
 }
 
@@ -196,6 +201,11 @@
   .panel {
     grid-template-columns: 1fr;
     padding: 40px 24px 24px;
+  }
+
+  .drawings {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .photos {

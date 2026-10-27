@@ -53,7 +53,7 @@ export default function Skills() {
                 <Image src={withBasePath(skill.drawings.src)} alt={skill.drawings.alt} fill sizes="(max-width: 900px) 100vw, 820px" />
               )}
             </div>
-            <div className={styles.drawingsFooter}>
+            <div className={styles.drawingsText}>
               <p>{skill.drawings.text}</p>
               {skill.drawings.instagram && (
                 <Button href={skill.drawings.instagram} variant="outline" target="_blank" rel="noopener noreferrer">
