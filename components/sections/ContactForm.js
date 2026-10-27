@@ -5,21 +5,41 @@ import Button from "@/components/ui/Button";
 import { site } from "@/data/content";
 import styles from "./ContactForm.module.css";
 
-// GitHub Pages has no server, so the form opens the visitor's email app
-// with the message filled in. Set `email` in data/content.js.
-export default function ContactForm() {
-  const [error, setError] = useState("");
+// GitHub Pages has no server, so messages are sent through Web3Forms,
+// which forwards them to the email registered with the access key.
+const MESSAGES = {
+  sending: "Sending...",
+  success: "Thanks! Your message has been sent. I’ll get back to you soon.",
+  error: "Something went wrong. Please try again, or email me directly at ",
+};
 
-  function handleSubmit(event) {
+export default function ContactForm() {
+  const [status, setStatus] = useState("idle");
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    if (!site.email) {
-      setError("The contact form is not set up yet.");
-      return;
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    setStatus("sending");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...data,
+          access_key: site.web3formsKey,
+          subject: data.reason ? `Portfolio: ${data.reason}` : "New message from your portfolio",
+          from_name: data.name,
+        }),
+      });
+      const result = await response.json();
+      if (!result.success) throw new Error(result.message);
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
     }
-    const data = new FormData(event.currentTarget);
-    const subject = data.get("reason") || "Hello from your portfolio";
-    const body = `${data.get("message")}\n\n${data.get("name")}\n${data.get("email")}`;
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (
@@ -41,15 +61,23 @@ export default function ContactForm() {
         </label>
         <label className={styles.field}>
           <span className="visually-hidden">Message</span>
-          <textarea name="message" rows={5} placeholder="Write an additional message ..." />
+          <textarea name="message" rows={5} placeholder="Write an additional message ..." required />
         </label>
+        {/* Spam trap: hidden from people, bots tick it and get filtered out */}
+        <input type="checkbox" name="botcheck" className="visually-hidden" tabIndex={-1} autoComplete="off" />
       </div>
-      <Button type="submit">Send message</Button>
-      {error && (
-        <p className={styles.error} role="status">
-          {error}
-        </p>
-      )}
+      <Button type="submit" disabled={status === "sending"}>
+        {status === "sending" ? MESSAGES.sending : "Send message"}
+      </Button>
+      <p className={styles.status} role="status">
+        {status === "success" && MESSAGES.success}
+        {status === "error" && (
+          <>
+            {MESSAGES.error}
+            <a href={`mailto:${site.email}`}>{site.email}</a>.
+          </>
+        )}
+      </p>
     </form>
   );
 }

@@ -52,9 +52,14 @@
   background: #e3dfd9;
 }
 
-.error {
+.status {
+  min-height: 1.5em;
   font-size: var(--fs-field);
   color: var(--color-muted);
+}
+
+.status a {
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {

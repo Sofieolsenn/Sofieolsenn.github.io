@@ -10,6 +10,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://sofieolsenn.github.io",
   // Fill these in. Empty values are hidden on the site.
   email: "sofievennickolsen@gmail.com",
+  // Public Web3Forms key: the contact form sends messages to the email above.
+  web3formsKey: "14ad1a38-6e90-427e-bfc6-516d979b4b56",
   linkedin: "https://www.linkedin.com/in/sofie-olsen-14204532a/",
   github: "https://github.com/Sofieolsenn",
   // Put your CV in /public/cv.pdf

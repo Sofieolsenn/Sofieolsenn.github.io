@@ -18,6 +18,12 @@
   transform: translateY(-1px);
 }
 
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
 .primary {
   background: var(--color-button);
   color: var(--color-white);
