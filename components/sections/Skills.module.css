@@ -116,8 +116,6 @@
 
 .photoPanel .text {
   max-width: 600px;
-  margin-inline: auto;
-  text-align: center;
 }
 
 /* Caption under each photo, like a social media post */
