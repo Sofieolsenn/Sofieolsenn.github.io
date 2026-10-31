@@ -200,12 +200,13 @@
 }
 
 .post:last-child:nth-child(odd) .photo {
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 3 / 1;
 }
 
+/* Landscape boxes, since most of the photos are wider than they are tall */
 .photo {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   border-radius: var(--radius-field);
   background: var(--color-surface-strong);
