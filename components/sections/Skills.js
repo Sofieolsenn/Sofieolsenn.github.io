@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
+import Slideshow from "@/components/ui/Slideshow";
 import Tag from "@/components/ui/Tag";
 import { skillGroups, skillsIntro } from "@/data/content";
 import { withBasePath } from "@/lib/paths";
@@ -70,8 +71,8 @@ export default function Skills() {
         {skill.drawings && (
           <div className={styles.drawings}>
             <div className={styles.drawingImage}>
-              {skill.drawings.src && (
-                <Image src={withBasePath(skill.drawings.src)} alt={skill.drawings.alt} fill sizes="(max-width: 900px) 100vw, 480px" />
+              {skill.drawings.images?.length > 0 && (
+                <Slideshow images={skill.drawings.images} sizes="(max-width: 900px) 100vw, 480px" />
               )}
             </div>
             <div className={styles.drawingsText}>

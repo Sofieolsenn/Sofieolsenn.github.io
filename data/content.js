@@ -159,11 +159,14 @@ export const skills = [
       "When I’m not developing or creating, you’ll probably find me drawing, enjoying good food, or adding yet another Pokémon card to my collection.",
     detail:
       "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
-    // Large drawing shown above the photos, with a link to the drawing Instagram.
-    // The link is hidden until `instagram` has a URL.
+    // Drawings shown as a slideshow next to the text, with a link to the
+    // drawing Instagram. Add more images to the list to include them.
     drawings: {
-      src: "",
-      alt: "",
+      images: [
+        { src: "/images/drawings/drawing-cat.jpg", alt: "Pencil drawing of a sitting cat" },
+        { src: "/images/drawings/drawing-house.jpg", alt: "Detailed pencil drawing of a timber-framed house" },
+        { src: "/images/drawings/drawing-portrait.jpg", alt: "Digital sketch portrait of a woman with her hair blowing" },
+      ],
       text: [
         "I’ve loved drawing for as long as I can remember, and I find inspiration in everything from Studio Ghibli and Spider-Verse to the Star Wars universe, and pretty much anything in between!",
         "I also share some of my own drawings on Instagram, so feel free to take a look if you’re curious!",

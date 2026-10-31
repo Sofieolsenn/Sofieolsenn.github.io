@@ -162,21 +162,18 @@
 /* Personal tab: a large drawing next to a link to the drawing Instagram */
 .drawings {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 32px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
   align-items: center;
 }
 
+/* Portrait shape to match the drawings */
 .drawingImage {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: var(--radius-panel);
   background: var(--color-surface-strong);
-}
-
-.drawingImage img {
-  object-fit: cover;
 }
 
 .drawingsText {
