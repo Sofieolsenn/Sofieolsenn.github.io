@@ -190,8 +190,17 @@
 
 .photos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px 16px;
+}
+
+/* An odd last photo fills the whole row instead of leaving a gap */
+.post:last-child:nth-child(odd) {
+  grid-column: span 2;
+}
+
+.post:last-child:nth-child(odd) .photo {
+  aspect-ratio: 2 / 1;
 }
 
 .photo {
@@ -264,16 +273,6 @@
   }
 
   .photos {
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px 10px;
-  }
-
-  /* An odd last photo fills the whole row instead of leaving a gap */
-  .post:last-child:nth-child(odd) {
-    grid-column: span 2;
-  }
-
-  .post:last-child:nth-child(odd) .photo {
-    aspect-ratio: 2 / 1;
   }
 }

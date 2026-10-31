@@ -93,7 +93,7 @@ export default function Skills() {
               <li key={index} className={styles.post}>
                 <div className={styles.photo}>
                   {photo.src && (
-                    <Image src={withBasePath(photo.src)} alt={photo.alt} fill sizes="(max-width: 900px) 50vw, 270px" />
+                    <Image src={withBasePath(photo.src)} alt={photo.alt} fill sizes="(max-width: 900px) 50vw, 400px" />
                   )}
                 </div>
                 {photo.caption && <p className={styles.caption}>{photo.caption}</p>}
