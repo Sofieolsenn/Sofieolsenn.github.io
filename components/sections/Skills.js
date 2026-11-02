@@ -137,7 +137,6 @@ export default function Skills() {
           <h3 className={styles.heading}>{skill.heading}</h3>
           {skill.intro && <p className={styles.intro}>{skill.intro}</p>}
           {skill.detail && <p className={styles.detail}>{skill.detail}</p>}
-          {skill.more && <p className={styles.detail}>{skill.more}</p>}
           {skill.link && (
             <Button href={skill.link.href} variant="outline" target="_blank" rel="noopener noreferrer">
               {skill.link.label}

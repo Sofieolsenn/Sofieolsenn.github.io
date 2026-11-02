@@ -283,46 +283,15 @@ export const businessSkills = [
   },
 ];
 
-// Empty picture slots, shown as grey boxes until a `src` is filled in
-const placeholders = (count) => Array.from({ length: count }, () => ({ src: "", alt: "", caption: "" }));
-
 // Hobbies (one tab each).
 // - `slideshow` shows a set of pictures in the picture slot instead of a single `image`
 // - `link` adds a button under the text
 // - `galleries` are picture sections under the text, each with an optional
-//   `heading`. Fill in `src` (e.g. "/images/hobbies/board-games.jpg"), `alt`
-//   (a short description) and `caption` (text under the picture, can be empty).
-//   Add `focus` (e.g. "center 70%") to move the crop when the subject sits
-//   off-centre: the second number goes from 0% (top) to 100% (bottom).
-//   `shape: "portrait"` gives tall boxes in rows of four, which suits drawings.
-// Every tab has a picture slot next to the text: add `image: { src, alt }` to fill it.
+//   `heading`. Each photo has `src`, `alt` (a short description) and `caption`
+//   (text under the picture, can be empty). Add `focus` (e.g. "center 70%") to
+//   move the crop when the subject sits off-centre: the second number goes
+//   from 0% (top) to 100% (bottom). Only add photos that are ready.
 export const hobbies = [
-  // Personal skills come first, with a line pointing to the hobby tabs
-  {
-    tab: "Personal / other skills",
-    heading: "Personal skills",
-    // Title above the tags (the other tabs use "Specific skills")
-    tagsHeading: "Fun facts about me",
-    intro:
-      "When I’m not developing or creating, you’ll probably find me drawing, enjoying good food, or adding yet another Pokémon card to my collection.",
-    detail:
-      "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
-    more: "The other tabs show a bit more about my different hobbies.",
-    tags: [
-      "Loves dogs",
-      "Drawing skills",
-      "Creative",
-      "Does not like coffee",
-      "Popcorn eater",
-      "Pokémon card collector",
-      "Foodie",
-      "Studio Ghibli fan",
-      "Star Wars nerd",
-      "Harry Potter rewatcher",
-      "Secret Twilight fan",
-      "Loves to travel",
-    ],
-  },
   {
     tab: "Drawing",
     heading: "My biggest passion is drawing",
@@ -336,29 +305,29 @@ export const hobbies = [
       { src: "/images/drawings/drawing-portrait.jpg", alt: "Digital sketch portrait of a woman with her hair blowing" },
     ],
     link: { href: "https://www.instagram.com/sofieevoi/", label: "See my drawings on Instagram ↗" },
-    galleries: [
-      { heading: "Portraits", shape: "portrait", photos: placeholders(4) },
-      { heading: "Pokémon illustrations", shape: "portrait", photos: placeholders(4) },
-      { heading: "Random stuff", shape: "portrait", photos: placeholders(4) },
-      { heading: "Environments", shape: "portrait", photos: placeholders(4) },
+  },
+  {
+    tab: "Other hobbies",
+    heading: "Other hobbies",
+    // Title above the tags (the skill tabs use "Specific skills")
+    tagsHeading: "Fun facts about me",
+    intro:
+      "When I’m not developing or drawing, you’ll probably find me in the kitchen, out on a long walk, or adding yet another Pokémon card to my collection.",
+    detail:
+      "I love to travel and explore new places, I go skiing with my family in winter, and I explore new restaurants whenever the monthly budget allows it. And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
+    tags: [
+      "Loves dogs",
+      "Creative",
+      "Does not like coffee",
+      "Popcorn eater",
+      "Pokémon card collector",
+      "Foodie",
+      "Studio Ghibli fan",
+      "Star Wars nerd",
+      "Harry Potter rewatcher",
+      "Secret Twilight fan",
+      "Loves to travel",
     ],
-  },
-  {
-    tab: "Indoors",
-    heading: "Indoors",
-    intro:
-      "Inside, you’ll mostly find me in the kitchen cooking, whenever the budget allows it (groceries are way too expensive these days).",
-    detail:
-      "When the monthly budget allows it, I also love exploring new restaurants. And sometimes I play board games, although I’m horrible at them.",
-    galleries: [{ photos: placeholders(4) }],
-  },
-  {
-    tab: "Outdoors",
-    heading: "Outdoors",
-    intro:
-      "I love long walks, and they usually involve dogs, even though I don’t have one myself.",
-    detail:
-      "In winter I go skiing with my family, and when the weather allows it I pick small, cute flower bouquets or go out collecting mushrooms. If I’m really bored, I also catch Pokémon in Pokémon GO.",
     galleries: [
       {
         photos: [
@@ -368,24 +337,10 @@ export const hobbies = [
           { src: "/images/hobbies/cafe-beer.jpg", alt: "Sofie and a friend sitting outside at a café with a beer", caption: "Love sitting outside, enjoying a drink and good company" },
           { src: "/images/hobbies/flowers-field.jpg", alt: "A small bouquet of wildflowers held over the grass", caption: "Collecting little things from nature to bring home", focus: "center 66%" },
           { src: "/images/hobbies/mushrooms.jpg", alt: "Freshly picked chanterelles laid out to dry on paper towels", caption: "Basically a treasure hunt, but with mushrooms" },
-        ],
-      },
-    ],
-  },
-  {
-    tab: "Traveling",
-    heading: "Traveling",
-    intro:
-      "I like to take pictures of pretty things when I travel, and I often use them as inspiration when I draw.",
-    galleries: [
-      {
-        photos: [
           { src: "/images/personal/japan-goldfish.jpg", alt: "A street in Japan lined with tanks full of goldfish", caption: "Goldfish tanks on a street in Japan" },
           { src: "/images/personal/japan-beach.jpg", alt: "Waves rolling onto a dark sand beach in Japan", caption: "Dark sand beach in Japan" },
           { src: "/images/personal/samos-horses.jpg", alt: "Two saddled horses resting by a brick wall on Samos", caption: "Horses on Samos, Greece" },
           { src: "/images/personal/lemur.jpg", alt: "Sofie smiling next to a lemur", caption: "Making friends with a lemur" },
-          { src: "/images/personal/sweden-hike.jpg", alt: "Hiking on mossy rocks in a Swedish forest", caption: "Hiking in Sweden" },
-          ...placeholders(1),
         ],
       },
     ],
