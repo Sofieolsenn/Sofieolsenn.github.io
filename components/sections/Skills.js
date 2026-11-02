@@ -19,11 +19,23 @@ const ICONS = {
   heart: <path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z" />,
 };
 
-// Small filled star shown on the main skill tabs
-function Star() {
+// Badge with a tick, shown on the main skill tabs
+function Badge() {
   return (
-    <svg className={styles.star} viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true">
-      <path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" />
+    <svg
+      className={styles.badge}
+      viewBox="0 0 24 24"
+      width="14"
+      height="14"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+      <path d="m9 12 2 2 4-4" />
     </svg>
   );
 }
@@ -110,7 +122,7 @@ export default function Skills() {
             className={`${styles.tab} ${index === active ? styles.activeTab : ""}`}
             onClick={() => setActive(index)}
           >
-            {item.featured && <Star />}
+            {item.featured && <Badge />}
             {item.tab}
           </button>
         ))}

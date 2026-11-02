@@ -66,7 +66,7 @@ export const skillsText =
   "Although I’ve worked on fewer projects in these other areas, I’ve gained hands-on experience with them and feel comfortable putting those skills to use when needed.";
 
 // Development and design skills (one tab each).
-// `featured: true` puts a star next to the tab name (my main areas).
+// `featured: true` puts a badge with a tick next to the tab name (my main areas).
 // Each tab has room for a picture next to the text: add
 // `image: { src: "/images/your-file.jpg", alt: "…" }` to show one.
 export const skills = [

@@ -135,7 +135,7 @@
   transition: background-color 0.2s, color 0.2s;
 }
 
-.star {
+.badge {
   flex: none;
 }
 
