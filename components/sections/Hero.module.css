@@ -22,3 +22,10 @@
   gap: 23px;
   margin-top: 40px;
 }
+
+@media (max-width: 900px) {
+  .buttons {
+    gap: 12px;
+    margin-top: 32px;
+  }
+}

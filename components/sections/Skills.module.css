@@ -1,7 +1,17 @@
+/* Intro on the left, the skill area switch on the right */
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px 48px;
+}
+
+/* Up to 540px wide, shrinking on narrower screens so the category card
+   stays beside it for as long as possible */
 .header {
-  max-width: 560px;
-  margin-inline: auto;
-  text-align: center;
+  flex: 1 1 320px;
+  max-width: 540px;
 }
 
 .sectionIntro {
@@ -12,27 +22,59 @@
   color: var(--color-black);
 }
 
-/* Switch between "Development and design" and "Entrepreneurship and business" */
+.sectionText {
+  margin-top: 16px;
+  font-size: var(--fs-skill);
+  letter-spacing: var(--ls-text);
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* Switch between "Development and design" and "Entrepreneurship and business",
+   styled as a small card with a title and radio-style options */
 .groups {
   display: flex;
-  width: fit-content;
-  max-width: 100%;
-  margin: 32px auto 0;
-  padding: 6px;
-  border-radius: var(--radius-pill);
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 20px 20px;
+  border-radius: var(--radius-panel);
   background: var(--color-surface);
 }
 
+.groupsTitle {
+  margin: 0 8px 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--fs-button);
+  color: var(--color-label);
+}
+
 .group {
-  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 24px 10px 10px;
   border: 0;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-tab);
   background: transparent;
   color: var(--color-tag-text);
   font-size: var(--fs-skill);
   font-weight: 500;
+  text-align: left;
   cursor: pointer;
   transition: background-color 0.2s;
+}
+
+.radio {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-tag);
+  color: var(--color-tag-text);
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .group:hover {
@@ -44,13 +86,18 @@
   background: var(--color-tag);
 }
 
+.activeGroup .radio {
+  background: #b7b3ad;
+  color: var(--color-ink);
+}
+
 .tabs {
   position: relative;
   z-index: 1;
   display: flex;
   align-items: flex-end;
   gap: 8px;
-  margin-top: 40px;
+  margin-top: 72px;
   margin-bottom: -18px;
   overflow-x: auto;
   scrollbar-width: none;
@@ -98,14 +145,26 @@
   color: #8d8982;
 }
 
+/* Text and a picture side by side, with the tags below a thin line */
 .panel {
   display: grid;
-  grid-template-columns: minmax(0, 378fr) minmax(0, 718fr);
-  gap: 40px 46px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px 56px;
   align-items: center;
   padding: 72px 68px 68px;
   border-radius: var(--radius-card);
   background: var(--color-surface);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Button under the text, e.g. the link to the drawing Instagram */
+.text > a {
+  margin-top: 28px;
 }
 
 .heading {
@@ -134,20 +193,42 @@
   color: var(--color-muted);
 }
 
+.skillImage {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius-panel);
+  background: var(--color-surface-strong);
+}
+
+/* Taller picture slot for the drawings slideshow */
+.portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.skillImage img {
+  object-fit: cover;
+}
+
+.tagArea {
+  grid-column: 1 / -1;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-line);
+}
+
+/* Small grey title above the tags, like the one on the category switch */
+.tagsTitle {
+  font-size: var(--fs-button);
+  font-weight: 400;
+  color: var(--color-label);
+}
+
 .tags {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   align-content: start;
   gap: 12px 10px;
-}
-
-/* Personal tab: text on top, a large photo grid underneath; empty slots stay grey */
-.photoPanel {
-  grid-template-columns: 1fr;
-}
-
-.photoPanel .text {
-  max-width: 600px;
 }
 
 /* Caption under each photo, like a social media post */
@@ -159,30 +240,15 @@
   color: var(--color-heading);
 }
 
-/* Personal tab: a large drawing next to a link to the drawing Instagram */
-.drawings {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 40px;
-  align-items: center;
+/* Picture sections under the text (Hobbies tabs), each below a thin line */
+.gallery {
+  grid-column: 1 / -1;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-line);
 }
 
-/* Portrait shape to match the drawings */
-.drawingImage {
-  position: relative;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  border-radius: var(--radius-panel);
-  background: var(--color-surface-strong);
-}
-
-.drawingsText {
-  display: grid;
-  justify-items: start;
-  gap: 16px;
-  font-size: var(--fs-body);
-  line-height: 1.5;
-  color: var(--color-heading);
+.gallery .tagsTitle {
+  margin-bottom: 20px;
 }
 
 .photos {
@@ -200,6 +266,20 @@
   aspect-ratio: 3 / 1;
 }
 
+/* Tall boxes in rows of four, for drawings */
+.portraitPhotos {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.portraitPhotos .photo,
+.portraitPhotos .post:last-child:nth-child(odd) .photo {
+  aspect-ratio: 3 / 4;
+}
+
+.portraitPhotos .post:last-child:nth-child(odd) {
+  grid-column: auto;
+}
+
 /* Landscape boxes, since most of the photos are wider than they are tall */
 .photo {
   position: relative;
@@ -214,10 +294,11 @@
 }
 
 @media (max-width: 900px) {
-  /* On small screens the tabs wrap into centred rows of pills */
+  /* On small screens the tabs wrap into left-aligned rows of pills */
   .tabs {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 40px;
     margin-bottom: 16px;
   }
 
@@ -235,10 +316,35 @@
     color: var(--color-white);
   }
 
+  /* A more compact category card on small screens */
+  .groups {
+    width: 100%;
+    gap: 4px;
+    padding: 16px 12px 12px;
+    border-radius: var(--radius-field);
+  }
+
+  .groupsTitle {
+    margin: 0 8px 8px;
+    padding-bottom: 10px;
+    font-size: 0.875rem; /* 14px */
+  }
+
   .group {
-    flex: 1;
-    padding: 10px 16px;
-    font-size: var(--fs-field);
+    gap: 12px;
+    padding: 6px 12px 6px 6px;
+    border-radius: var(--radius-field);
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .radio {
+    width: 30px;
+    height: 30px;
+  }
+
+  .radio svg {
+    width: 16px;
+    height: 16px;
   }
 
   /* minmax(0, 1fr) lets the column shrink below its content's width */
@@ -252,25 +358,39 @@
     max-width: 100%;
   }
 
+  /* Smaller tags on small screens */
   .tags li > * {
-    padding-block: 6px;
+    min-height: 30px;
+    padding: 6px 14px;
+    font-size: 0.8125rem; /* 13px */
     white-space: normal;
   }
 
+  /* No picture box on small screens, only the drawings slideshow stays,
+     centred and a little narrower */
+  .skillImage:not(.portrait) {
+    display: none;
+  }
+
+  .portrait {
+    width: 100%;
+    max-width: 420px;
+    justify-self: center;
+  }
+
   /* The long Instagram button may wrap instead of pushing the panel wider */
-  .drawingsText > a {
+  .text > a {
     max-width: 100%;
     padding-block: 10px;
     white-space: normal;
     text-align: center;
   }
 
-  .drawings {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-  }
-
   .photos {
     gap: 20px 10px;
+  }
+
+  .portraitPhotos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

@@ -47,8 +47,10 @@
     gap: 40px;
   }
 
+  /* Centred when the height limit makes it narrower than the screen */
   .photo {
-    max-height: 640px;
+    width: min(100%, 512px); /* 640px tall at 4:5 */
     aspect-ratio: 4 / 5;
+    margin-inline: auto;
   }
 }

@@ -1,7 +1,8 @@
+/* Mirrors the About section so both portraits are the same size */
 .contact {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: 54px;
   align-items: center;
 }
 
@@ -34,9 +35,9 @@
 
 .photo {
   position: relative;
-  aspect-ratio: 525 / 787;
+  aspect-ratio: 672 / 1007;
   overflow: hidden;
-  border-radius: 53px;
+  border-radius: var(--radius-photo);
 }
 
 .photo img {
@@ -49,9 +50,10 @@
     gap: 48px;
   }
 
+  /* Centred when the height limit makes it narrower than the screen */
   .photo {
-    max-height: 560px;
+    width: min(100%, 512px); /* 640px tall at 4:5, like the About photo */
     aspect-ratio: 4 / 5;
-    border-radius: var(--radius-photo);
+    margin-inline: auto;
   }
 }

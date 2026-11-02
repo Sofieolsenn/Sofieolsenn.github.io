@@ -14,6 +14,15 @@
   transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 
+/* Slightly smaller buttons on small screens */
+@media (max-width: 900px) {
+  .button {
+    min-height: 38px;
+    padding: 0 20px;
+    font-size: 0.9375rem; /* 15px */
+  }
+}
+
 .button:hover {
   transform: translateY(-1px);
 }

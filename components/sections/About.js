@@ -26,10 +26,10 @@ export default function About() {
           ))}
         </div>
         <div className={styles.buttons}>
-          <Button href="#skills" variant="outline">
+          <Button href="#skills">
             My skills
           </Button>
-          <Button href="#contact" variant="outline">
+          <Button href="#hobbies" variant="outline">
             Get to know me
           </Button>
         </div>

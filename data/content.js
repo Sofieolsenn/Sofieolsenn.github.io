@@ -60,9 +60,14 @@ export const about = {
 };
 
 export const skillsIntro =
-  "My diverse skill set allows me to fit into different projects, take on new challenges, and adapt to whatever comes my way.";
+  "Frontend development is where I have the most experience, followed by UX/UI design. Along the way, I’ve gained experience in other areas of digital product development, giving me a broader understanding of how everything comes together.";
 
-// Development and design skills (one tab each)
+export const skillsText =
+  "Although I’ve worked on fewer projects in these other areas, I’ve gained hands-on experience with them and feel comfortable putting those skills to use when needed.";
+
+// Development and design skills (one tab each).
+// Each tab has room for a picture next to the text: add
+// `image: { src: "/images/your-file.jpg", alt: "…" }` to show one.
 export const skills = [
   {
     tab: "Frontend",
@@ -152,42 +157,6 @@ export const skills = [
       "I focus on building clear, well-organized systems that make everyday content management simple for others.",
     tags: ["Umbraco", "Webflow", "WordPress", "CMS Customization", "Content Structure", "Website Maintenance"],
   },
-  {
-    tab: "Personal / other skills",
-    heading: "Personal skills",
-    intro:
-      "When I’m not developing or creating, you’ll probably find me drawing, enjoying good food, or adding yet another Pokémon card to my collection.",
-    detail:
-      "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
-    // Drawings shown as a slideshow next to the text, with a link to the
-    // drawing Instagram. Add more images to the list to include them.
-    drawings: {
-      images: [
-        { src: "/images/drawings/drawing-cat.jpg", alt: "Pencil drawing of a sitting cat" },
-        { src: "/images/drawings/drawing-house.jpg", alt: "Detailed pencil drawing of a timber-framed house" },
-        { src: "/images/drawings/drawing-portrait.jpg", alt: "Digital sketch portrait of a woman with her hair blowing" },
-      ],
-      text: [
-        "I’ve loved drawing for as long as I can remember, and I find inspiration in everything from Studio Ghibli and Spider-Verse to the Star Wars universe, and pretty much anything in between!",
-        "I also share some of my own drawings on Instagram, so feel free to take a look if you’re curious!",
-      ],
-      instagram: "https://www.instagram.com/sofieevoi/",
-    },
-    // Photos instead of tags. Put images in /public/images and fill in `src`
-    // (e.g. "/images/drawing.jpg"). Empty slots show as grey boxes.
-    // `caption` is the text shown under the photo; leave it empty to hide it.
-    photos: [
-      { src: "/images/personal/japan-goldfish.jpg", alt: "A street in Japan lined with tanks full of goldfish", caption: "Goldfish tanks on a street in Japan" },
-      { src: "/images/personal/japan-beach.jpg", alt: "Waves rolling onto a dark sand beach in Japan", caption: "Dark sand beach in Japan" },
-      { src: "/images/personal/samos-horses.jpg", alt: "Two saddled horses resting by a brick wall on Samos", caption: "Horses on Samos, Greece" },
-      { src: "/images/personal/lemur.jpg", alt: "Sofie smiling next to a lemur", caption: "Making friends with a lemur" },
-      { src: "/images/personal/sweden-hike.jpg", alt: "Hiking on mossy rocks in a Swedish forest", caption: "Hiking in Sweden" },
-      { src: "", alt: "", caption: "Drawing" },
-      { src: "", alt: "", caption: "Good food" },
-      { src: "", alt: "", caption: "Pokémon cards" },
-      { src: "", alt: "", caption: "Caption" },
-    ],
-  },
 ];
 
 // Entrepreneurship and business skills (one tab each)
@@ -219,14 +188,123 @@ export const businessSkills = [
       "It’s given me a better understanding of what it takes to turn an idea into something real.",
     tags: ["Entrepreneurship", "Startup Development", "Market Research", "Competitor Analysis", "Business Model Canvas", "Business Planning", "Product Strategy", "MVP Development", "Pitching", "Brand Development"],
   },
-  // The personal tab is shown in both groups
-  skills.find((skill) => skill.tab === "Personal / other skills"),
+];
+
+// Empty picture slots, shown as grey boxes until a `src` is filled in
+const placeholders = (count) => Array.from({ length: count }, () => ({ src: "", alt: "", caption: "" }));
+
+// Hobbies (one tab each).
+// - `slideshow` shows a set of pictures in the picture slot instead of a single `image`
+// - `link` adds a button under the text
+// - `galleries` are picture sections under the text, each with an optional
+//   `heading`. Fill in `src` (e.g. "/images/hobbies/board-games.jpg"), `alt`
+//   (a short description) and `caption` (text under the picture, can be empty).
+//   Add `focus` (e.g. "center 70%") to move the crop when the subject sits
+//   off-centre: the second number goes from 0% (top) to 100% (bottom).
+//   `shape: "portrait"` gives tall boxes in rows of four, which suits drawings.
+// Every tab has a picture slot next to the text: add `image: { src, alt }` to fill it.
+export const hobbies = [
+  // Personal skills come first, with a line pointing to the hobby tabs
+  {
+    tab: "Personal / other skills",
+    heading: "Personal skills",
+    // Title above the tags (the other tabs use "Specific skills")
+    tagsHeading: "Fun facts about me",
+    intro:
+      "When I’m not developing or creating, you’ll probably find me drawing, enjoying good food, or adding yet another Pokémon card to my collection.",
+    detail:
+      "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
+    more: "The other tabs show a bit more about my different hobbies.",
+    tags: [
+      "Loves dogs",
+      "Drawing skills",
+      "Creative",
+      "Does not like coffee",
+      "Popcorn eater",
+      "Pokémon card collector",
+      "Foodie",
+      "Studio Ghibli fan",
+      "Star Wars nerd",
+      "Harry Potter rewatcher",
+      "Secret Twilight fan",
+      "Loves to travel",
+    ],
+  },
+  {
+    tab: "Drawing",
+    heading: "My biggest passion is drawing",
+    intro:
+      "I’ve loved drawing for as long as I can remember, and I find inspiration in everything from Studio Ghibli and Spider-Verse to the Star Wars universe, and pretty much anything in between!",
+    detail:
+      "I also collect art books and Pokémon cards, which inspire me to try out different kinds of art. I share some of my drawings on Instagram, so feel free to take a look if you’re curious!",
+    slideshow: [
+      { src: "/images/drawings/drawing-cat.jpg", alt: "Pencil drawing of a sitting cat" },
+      { src: "/images/drawings/drawing-house.jpg", alt: "Detailed pencil drawing of a timber-framed house" },
+      { src: "/images/drawings/drawing-portrait.jpg", alt: "Digital sketch portrait of a woman with her hair blowing" },
+    ],
+    link: { href: "https://www.instagram.com/sofieevoi/", label: "See my drawings on Instagram ↗" },
+    galleries: [
+      { heading: "Portraits", shape: "portrait", photos: placeholders(4) },
+      { heading: "Pokémon illustrations", shape: "portrait", photos: placeholders(4) },
+      { heading: "Random stuff", shape: "portrait", photos: placeholders(4) },
+      { heading: "Environments", shape: "portrait", photos: placeholders(4) },
+    ],
+  },
+  {
+    tab: "Indoors",
+    heading: "Indoors",
+    intro:
+      "Inside, you’ll mostly find me in the kitchen cooking, whenever the budget allows it (groceries are way too expensive these days).",
+    detail:
+      "When the monthly budget allows it, I also love exploring new restaurants. And sometimes I play board games, although I’m horrible at them.",
+    galleries: [{ photos: placeholders(4) }],
+  },
+  {
+    tab: "Outdoors",
+    heading: "Outdoors",
+    intro:
+      "I love long walks, and they usually involve dogs, even though I don’t have one myself.",
+    detail:
+      "In winter I go skiing with my family, and when the weather allows it I pick small, cute flower bouquets or go out collecting mushrooms. If I’m really bored, I also catch Pokémon in Pokémon GO.",
+    galleries: [
+      {
+        photos: [
+          { src: "/images/hobbies/skiing.jpg", alt: "Sofie lying in deep snow in her ski gear", caption: "Going off-piste (sometimes unintentionally…)", focus: "center 15%" },
+          { src: "/images/personal/sweden-hike.jpg", alt: "Hiking on mossy rocks in a Swedish forest", caption: "Getting lost in Swedish forests (on purpose, mostly)" },
+          { src: "/images/hobbies/dog-walk.jpg", alt: "A small white terrier running along a mossy forest path", caption: "Long walks are better with four-legged company", focus: "center 100%" },
+          { src: "/images/hobbies/cafe-beer.jpg", alt: "Sofie and a friend sitting outside at a café with a beer", caption: "Love sitting outside, enjoying a drink and good company" },
+          { src: "/images/hobbies/flowers-field.jpg", alt: "A small bouquet of wildflowers held over the grass", caption: "Collecting little things from nature to bring home", focus: "center 66%" },
+          { src: "/images/hobbies/mushrooms.jpg", alt: "Freshly picked chanterelles laid out to dry on paper towels", caption: "Basically a treasure hunt, but with mushrooms" },
+        ],
+      },
+    ],
+  },
+  {
+    tab: "Traveling",
+    heading: "Traveling",
+    intro:
+      "I like to take pictures of pretty things when I travel, and I often use them as inspiration when I draw.",
+    galleries: [
+      {
+        photos: [
+          { src: "/images/personal/japan-goldfish.jpg", alt: "A street in Japan lined with tanks full of goldfish", caption: "Goldfish tanks on a street in Japan" },
+          { src: "/images/personal/japan-beach.jpg", alt: "Waves rolling onto a dark sand beach in Japan", caption: "Dark sand beach in Japan" },
+          { src: "/images/personal/samos-horses.jpg", alt: "Two saddled horses resting by a brick wall on Samos", caption: "Horses on Samos, Greece" },
+          { src: "/images/personal/lemur.jpg", alt: "Sofie smiling next to a lemur", caption: "Making friends with a lemur" },
+          { src: "/images/personal/sweden-hike.jpg", alt: "Hiking on mossy rocks in a Swedish forest", caption: "Hiking in Sweden" },
+          ...placeholders(1),
+        ],
+      },
+    ],
+  },
 ];
 
 // The switch above the skill tabs
 export const skillGroups = [
-  { label: "Development and design", skills },
-  { label: "Entrepreneurship and business", skills: businessSkills },
+  { label: "Development and design", icon: "code", skills },
+  { label: "Entrepreneurship and business", icon: "rocket", skills: businessSkills },
+  // `link` lets other parts of the page open a category, e.g. href="#hobbies"
+  { label: "Hobbies", icon: "heart", link: "hobbies", skills: hobbies },
 ];
 
 export const otherProjects = {
