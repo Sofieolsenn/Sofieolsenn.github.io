@@ -61,21 +61,18 @@ const caseStudyPlaceholder = {
       { heading: "Placeholder: Design", text: "Placeholder: what you did in this stage." },
       { heading: "Placeholder: Build", text: "Placeholder: what you did in this stage." },
     ],
-    // `imageColumns: 2` shows the images two by two, side by side
-    imageColumns: 2,
-    images: [
-      imageSlot("research, e.g. notes or user interviews"),
-      imageSlot("sketches or wireframes"),
-      imageSlot("design in Figma"),
-      imageSlot("code or the build in progress"),
-    ],
+    images: [imageSlot("one image from the process, e.g. sketches, wireframes or the design in Figma")],
   },
   outcome: {
     paragraphs: [
       "Placeholder: What was the impact of your work? What did you learn? What are the next steps?",
     ],
-    images: [imageSlot("the final result on desktop"), imageSlot("the final result on mobile")],
-    imageColumns: 2,
+    // Several large images, one per row (`imageColumns: 2` would put them side by side)
+    images: [
+      imageSlot("the final result on desktop"),
+      imageSlot("the final result on mobile"),
+      imageSlot("a key screen or detail you're proud of"),
+    ],
   },
 };
 
