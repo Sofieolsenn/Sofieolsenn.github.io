@@ -10,14 +10,22 @@ import styles from "./ProjectTemplate.module.css";
 export default function ProjectTemplate({ project, previousProject, nextProject }) {
   const { headline, title, summary, cover, primaryRole, secondaryRole, tags = [], team = [], timeline, client } = project;
 
-  const facts = [
-    { label: "Primary Role", value: primaryRole },
-    { label: "Secondary Role", value: secondaryRole },
-    { label: "Tools", value: tags },
-    { label: "Team", value: team },
-    { label: "Timeline", value: timeline },
-    { label: "Client", value: client },
-  ].filter((fact) => (Array.isArray(fact.value) ? fact.value.length > 0 : fact.value));
+  // Facts in columns; facts in the same column are stacked
+  const hasValue = (fact) => (Array.isArray(fact.value) ? fact.value.length > 0 : fact.value);
+  const factColumns = [
+    [
+      { label: "Primary Role", value: primaryRole },
+      { label: "Secondary Role", value: secondaryRole },
+    ],
+    [{ label: "Tools", value: tags }],
+    [{ label: "Team", value: team }],
+    [
+      { label: "Client", value: client },
+      { label: "Timeline", value: timeline },
+    ],
+  ]
+    .map((column) => column.filter(hasValue))
+    .filter((column) => column.length > 0);
 
   return (
     <article className={`container ${styles.project}`} id="top">
@@ -35,11 +43,15 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
       <div className={styles.overview}>
         {summary && <p className={styles.summary}>{summary}</p>}
         <dl className={styles.facts}>
-          {facts.map((fact) => (
-            <div key={fact.label}>
-              <dt>{fact.label}</dt>
-              {[].concat(fact.value).map((value, index) => (
-                <dd key={index}>{value}</dd>
+          {factColumns.map((column) => (
+            <div key={column[0].label} className={styles.factColumn}>
+              {column.map((fact) => (
+                <div key={fact.label}>
+                  <dt>{fact.label}</dt>
+                  {[].concat(fact.value).map((value, index) => (
+                    <dd key={index}>{value}</dd>
+                  ))}
+                </div>
               ))}
             </div>
           ))}
