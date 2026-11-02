@@ -31,6 +31,9 @@ export const hero = {
   text: "I’m a developer with full-stack experience. I develop and design meaningful digital products.",
 };
 
+// An empty image slot: shows as a grey box until `src` is filled in
+const imageSlot = (caption) => ({ src: "", alt: "", caption: `Placeholder: ${caption}` });
+
 // Case study content shared by all projects until each gets its own texts.
 // The texts are the questions to answer, so it's clear what goes where.
 // Replace them per project (copy this block into the project and edit it).
@@ -46,6 +49,7 @@ const caseStudyPlaceholder = {
     paragraphs: [
       "Placeholder: Set the scene. Who was the work for? What was the project? What was the problem? What was your involvement?",
     ],
+    images: [imageSlot("the finished product, or the problem you started with")],
   },
   process: {
     paragraphs: [
@@ -57,12 +61,21 @@ const caseStudyPlaceholder = {
       { heading: "Placeholder: Design", text: "Placeholder: what you did in this stage." },
       { heading: "Placeholder: Build", text: "Placeholder: what you did in this stage." },
     ],
-    // images: [{ src: "/images/projects/…", alt: "…", caption: "…" }],
+    // `imageColumns: 2` shows the images two by two, side by side
+    imageColumns: 2,
+    images: [
+      imageSlot("research, e.g. notes or user interviews"),
+      imageSlot("sketches or wireframes"),
+      imageSlot("design in Figma"),
+      imageSlot("code or the build in progress"),
+    ],
   },
   outcome: {
     paragraphs: [
       "Placeholder: What was the impact of your work? What did you learn? What are the next steps?",
     ],
+    images: [imageSlot("the final result on desktop"), imageSlot("the final result on mobile")],
+    imageColumns: 2,
   },
 };
 
@@ -71,8 +84,9 @@ const caseStudyPlaceholder = {
 // - headline, summary: the big sentence and short intro at the top
 // - client, role, timeline, team, tags: the overview facts
 // - cover: { src, alt } the large image at the top (grey box until added)
-// - introduction, process, outcome: { paragraphs, images }, and process can
-//   have `steps` ({ heading, text }) for the stages of the work
+// - introduction, process, outcome: { paragraphs, images, imageColumns }, and
+//   process can have `steps` ({ heading, text }) for the stages of the work.
+//   Images are { src, alt, caption }; an empty `src` shows a grey box.
 export const projects = [
   {
     slug: "hack-your-job",

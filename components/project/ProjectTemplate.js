@@ -76,7 +76,7 @@ export default function ProjectTemplate({ project, nextProject }) {
 // One case study section: heading on the left, text, steps and images on the right
 function Section({ heading, content }) {
   if (!content) return null;
-  const { paragraphs = [], steps = [], images = [] } = content;
+  const { paragraphs = [], steps = [], images = [], imageColumns = 1 } = content;
 
   return (
     <section className={styles.section}>
@@ -98,12 +98,20 @@ function Section({ heading, content }) {
         )}
       </div>
 
+      {/* Images without a `src` show as grey placeholder boxes */}
       {images.length > 0 && (
-        <div className={styles.images}>
-          {images.map((image) => (
-            <figure key={image.src}>
+        <div className={`${styles.images} ${imageColumns === 2 ? styles.twoColumns : ""}`}>
+          {images.map((image, index) => (
+            <figure key={index}>
               <div className={styles.image}>
-                <Image src={withBasePath(image.src)} alt={image.alt} fill sizes="(max-width: 900px) 100vw, 950px" />
+                {image.src && (
+                  <Image
+                    src={withBasePath(image.src)}
+                    alt={image.alt}
+                    fill
+                    sizes={imageColumns === 2 ? "(max-width: 900px) 100vw, 475px" : "(max-width: 900px) 100vw, 950px"}
+                  />
+                )}
               </div>
               {image.caption && <figcaption>{image.caption}</figcaption>}
             </figure>
