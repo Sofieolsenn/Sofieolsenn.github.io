@@ -40,27 +40,31 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
 
       <h1 className={styles.headline}>{headline || title}</h1>
 
-      <div className={styles.overview}>
-        {summary && <p className={styles.summary}>{summary}</p>}
-        <dl className={styles.facts}>
-          {factColumns.map((column) => (
-            <div key={column[0].label} className={styles.factColumn}>
-              {column.map((fact) => (
-                <div key={fact.label}>
-                  <dt>{fact.label}</dt>
-                  {[].concat(fact.value).map((value, index) => (
-                    <dd key={index}>{value}</dd>
-                  ))}
-                </div>
-              ))}
-            </div>
-          ))}
-        </dl>
-      </div>
+      <div className={styles.overview}>{summary && <p className={styles.summary}>{summary}</p>}</div>
 
       <ImageRows rows={project.gallery} />
 
-      <Section heading="Intro" content={project.introduction} />
+      {/* The project facts sit under the Intro heading */}
+      <Section
+        heading="Intro"
+        content={project.introduction}
+        aside={
+          <dl className={styles.facts}>
+            {factColumns.map((column) => (
+              <div key={column[0].label} className={styles.factColumn}>
+                {column.map((fact) => (
+                  <div key={fact.label}>
+                    <dt>{fact.label}</dt>
+                    {[].concat(fact.value).map((value, index) => (
+                      <dd key={index}>{value}</dd>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </dl>
+        }
+      />
       <Section heading="Process" content={project.process} />
       <Section heading="Outcome" content={project.outcome} />
       <Section heading="Reflections" content={project.reflections} />
@@ -93,7 +97,8 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
 
 // A case study part: heading on the left and text on the right, short blocks
 // side by side below, then wide image rows
-function Section({ heading, content }) {
+// `aside` is extra content under the heading, in the left column
+function Section({ heading, content, aside }) {
   if (!content) return null;
   const { blocks = [], paragraphs = [], rows = [], stackBlocks = false } = content;
 
@@ -107,7 +112,10 @@ function Section({ heading, content }) {
   return (
     <section className={styles.section}>
       <div className={styles.sectionText}>
-        <h2 className={styles.sectionHeading}>{heading}</h2>
+        <div>
+          <h2 className={styles.sectionHeading}>{heading}</h2>
+          {aside}
+        </div>
         <div className={styles.sectionBody}>
           {paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
