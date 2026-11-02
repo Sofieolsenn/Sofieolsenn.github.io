@@ -1,21 +1,20 @@
 /* Case study page. Inspired by the Figma slide and the reference case studies,
    with the same colours, fonts and radii as the front page */
 .project {
-  --wide: min(1200px, 100vw - 2 * var(--gutter));
   /* The sticky menu already takes up space, so the cover sits right below it */
   padding-block: 16px 64px;
 }
 
-/* Only the cover is wider than the content, and it stays low enough for the
-   headline below it to be visible on the first screen */
+/* The cover has the same width as the rest of the content, and stays low
+   enough for the headline below it to be visible on the first screen */
 .coverFigure {
-  width: var(--wide);
-  margin: 0 calc((100% - var(--wide)) / 2);
+  margin: 0;
 }
 
 .cover {
   position: relative;
-  height: min(56vh, var(--wide) * 9 / 16);
+  aspect-ratio: 16 / 9;
+  max-height: 56vh;
   overflow: hidden;
   border-radius: var(--radius-card);
   background: var(--color-surface);
