@@ -106,11 +106,16 @@ const caseStudyPlaceholder = {
 // the ProjectTemplate component. Fields:
 // - cover: { src, alt } the large image at the top (grey box until added)
 // - headline, summary: the big sentence and short intro under the cover
-// - primaryRole, tags (Tools), team, timeline, client: the facts
+// - link: the live site, opened by the "View site" button in the corner. Leave it out and the button
+//   shows a "not published yet" message instead. linkLabel changes the button text.
+// - primaryRole, tools (falls back to the card tags), team, timeline, client: the facts
+//   primaryRole and team can be a list; each item gets its own line
 // - gallery: image rows under the facts
 // - introduction, process, outcome, reflections: { blocks, paragraphs, rows }, where blocks
-//   are short { heading, text } parts and rows are image rows (see above).
+//   are short { heading, text } parts (text can be a list of paragraphs) and rows are image rows (see above).
 //   `stackBlocks: true` shows the blocks under each other next to the heading.
+// - process and outcome can instead have `steps`: [{ title, parts: [{ heading, paragraphs }], rows }],
+//   steps with their own image rows, so long texts are broken up by images.
 export const projects = [
   {
     slug: "hack-your-job",
@@ -119,6 +124,163 @@ export const projects = [
     tags: ["React", "Vite", "Tailwind", "Umbraco"],
     featured: true,
     ...caseStudyPlaceholder,
+    link: "https://hack-your-future.euwest01.umbraco.io/",
+    headline: "A centralized platform connecting HackYourFuture trainees with relevant job opportunities.",
+    summary:
+      "Developed for HackYourFuture Denmark during my internship at Knowit. The platform helps staff manage trainees, companies, and job opportunities while making it easier to match trainees with potential employers.",
+    primaryRole: "Frontend Developer & Concept Developer",
+    tools: ["Umbraco", "React + Vite & Razor", "Tailwind", "Git", "Claude Code & MCP"],
+    team: ["2 × Designers", "2 × Backend Developers", "1 × Frontend Developer (me)", "Technical guidance from Knowit"],
+    client: "HackYourFuture Denmark",
+    timeline: "August – October 2026",
+    introduction: {
+      ...caseStudyPlaceholder.introduction,
+      blocks: [
+        {
+          heading: "Client introduction",
+          text: "HackYourFuture Denmark is a non-profit organization helping people with international backgrounds develop technical skills and enter the Danish tech industry. During my internship at Knowit, our team worked with HYF to build a platform that could help them manage trainees and connect them with employers.",
+        },
+        {
+          heading: "The problem",
+          text: "Information about trainees, their skills, CVs, and job opportunities was stored in different places. This made it harder for HYF staff to keep track of everything and find suitable trainees for available jobs.",
+        },
+        {
+          heading: "The purpose",
+          text: "To build one platform where HYF staff could manage trainees, companies, and job opportunities, while trainees could update their own profiles.",
+        },
+        {
+          heading: "The outcome",
+          text: "We delivered a fully working platform that HYF is now starting to use. As the only frontend developer, I built the entire frontend and set up Umbraco, making sure the platform was easy for HYF staff to manage and for future developers to take over.",
+        },
+      ],
+    },
+    process: {
+      steps: [
+      {
+        title: "Understanding the problem",
+        parts: [
+          {
+            heading: "Workshop & concept development",
+            paragraphs: [
+              "I helped plan and run a workshop with HYF staff to understand their daily work and the challenges they faced. We used brainstorming exercises, dot voting, and group discussions to identify key problems and values we wanted to focus on.",
+              "Based on the workshop, we explored different ideas and worked with the client to decide which features were most important and realistic to build during our ten-week internship.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot()] }],
+      },
+      {
+        title: "Building the platform",
+        parts: [
+          {
+            heading: "Frontend development",
+            paragraphs: [
+              "As the team's only frontend developer, I was responsible for developing the entire frontend of the platform. I turned the Figma designs into a working website, built reusable React components, set up design tokens, and developed all frontend interfaces for staff, trainees, and visitors.",
+            ],
+          },
+          {
+            heading: "Learning Umbraco",
+            paragraphs: [
+              "I had never used Umbraco before, so I learned how to set it up while thinking about what HYF should be able to edit themselves and how to make it easy for them to navigate.",
+              "Having previously taken over projects and designs from others, I know how frustrating unclear setups can be. I wanted to leave behind something that others, or even myself months later, could easily understand and work with.",
+            ],
+          },
+          {
+            heading: "AI-assisted development",
+            paragraphs: [
+              "Since Knowit works extensively with AI, I was encouraged to experiment with it as much as possible during my internship.",
+              "I connected Claude Code to Figma and Umbraco through MCP, allowing it to help set up content instead of doing everything manually. I created custom commands and guardrails that checked Figma design tokens and generated reports about changes. I also used AI for debugging, code reviews, and understanding how unfamiliar frontend and backend technologies worked together.",
+            ],
+          },
+        ],
+        rows: [{ height: 44, images: [imageSlot(), imageSlot()] }, { height: 64, images: [imageSlot()] }],
+      },
+      {
+        title: "Challenges & collaboration",
+        parts: [
+          {
+            heading: "Working with changing designs",
+            paragraphs: [
+              "I was used to developing from finished designs, but in this project, design and development happened at the same time. I had to get comfortable building things that might change later.",
+              "This made reusable components and shared design variables especially important. Instead of updating the same style in many different places, I could make changes in just a few places.",
+            ],
+          },
+          {
+            heading: "Working across disciplines",
+            paragraphs: [
+              "As the only frontend developer, I often worked between our two designers and two backend developers, helping both sides understand what was needed and what was technically possible.",
+              "This helped me become more confident explaining technical decisions, understanding different perspectives, and finding solutions together.",
+            ],
+          },
+          {
+            heading: "Client communication",
+            paragraphs: [
+              "During catch-up meetings with HYF, I learned how important it was to clearly explain the purpose of each meeting, what feedback we needed, and what everyone should prepare or complete before the next meeting.",
+              "Being specific helped avoid misunderstandings and keep the project moving.",
+            ],
+          },
+        ],
+        rows: [{ height: 44, images: [imageSlot(), imageSlot()] }],
+      },
+    ],
+    },
+    outcome: {
+      steps: [
+      {
+        title: "The final result",
+        parts: [
+          {
+            paragraphs: [
+              "We delivered a working platform with staff and trainee dashboards, profile management, company and job listings, and job matching.",
+              "I developed the entire frontend and set up the content management experience in Umbraco. I also created an easy-to-follow guide showing HYF staff how to add, edit, and manage content on different pages without needing help from me.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot()] }, { height: 44, images: [imageSlot(), imageSlot()] }],
+      },
+      {
+        title: "The impact",
+        parts: [
+          {
+            paragraphs: [
+              "HYF is now starting to use the platform, with plans to evaluate it over approximately one year.",
+              "An important part of my work was making sure HYF could manage their content independently and that the project could be handed over to other developers after my internship.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot()] }],
+      },
+      {
+        title: "The details I'm most proud of",
+        parts: [
+          {
+            paragraphs: [
+              "I'm proud of how my different skills allowed me to contribute to several parts of the project, from early concept development and client workshops to frontend development, CMS setup, and handover.",
+              "I'm also proud of how our team improved at working across different disciplines. We became better at understanding each other's work, communicating our needs, and solving problems together.",
+              "Finally, I'm proud of how much I managed to build and learn in just ten weeks. Experimenting with AI helped me work faster and take on unfamiliar technologies, and I often surprised myself with how much I could accomplish.",
+            ],
+          },
+        ],
+        rows: [{ height: 44, images: [imageSlot(), imageSlot()] }],
+      },
+    ],
+    },
+    reflections: {
+      ...caseStudyPlaceholder.reflections,
+      blocks: [
+        { heading: "What I learned", text: [
+          "I started the project without any experience in Umbraco and finished feeling confident working with it. I discovered how flexible it is and how much you can build with it. I also learned to think about the people editing the content, not just the developers building the platform.",
+          "Experimenting with AI changed how I work. I became faster at learning new technologies, understanding unfamiliar code, finding bugs, and seeing how frontend and backend systems connect. It also taught me to review AI-generated code carefully and make sure I understood what I was implementing.",
+          "Working with designers, backend developers, and the client taught me how important clear communication is. I became better at explaining technical decisions, asking specific questions, and understanding how other people's work affects my own.",
+          "I also learned that finishing a project is not just about making it work. It is about leaving something behind that other people can understand, use, and continue developing.",
+        ] },
+        { heading: "What I would do differently", text: [
+          "I would spend more time on project planning and time management from the beginning. We were all responsible for keeping the project on track, but with only ten weeks, it was difficult to balance planning, communication, and development.",
+          "Looking back, clearer priorities, more realistic deadlines, and regular check-ins on our progress could have helped us work more efficiently and avoid some last-minute pressure.",
+        ] },
+        { heading: "Next steps", text: "Collect feedback from HYF staff and trainees as they start using the platform, improve the experience based on their feedback, and continue developing the job-matching features." },
+      ],
+    },
   },
   {
     slug: "hack-your-future-website",
@@ -126,6 +288,184 @@ export const projects = [
     title: "Hack your future website",
     tags: ["Webflow", "Custom code integration"],
     ...caseStudyPlaceholder,
+    headline: "Developing a new website for HackYourFuture Denmark in Webflow.",
+    summary:
+      "I developed HackYourFuture's new website during my internship at Knowit, focusing on performance, easy content management, and a flexible setup that can grow with the organization.",
+    cover: { src: "", alt: "", caption: "Finished HackYourFuture website" },
+    primaryRole: "Web Developer",
+    tools: ["Webflow", "CMS system", "Custom code integration", "Figma"],
+    team: ["Independent project — sole developer"],
+    client: "HackYourFuture Denmark",
+    timeline: "August – October 2026",
+    introduction: {
+      ...caseStudyPlaceholder.introduction,
+      blocks: [
+        {
+          heading: "Client introduction",
+          text: "HackYourFuture Denmark is a non-profit organization helping people with international backgrounds learn programming and enter the Danish tech industry. They needed a new website that better represented their organization and supported their content.",
+        },
+        {
+          heading: "The problem",
+          text: "HYF was not satisfied with their existing website and needed a new one that was easier to maintain, update, and develop further.",
+        },
+        {
+          heading: "The purpose",
+          text: "To develop a responsive, high-performing website that HYF could easily maintain and expand, while making sure the structure was clear and easy for future developers to understand and build upon.",
+        },
+        {
+          heading: "The outcome",
+          text: "I developed and delivered a new Webflow website with a flexible design system, reusable components, and easy content management. The website also achieved a performance score of 100 in Webflow's site health check. The website is ready and will go live as soon as possible.",
+        },
+      ],
+    },
+    process: {
+      steps: [
+      {
+        title: "Understanding the project",
+        parts: [
+          {
+            heading: "Getting familiar with the project",
+            paragraphs: [
+              "I started by reviewing HYF's existing website, their needs, and the Figma designs for the new one.",
+              "I worked directly with HYF to clarify requirements and discuss details that needed further decisions before or during development.",
+            ],
+          },
+          {
+            heading: "Planning the Webflow setup",
+            paragraphs: [
+              "I reviewed their existing Webflow plan and compared it with the features and functionality needed for the new website.",
+              "This helped us understand the available options and plan a setup that could support the website in the future, while keeping the editing experience familiar and easy for HYF to work with.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot(1, "Figma designs and initial planning")] }],
+      },
+      {
+        title: "Building the website",
+        parts: [
+          {
+            heading: "Development in webflow",
+            paragraphs: [
+              "I was responsible for developing the website in Webflow, including page layouts, responsive design, interactions, and custom code integrations.",
+              "I made sure the website worked across different screen sizes and added details such as hover effects, button interactions, and different message styles.",
+            ],
+          },
+          {
+            heading: "Building a flexible design system",
+            paragraphs: [
+              "I created a reusable component library with different layouts and content blocks, including heroes, headers, CTA buttons, and breadcrumbs with different navigation levels.",
+              "Together with shared variables and global classes, this made it easy to build new pages, add content, and keep the design consistent across the website.",
+              "I also structured the content blocks and CMS to make it easier for HYF to add and update content themselves.",
+              "I wanted HYF to be able to grow their website without having to build everything from scratch, while keeping the editing experience simple and familiar.",
+            ],
+          },
+        ],
+        rows: [{ height: 44, images: [imageSlot(1, "Webflow variables and global classes"), imageSlot(1, "Reusable components")] }, { height: 64, images: [imageSlot(1, "Responsive layouts")] }],
+      },
+      {
+        title: "Content management & performance",
+        parts: [
+          {
+            heading: "Forms & content management",
+            paragraphs: [
+              "I set up different forms in Webflow based on their purpose, making sure submissions were handled correctly and HYF could easily access the responses.",
+              "I also created a guide explaining how to find form submissions, manage the forms, and update their settings, so HYF could handle these tasks without needing a developer.",
+            ],
+          },
+          {
+            heading: "Performance & site health",
+            paragraphs: [
+              "I focused on keeping the website lightweight and fast by minifying HTML, CSS, and JavaScript, using Google Fonts efficiently, and avoiding unnecessary resources.",
+              "I also implemented SEO settings, including page titles, meta descriptions, and relevant metadata, while checking accessibility and performance through Webflow's site health tools.",
+              "The website achieved a performance score of 100.",
+            ],
+          },
+        ],
+        rows: [{ height: 44, images: [imageSlot(1, "Forms and the content guide"), imageSlot(1, "Webflow performance score")] }],
+      },
+      {
+        title: "Challenges & collaboration",
+        parts: [
+          {
+            heading: "Making independent decisions",
+            paragraphs: [
+              "As the only developer, I was responsible for solving technical challenges and making decisions throughout development.",
+              "Some parts of the Figma designs needed further clarification, so I worked with HYF to find solutions that matched their needs.",
+            ],
+          },
+          {
+            heading: "Client communication & project scope",
+            paragraphs: [
+              "I managed communication with HYF, including catch-ups, feedback, and testing.",
+              "During one catch-up, I presented the website, explained how the design system worked, and walked through what had been developed.",
+              "I also explained which features were outside the current scope, including the unfinished mentor and trainee forms and the site search functionality, which needed further research and planning.",
+              "This taught me how important it is to clearly communicate progress, limitations, and next steps so everyone has the same expectations.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot(1, "From the client presentation")] }],
+      },
+    ],
+    },
+    outcome: {
+      steps: [
+      {
+        title: "The final result",
+        parts: [
+          {
+            paragraphs: [
+              "I delivered a responsive Webflow website with reusable components, shared design variables, CMS functionality, and a performance score of 100.",
+              "The website is ready and will go live as soon as possible.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot(1, "Front page")] }, { height: 64, images: [imageSlot(1, "Subpage")] }, { height: 64, images: [imageSlot(1, "Mobile views")] }],
+      },
+      {
+        title: "The impact",
+        parts: [
+          {
+            paragraphs: [
+              "HYF received a website designed to be easy to maintain and expand. The shared design system and structured content make it easier to update pages and add new content without rebuilding existing elements.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot(1, "Content blocks in the Webflow editor")] }, { height: 64, images: [imageSlot(1, "CMS collections")] }],
+      },
+      {
+        title: "The details I'm most proud of",
+        parts: [
+          {
+            paragraphs: [
+              "I'm proud of taking responsibility for the website from development to handover, including the technical setup, design decisions, and client communication.",
+              "I'm especially proud of the performance result and how I structured the website to make future changes easier for HYF.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot(1, "Site health check: performance score of 100")] }, { height: 64, images: [imageSlot(1, "Design system: variables, classes and components")] }],
+      },
+    ],
+    },
+    reflections: {
+      ...caseStudyPlaceholder.reflections,
+      blocks: [
+        {
+          heading: "What I learned",
+          text: [
+            "I became more confident working independently, making technical decisions, and communicating directly with a client.",
+            "I also learned how much planning goes into building a website that is not only responsive and visually consistent, but also easy to maintain and expand.",
+          ],
+        },
+        {
+          heading: "What I would do differently",
+          text: "I would clarify the project scope and feedback process earlier, especially for features that need additional research or design work.",
+        },
+        {
+          heading: "Next steps",
+          text: "Complete the handover, collect feedback from HYF, and evaluate the remaining features, including the mentor and trainee forms and site search.",
+        },
+      ],
+    },
   },
   {
     slug: "stuganibacken-martemeo",

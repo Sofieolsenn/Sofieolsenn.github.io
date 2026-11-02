@@ -48,7 +48,7 @@
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--color-muted);
+  border-color: var(--color-border-strong);
   background: #e3dfd9;
 }
 

@@ -5,18 +5,28 @@
   --color-surface: #ece9e2;
   --color-surface-strong: #dcd8d2;
   --color-tag: #d8d4cd;
-  --color-ink: #30302f;
-  --color-black: #030000;
-  --color-heading: #4f4f4f;
-  --color-body: #4c4c4c;
-  --color-muted: #837f79;
-  --color-subtle: #808080;
+  /* Text hierarchy: headings darkest, body text a step lighter, secondary text (muted)
+     lighter again, and small labels lightest */
+  --color-text-dark: #4d4a46;
+  --color-text: #7d7872;
+  --color-text-light: #9a958f;
+  --color-ink: var(--color-text-dark);
+  --color-black: var(--color-text-dark);
+  --color-heading: var(--color-text-dark);
+  --color-body: var(--color-text);
+  --color-muted: var(--color-text-light);
+  --color-subtle: var(--color-text-light);
   --color-label: #aeaeae;
   --color-greeting: #9d9a95;
-  --color-tag-text: #67635d;
-  --color-tag-text-light: #818181;
-  --color-field-text: #626262;
+  --color-tag-text: var(--color-text);
+  --color-tag-text-light: var(--color-text);
+  --color-field-text: var(--color-text);
+  /* Buttons keep their own colours, separate from the text hierarchy */
   --color-button: #575757;
+  --color-button-hover: #30302f;
+  --color-button-text: #67635d; /* Skills category and tab buttons */
+  --color-button-active: #8d8982; /* the selected Skills tab */
+  --color-border-strong: #837f79;
   --color-line: #c9c4bc;
   --color-white: #ffffff;
 
@@ -75,7 +85,7 @@ html {
 body {
   margin: 0;
   background: var(--color-bg);
-  color: var(--color-ink);
+  color: var(--color-text);
   font-family: var(--font-text);
   font-size: var(--fs-body);
   line-height: 1.5;
@@ -89,6 +99,13 @@ h4,
 p,
 ul {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-text-dark);
 }
 
 ul {

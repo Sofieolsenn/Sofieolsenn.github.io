@@ -40,7 +40,7 @@
 }
 
 .primary:hover {
-  background: var(--color-ink);
+  background: var(--color-button-hover);
 }
 
 .outline {

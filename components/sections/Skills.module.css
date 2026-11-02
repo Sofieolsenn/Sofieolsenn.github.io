@@ -57,7 +57,7 @@
   border: 0;
   border-radius: var(--radius-tab);
   background: transparent;
-  color: var(--color-tag-text);
+  color: var(--color-button-text);
   font-size: var(--fs-skill);
   font-weight: 500;
   text-align: left;
@@ -73,7 +73,7 @@
   height: 36px;
   border-radius: 50%;
   background: var(--color-tag);
-  color: var(--color-tag-text);
+  color: var(--color-button-text);
   transition: background-color 0.2s, color 0.2s;
 }
 
@@ -126,7 +126,7 @@
   border: 0;
   border-radius: var(--radius-tab);
   background: var(--color-tag);
-  color: var(--color-tag-text);
+  color: var(--color-button-text);
   /* Small enough for all seven tabs to fit the 950px content width */
   font-size: 0.8125rem; /* 13px */
   font-weight: 500;
@@ -149,7 +149,7 @@
   padding: 0 16px 14px;
   border-radius: var(--radius-panel) var(--radius-panel) 0 0;
   background: var(--color-surface);
-  color: #8d8982;
+  color: var(--color-button-active);
 }
 
 /* A category with only one entry has no tabs above its panel */

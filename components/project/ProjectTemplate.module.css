@@ -55,31 +55,60 @@
   color: var(--color-muted);
 }
 
-/* Project facts under the Intro heading, in one column */
+/* Project facts in a soft box next to the Intro texts: each label with its values
+   under it, one per line, and a thin line between the facts */
 .facts {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 24px;
-  margin: 40px 0 0;
+  margin: 0;
+  padding: 12px 32px;
+  border-radius: var(--radius-panel);
+  background: var(--color-surface);
 }
 
-.factColumn {
-  display: grid;
-  align-content: start;
-  gap: 24px;
+.fact {
+  padding: 20px 0;
+}
+
+.fact + .fact {
+  border-top: 1px solid var(--color-line);
 }
 
 .facts dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
   color: var(--color-label);
   font-size: var(--fs-skill);
   line-height: 1.5;
 }
 
 .facts dd {
-  margin: 4px 0 0;
+  margin: 0;
   font-size: var(--fs-skill);
-  line-height: 1.5;
+  line-height: 1.7;
   color: var(--color-muted);
+}
+
+/* Tools as small tags with an icon, inside the facts box */
+.factTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.factTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-strong);
+  color: var(--color-tag-text);
+  font-size: var(--fs-tag);
+  line-height: 1;
+  white-space: nowrap;
 }
 
 /* Image rows: one or two big images per row */
@@ -131,9 +160,21 @@
   gap: 16px 48px;
 }
 
+/* The facts box and the Intro texts, centred vertically against each other */
+.sectionTextCentered {
+  align-items: center;
+}
+
+/* Process and Outcome have long texts, so their text column starts closer to the heading */
+.sectionTextWide {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+}
+
+/* Type scale for the long sections, clearly stepping down:
+   section heading 48px, step title 27px, part title 21px, paragraphs 17px */
 .sectionHeading {
   font-family: var(--font-display);
-  font-size: var(--fs-heading);
+  font-size: var(--fs-hero);
   font-weight: 400;
   letter-spacing: var(--ls-heading);
   line-height: 1.1;
@@ -147,6 +188,50 @@
   font-size: var(--fs-lead);
   line-height: 1.5;
   color: var(--color-body);
+}
+
+/* Steps in Process and Outcome, each followed by its images */
+.step + .step {
+  margin-top: 96px;
+}
+
+/* A section heading on its own line above the columns (steps and Introduction) */
+.stepsHeading {
+  margin-bottom: 48px;
+}
+
+.stepLabel {
+  font-family: var(--font-display);
+  font-size: var(--fs-title-sm);
+  letter-spacing: var(--ls-title);
+  line-height: 1.15;
+  color: var(--color-ink);
+}
+
+/* A titled part of a step: a small title, then its paragraphs in body text */
+/* Added to the 1.2em gap of the text column, about 48px between parts */
+.stepPart + .stepPart {
+  margin-top: 24px;
+}
+
+.stepPart h3 {
+  margin-bottom: 10px;
+  font-family: var(--font-display);
+  font-size: 1.3125rem; /* 21px */
+  font-weight: 400;
+  letter-spacing: var(--ls-title);
+  line-height: 1.2;
+  color: var(--color-ink);
+}
+
+.stepPart p {
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.6;
+  color: var(--color-body);
+}
+
+.stepPart p + p {
+  margin-top: 1.2em;
 }
 
 /* Short headed blocks side by side, e.g. client and problem */
@@ -164,12 +249,16 @@
   gap: 40px;
 }
 
+/* Same sizes as the part titles and paragraphs in Process and Outcome */
 .stackedBlocks .block h3 {
-  font-size: var(--fs-title-sm);
+  font-size: 1.3125rem; /* 21px */
+  line-height: 1.2;
 }
 
 .stackedBlocks .block p {
-  font-size: var(--fs-lead);
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.6;
+  color: var(--color-body);
 }
 
 .block h3 {
@@ -216,7 +305,8 @@
     margin-top: 48px;
   }
 
-  .sectionText {
+  .sectionText,
+  .sectionTextWide {
     grid-template-columns: minmax(0, 1fr);
   }
 
