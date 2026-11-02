@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${project.title} | ${site.name}`,
-    description: project.description,
+    description: project.summary,
     alternates: { canonical: `/projects/${slug}/` },
   };
 }
@@ -32,12 +32,14 @@ export default async function ProjectPage({ params }) {
   const { slug } = await params;
   const project = findProject(slug);
   if (!project) notFound();
+  // The next project in the list, going back to the first after the last
+  const nextProject = projects[(projects.indexOf(project) + 1) % projects.length];
 
   return (
     <>
       <Header onHome={false} />
       <main>
-        <ProjectTemplate {...project} />
+        <ProjectTemplate project={project} nextProject={nextProject} />
       </main>
       <Footer />
     </>

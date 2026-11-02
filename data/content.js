@@ -31,34 +31,70 @@ export const hero = {
   text: "I’m a developer with full-stack experience. I develop and design meaningful digital products.",
 };
 
-// Each project gets its own page at /projects/<slug>/ (built from the
-// ProjectTemplate component). `role` and `description` show on that page.
-// PLACEHOLDER: replace the role and description texts with your own.
+// Case study content shared by all projects until each gets its own texts.
+// The texts are the questions to answer, so it's clear what goes where.
+// Replace them per project (copy this block into the project and edit it).
+const caseStudyPlaceholder = {
+  headline: "Placeholder: one sentence that sums up what the project is.",
+  summary: "Placeholder: who it was for and what it does, in one or two lines.",
+  client: "Placeholder",
+  role: "Placeholder: your role",
+  timeline: "Placeholder: e.g. March – June 2025",
+  team: ["Placeholder: e.g. 1 × designer", "Placeholder: e.g. 2 × developers"],
+  // cover: { src: "/images/projects/your-image.jpg", alt: "…" },
+  introduction: {
+    paragraphs: [
+      "Placeholder: Set the scene. Who was the work for? What was the project? What was the problem? What was your involvement?",
+    ],
+  },
+  process: {
+    paragraphs: [
+      "Placeholder: How did you approach the problem? How did you work, and who did you work with? Did anything not go as planned?",
+    ],
+    // The stages of your process, each with a short heading and text
+    steps: [
+      { heading: "Placeholder: Research", text: "Placeholder: what you did in this stage." },
+      { heading: "Placeholder: Design", text: "Placeholder: what you did in this stage." },
+      { heading: "Placeholder: Build", text: "Placeholder: what you did in this stage." },
+    ],
+    // images: [{ src: "/images/projects/…", alt: "…", caption: "…" }],
+  },
+  outcome: {
+    paragraphs: [
+      "Placeholder: What was the impact of your work? What did you learn? What are the next steps?",
+    ],
+  },
+};
+
+// Each project gets its own case study page at /projects/<slug>/, built from
+// the ProjectTemplate component. Fields:
+// - headline, summary: the big sentence and short intro at the top
+// - client, role, timeline, team, tags: the overview facts
+// - cover: { src, alt } the large image at the top (grey box until added)
+// - introduction, process, outcome: { paragraphs, images }, and process can
+//   have `steps` ({ heading, text }) for the stages of the work
 export const projects = [
   {
     slug: "hack-your-job",
     kind: "Frontend development",
     title: "Hack your job",
-    role: "Placeholder: your role on the project",
-    description: "Placeholder: a short description of the project, what you built and why.",
     tags: ["React", "Vite", "Tailwind", "Umbraco"],
     featured: true,
+    ...caseStudyPlaceholder,
   },
   {
     slug: "hack-your-future-website",
     kind: "Web development",
     title: "Hack your future website",
-    role: "Placeholder: your role on the project",
-    description: "Placeholder: a short description of the project, what you built and why.",
     tags: ["Webflow", "Custom code integration"],
+    ...caseStudyPlaceholder,
   },
   {
     slug: "stuganibacken-martemeo",
     kind: "Web development",
     title: "Stuganibacken martemeo",
-    role: "Placeholder: your role on the project",
-    description: "Placeholder: a short description of the project, what you built and why.",
     tags: ["UX/UI Design", "React", "Vite"],
+    ...caseStudyPlaceholder,
   },
 ];
 
