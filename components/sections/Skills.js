@@ -54,6 +54,10 @@ export default function Skills() {
   const tabsRef = useRef(null);
   const skills = skillGroups[group].skills;
   const skill = skills[active];
+  // Only the main areas (and tabs with their own pictures) get a picture box.
+  // The other tabs show their tags next to the text instead, with no line.
+  const hasPicture = Boolean(skill.featured || skill.image || skill.slideshow);
+  const layout = hasPicture ? "" : skill.tags ? styles.side : styles.textOnly;
 
   // Links like href="#hobbies" open that category and scroll to it. The address
   // is then set back to #skills, so the same link works again on the next click.
@@ -128,7 +132,7 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className={styles.panel} role="tabpanel" id="skill-panel" aria-labelledby={`skill-tab-${active}`}>
+      <div className={`${styles.panel} ${layout}`} role="tabpanel" id="skill-panel" aria-labelledby={`skill-tab-${active}`}>
         <div className={styles.text}>
           <h3 className={styles.heading}>{skill.heading}</h3>
           {skill.intro && <p className={styles.intro}>{skill.intro}</p>}
@@ -141,12 +145,14 @@ export default function Skills() {
           )}
         </div>
 
-        <div className={`${styles.skillImage} ${skill.slideshow ? styles.portrait : ""}`}>
-          {skill.slideshow && <Slideshow images={skill.slideshow} sizes="(max-width: 900px) 100vw, 420px" />}
-          {skill.image && (
-            <Image src={withBasePath(skill.image.src)} alt={skill.image.alt} fill sizes="(max-width: 900px) 100vw, 420px" />
-          )}
-        </div>
+        {hasPicture && (
+          <div className={`${styles.skillImage} ${skill.slideshow ? styles.portrait : ""}`}>
+            {skill.slideshow && <Slideshow images={skill.slideshow} sizes="(max-width: 900px) 100vw, 420px" />}
+            {skill.image && (
+              <Image src={withBasePath(skill.image.src)} alt={skill.image.alt} fill sizes="(max-width: 900px) 100vw, 420px" />
+            )}
+          </div>
+        )}
 
         {skill.tags && (
           <div className={styles.tagArea}>
