@@ -83,7 +83,7 @@ const caseStudyPlaceholder = {
     paragraphs: [
       "Placeholder: What was the final result? Describe what was delivered and how it solves the problem from the introduction.",
       "Placeholder: What was the impact of your work? Share feedback from the client or users, numbers if you have them, or what changed for the people using it.",
-      "Placeholder: What did you learn, and what are the next steps? Reflect on what you would do differently, and what could be improved or added next.",
+      "Placeholder: Show the final result in more detail. Which screens, features or details are you most proud of, and why do they matter?",
     ],
     rows: [
       { height: 64, images: [imageSlot()] },
@@ -91,6 +91,17 @@ const caseStudyPlaceholder = {
       { height: 64, images: [imageSlot()] },
       { height: 44, images: [imageSlot(), imageSlot()] },
       { height: 64, images: [imageSlot()] },
+    ],
+  },
+  // Looking back at the project, without images
+  reflections: {
+    paragraphs: [
+      "Placeholder: Look back on the project as a whole. How did it go, and how do you feel about the result now that it's done?",
+    ],
+    blocks: [
+      { heading: "What I learned", text: "Placeholder: new skills, tools or ways of working you picked up during the project." },
+      { heading: "What I would do differently", text: "Placeholder: decisions you would change, or things you would start earlier next time." },
+      { heading: "Next steps", text: "Placeholder: what could be improved or added if the project continued." },
     ],
   },
 };
@@ -101,7 +112,7 @@ const caseStudyPlaceholder = {
 // - headline, summary: the big sentence and short intro under the cover
 // - primaryRole, secondaryRole, tags (Tools), team, timeline, client: the facts
 // - gallery: image rows under the facts
-// - introduction, process, outcome: { blocks, paragraphs, rows }, where blocks
+// - introduction, process, outcome, reflections: { blocks, paragraphs, rows }, where blocks
 //   are short { heading, text } parts and rows are image rows (see above)
 export const projects = [
   {

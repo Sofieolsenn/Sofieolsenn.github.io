@@ -4,9 +4,9 @@ import { withBasePath } from "@/lib/paths";
 import styles from "./ProjectTemplate.module.css";
 
 // Reusable case study layout, inspired by the "Slide 16:9 - 16" frame in Figma
-// and the reference case studies: a big cover, the headline with a summary next
-// to the facts, wide image rows, then Intro, Process and Outcome, and buttons
-// to go back to the top or to another project.
+// and the reference case studies: a big cover, the headline with a summary and
+// the facts, wide image rows, then Intro, Process, Outcome and Reflections, and
+// buttons to go back to the top or to another project.
 export default function ProjectTemplate({ project, previousProject, nextProject }) {
   const { headline, title, summary, cover, primaryRole, secondaryRole, tags = [], team = [], timeline, client } = project;
 
@@ -63,6 +63,7 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
       <Section heading="Intro" content={project.introduction} />
       <Section heading="Process" content={project.process} />
       <Section heading="Outcome" content={project.outcome} />
+      <Section heading="Reflections" content={project.reflections} />
 
       <nav className={styles.pager} aria-label="Projects">
         {previousProject && (
