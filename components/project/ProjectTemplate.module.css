@@ -2,7 +2,8 @@
    with the same colours, fonts and radii as the front page */
 .project {
   --wide: min(1200px, 100vw - 2 * var(--gutter));
-  padding-block: 104px 64px;
+  /* The sticky menu already takes up space, so the cover sits right below it */
+  padding-block: 16px 64px;
 }
 
 /* Only the cover is wider than the content, and it stays low enough for the
@@ -175,10 +176,6 @@
 }
 
 @media (max-width: 900px) {
-  .project {
-    padding-top: 100px;
-  }
-
   .headline {
     margin-top: 48px;
   }
