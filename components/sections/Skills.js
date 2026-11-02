@@ -188,11 +188,15 @@ export default function Skills() {
           <div key={group.heading} className={`${styles.tagArea} ${styles.moreTags}`}>
             <p className={styles.tagsTitle}>{group.heading}</p>
             <ul className={styles.tags}>
-              {group.tags.map((tag) => (
-                <li key={tag}>
-                  <Tag size="md">{tag}</Tag>
-                </li>
-              ))}
+              {/* A tag can be { label, faded: true } to show it at half opacity */}
+              {group.tags.map((tag) => {
+                const label = tag.label || tag;
+                return (
+                  <li key={label} className={tag.faded ? styles.faded : undefined}>
+                    <Tag size="md">{label}</Tag>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         ))}

@@ -257,6 +257,11 @@
   border-top: 0;
 }
 
+/* A tag shown at half opacity, e.g. a guilty pleasure */
+.faded {
+  opacity: 0.5;
+}
+
 /* Small grey title above the tags, like the one on the category switch */
 .tagsTitle {
   font-size: var(--fs-button);

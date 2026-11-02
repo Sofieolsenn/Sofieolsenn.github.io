@@ -335,7 +335,8 @@ export const hobbies = [
           "Rick and Morty",
           "The Dark Knight Trilogy",
           "Crime documentaries",
-          "Twilight (a rainy-day guilty pleasure)",
+          // A faded tag: a guilty pleasure, shown at half opacity
+          { label: "Twilight (a rainy-day guilty pleasure)", faded: true },
         ],
       },
     ],
