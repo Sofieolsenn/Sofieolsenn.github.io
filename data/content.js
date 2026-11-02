@@ -164,7 +164,6 @@ export const skills = [
   {
     tab: "Frontend",
     featured: true,
-    picture: true,
     heading: "Frontend development",
     intro:
       "I love bringing ideas and designs to life through websites that are both visually appealing and easy to use.",
@@ -187,7 +186,6 @@ export const skills = [
   {
     tab: "UX/UI design",
     featured: true,
-    picture: true,
     heading: "UX/UI design",
     intro:
       "With my background in Multimedia Design, I have experience with the entire UX/UI process, from understanding users and exploring ideas to designing and testing interactive prototypes.",
