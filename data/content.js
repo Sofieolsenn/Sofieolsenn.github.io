@@ -94,9 +94,8 @@ const caseStudyPlaceholder = {
   },
   // Looking back at the project, without images
   reflections: {
-    paragraphs: [
-      "Placeholder: Look back on the project as a whole. How did it go, and how do you feel about the result now that it's done?",
-    ],
+    // Short headed blocks under each other, next to the "Reflections" heading
+    stackBlocks: true,
     blocks: [
       { heading: "What I learned", text: "Placeholder: new skills, tools or ways of working you picked up during the project." },
       { heading: "What I would do differently", text: "Placeholder: decisions you would change, or things you would start earlier next time." },
