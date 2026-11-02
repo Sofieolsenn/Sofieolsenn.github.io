@@ -49,7 +49,6 @@ const caseStudyPlaceholder = {
   // The large image at the top. Fill in `src` (e.g. "/images/projects/…")
   cover: { src: "", alt: "" },
   primaryRole: "Placeholder",
-  secondaryRole: "Placeholder",
   team: ["Placeholder", "Placeholder", "Placeholder"],
   timeline: "2025",
   client: "Placeholder",
@@ -107,7 +106,7 @@ const caseStudyPlaceholder = {
 // the ProjectTemplate component. Fields:
 // - cover: { src, alt } the large image at the top (grey box until added)
 // - headline, summary: the big sentence and short intro under the cover
-// - primaryRole, secondaryRole, tags (Tools), team, timeline, client: the facts
+// - primaryRole, tags (Tools), team, timeline, client: the facts
 // - gallery: image rows under the facts
 // - introduction, process, outcome, reflections: { blocks, paragraphs, rows }, where blocks
 //   are short { heading, text } parts and rows are image rows (see above).

@@ -8,14 +8,13 @@ import styles from "./ProjectTemplate.module.css";
 // the facts, wide image rows, then Intro, Process, Outcome and Reflections, and
 // buttons to go back to the top or to another project.
 export default function ProjectTemplate({ project, previousProject, nextProject }) {
-  const { headline, title, summary, cover, primaryRole, secondaryRole, tags = [], team = [], timeline, client } = project;
+  const { headline, title, summary, cover, primaryRole, tags = [], team = [], timeline, client } = project;
 
   // Facts in columns; facts in the same column are stacked
   const hasValue = (fact) => (Array.isArray(fact.value) ? fact.value.length > 0 : fact.value);
   const factColumns = [
     [
       { label: "Primary Role", value: primaryRole },
-      { label: "Secondary Role", value: secondaryRole },
     ],
     [{ label: "Tools", value: tags }],
     [{ label: "Team", value: team }],
