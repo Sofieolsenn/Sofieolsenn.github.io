@@ -344,8 +344,8 @@ export const hobbies = [
         photos: [
           { src: "/images/hobbies/skiing.jpg", alt: "Sofie lying in deep snow in her ski gear", caption: "Going off-piste (not always intentionally)", focus: "center 15%" },
           { src: "/images/personal/sweden-hike.jpg", alt: "Hiking on mossy rocks in a Swedish forest", caption: "Hiking through the Swedish forests" },
-          { src: "/images/hobbies/dog-walk.jpg", alt: "A small white terrier running along a mossy forest path", caption: "Forest walks with good company", focus: "center 100%" },
-          { src: "/images/hobbies/cafe-beer.jpg", alt: "Sofie and a friend sitting outside at a café with a beer", caption: "Enjoying a drink in good company" },
+          { src: "/images/hobbies/dog-walk.jpg", alt: "A small white terrier running along a mossy forest path", caption: "Long walks are better with four-legged company", focus: "center 100%" },
+          { src: "/images/hobbies/cafe-beer.jpg", alt: "Sofie and a friend sitting outside at a café with a beer", caption: "Love sitting outside, enjoying a drink and good company" },
           { src: "/images/hobbies/flowers-field.jpg", alt: "A small bouquet of wildflowers held over the grass", caption: "Wildflowers collected along the way", focus: "center 66%" },
           { src: "/images/hobbies/mushrooms.jpg", alt: "Freshly picked chanterelles laid out to dry on paper towels", caption: "Finding chanterelles in the forest" },
           { src: "/images/personal/japan-goldfish.jpg", alt: "A street in Japan lined with tanks full of goldfish", caption: "Goldfish tanks in Japan" },
