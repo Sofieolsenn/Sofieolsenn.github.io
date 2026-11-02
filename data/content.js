@@ -295,14 +295,13 @@ export const hobbies = [
   {
     tab: "Hobbies",
     heading: "A bit about me",
-    // Drawing comes first, as it's my biggest passion
+    // Drawing comes first, as it's my biggest interest
     intro:
-      "My biggest passion is drawing. I’ve loved it for as long as I can remember, and I find inspiration in everything from Studio Ghibli and Spider-Verse to the Star Wars universe, and pretty much anything in between!",
+      "Drawing has always been one of my biggest interests. I work with both traditional and digital art, and I enjoy exploring different styles, techniques, and ways of creating. I find inspiration in everything from animation and illustration to the small details of everyday life.",
     // Several paragraphs, shown one after the other
     detail: [
-      "I also collect art books and Pokémon cards, which inspire me to try out different kinds of art. I share some of my drawings on Instagram, so feel free to take a look if you’re curious!",
-      "I’m also a big foodie, so you’ll often find me in the kitchen or exploring new restaurants whenever the monthly budget allows it.",
-      "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
+      "I also collect art books and Pokémon cards, partly because I enjoy the artwork and the different styles behind them. I share some of my own drawings on Instagram, where I occasionally post sketches and personal projects.",
+      "Outside of art, I enjoy cooking, trying new restaurants, and discovering new places. I also appreciate a good film or series, especially when the weather calls for staying indoors.",
     ],
     slideshow: [
       { src: "/images/drawings/drawing-cat.jpg", alt: "Pencil drawing of a sitting cat" },
@@ -311,32 +310,31 @@ export const hobbies = [
     ],
     link: { href: "https://www.instagram.com/sofieevoi/", label: "See my drawings on Instagram ↗" },
     // Title above the tags (the skill tabs use "Specific skills")
-    tagsHeading: "Personality & fun facts",
+    tagsHeading: "Personality & interests",
     tags: [
       "Traditional & digital art",
       "Drawing & illustration",
       "Design & creative projects",
-      "Collecting art & cute objects",
-      "Pokémon card collecting",
-      "Exploring new places",
+      "Art books & collecting",
+      "Pokémon cards",
       "Food & cooking",
-      "Traveling",
+      "Travel & exploring",
     ],
     galleries: [
       {
         heading: "Photo library",
-        text: "When I’m not drawing or developing, I love being outside. I spend a lot of time with my family, go on long walks, and usually bring home little things I collect along the way, like wildflowers or mushrooms. In winter we go skiing, and when I travel I take pictures of the pretty things I come across.",
+        text: "When I’m not drawing or developing, I enjoy spending time outdoors, whether it’s going for long walks, exploring somewhere new, or spending time with family and friends. I like collecting little things from nature, taking photos when I travel, and finding inspiration in the places I visit.",
         photos: [
-          { src: "/images/hobbies/skiing.jpg", alt: "Sofie lying in deep snow in her ski gear", caption: "Going off-piste (sometimes unintentionally…)", focus: "center 15%" },
-          { src: "/images/personal/sweden-hike.jpg", alt: "Hiking on mossy rocks in a Swedish forest", caption: "Getting lost in Swedish forests (on purpose, mostly)" },
-          { src: "/images/hobbies/dog-walk.jpg", alt: "A small white terrier running along a mossy forest path", caption: "Long walks are better with four-legged company", focus: "center 100%" },
-          { src: "/images/hobbies/cafe-beer.jpg", alt: "Sofie and a friend sitting outside at a café with a beer", caption: "Love sitting outside, enjoying a drink and good company" },
-          { src: "/images/hobbies/flowers-field.jpg", alt: "A small bouquet of wildflowers held over the grass", caption: "Collecting little things from nature to bring home", focus: "center 66%" },
-          { src: "/images/hobbies/mushrooms.jpg", alt: "Freshly picked chanterelles laid out to dry on paper towels", caption: "Basically a treasure hunt, but with mushrooms" },
-          { src: "/images/personal/japan-goldfish.jpg", alt: "A street in Japan lined with tanks full of goldfish", caption: "Goldfish tanks on a street in Japan" },
-          { src: "/images/personal/japan-beach.jpg", alt: "Waves rolling onto a dark sand beach in Japan", caption: "Dark sand beach in Japan" },
+          { src: "/images/hobbies/skiing.jpg", alt: "Sofie lying in deep snow in her ski gear", caption: "Going off-piste (not always intentionally)", focus: "center 15%" },
+          { src: "/images/personal/sweden-hike.jpg", alt: "Hiking on mossy rocks in a Swedish forest", caption: "Hiking through the Swedish forests" },
+          { src: "/images/hobbies/dog-walk.jpg", alt: "A small white terrier running along a mossy forest path", caption: "Forest walks with good company", focus: "center 100%" },
+          { src: "/images/hobbies/cafe-beer.jpg", alt: "Sofie and a friend sitting outside at a café with a beer", caption: "Enjoying a drink in good company" },
+          { src: "/images/hobbies/flowers-field.jpg", alt: "A small bouquet of wildflowers held over the grass", caption: "Wildflowers collected along the way", focus: "center 66%" },
+          { src: "/images/hobbies/mushrooms.jpg", alt: "Freshly picked chanterelles laid out to dry on paper towels", caption: "Finding chanterelles in the forest" },
+          { src: "/images/personal/japan-goldfish.jpg", alt: "A street in Japan lined with tanks full of goldfish", caption: "Goldfish tanks in Japan" },
+          { src: "/images/personal/japan-beach.jpg", alt: "Waves rolling onto a dark sand beach in Japan", caption: "A black sand beach in Japan" },
           { src: "/images/personal/samos-horses.jpg", alt: "Two saddled horses resting by a brick wall on Samos", caption: "Horses on Samos, Greece" },
-          { src: "/images/personal/lemur.jpg", alt: "Sofie smiling next to a lemur", caption: "Making friends with a lemur" },
+          { src: "/images/personal/lemur.jpg", alt: "Sofie smiling next to a lemur", caption: "A new friend" },
         ],
       },
     ],
