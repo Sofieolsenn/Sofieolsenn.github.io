@@ -14,7 +14,7 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
   const hasValue = (fact) => (Array.isArray(fact.value) ? fact.value.length > 0 : fact.value);
   const factColumns = [
     [
-      { label: "Primary Role", value: primaryRole },
+      { label: "Role", value: primaryRole },
     ],
     [{ label: "Tools", value: tags }],
     [{ label: "Team", value: team }],
