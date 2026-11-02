@@ -53,8 +53,7 @@ const caseStudyPlaceholder = {
   team: ["Placeholder", "Placeholder", "Placeholder"],
   timeline: "2025",
   client: "Placeholder",
-  // Two large images under the facts
-  gallery: [{ height: 44, images: [imageSlot(), imageSlot()] }],
+  // Optional image rows under the facts, e.g. gallery: [{ height: 44, images: [imageSlot(), imageSlot()] }]
   introduction: {
     // Short headed blocks under each other, next to the "Intro" heading
     stackBlocks: true,
