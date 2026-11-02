@@ -66,11 +66,13 @@ export const skillsText =
   "Although I’ve worked on fewer projects in these other areas, I’ve gained hands-on experience with them and feel comfortable putting those skills to use when needed.";
 
 // Development and design skills (one tab each).
+// `featured: true` puts a star next to the tab name (my main areas).
 // Each tab has room for a picture next to the text: add
 // `image: { src: "/images/your-file.jpg", alt: "…" }` to show one.
 export const skills = [
   {
     tab: "Frontend",
+    featured: true,
     heading: "Frontend development",
     intro:
       "I love bringing ideas and designs to life through websites that are both visually appealing and easy to use.",
@@ -94,32 +96,8 @@ export const skills = [
     ],
   },
   {
-    tab: "Backend",
-    heading: "Backend development",
-    intro:
-      "While frontend is my main focus, I’ve also gained hands-on backend experience through various projects.",
-    detail:
-      "I’ve worked with APIs, data, and connecting frontend and backend to build functional web applications.",
-    tags: ["Python", "Flask", "PHP", "REST APIs", "Frontend-backend integration"],
-  },
-  {
-    tab: "Database",
-    heading: "Databases",
-    intro:
-      "I have experience with relational, document, and graph databases, giving me a good understanding of how data is structured and connected.",
-    detail:
-      "Combined with my frontend and backend experience, this helps me understand how all the different layers of a web application work together.",
-    tags: ["SQL", "MariaDB", "ArangoDB", "Relational Databases", "Document Databases", "Graph Databases", "Database Design"],
-  },
-  {
-    tab: "Tools & DevOps",
-    heading: "Development tools & DevOps",
-    intro:
-      "I’ve worked with tools that help me organize, test, and manage development projects, from writing code to getting applications ready for deployment.",
-    tags: ["Git", "GitHub", "Docker", "CI/CD", "Postman", "Swagger", "Jira"],
-  },
-  {
     tab: "UX/UI design",
+    featured: true,
     heading: "UX/UI design",
     intro:
       "With my background in Multimedia Design, I have experience with the entire UX/UI process, from understanding users and exploring ideas to designing and testing interactive prototypes.",
@@ -150,12 +128,38 @@ export const skills = [
   },
   {
     tab: "CMS systems",
+    featured: true,
     heading: "CMS systems",
     intro:
       "I’ve mainly worked with Umbraco and Webflow, creating and maintaining websites that are easy to understand, update, and manage.",
     detail:
       "I focus on building clear, well-organized systems that make everyday content management simple for others.",
     tags: ["Umbraco", "Webflow", "WordPress", "CMS Customization", "Content Structure", "Website Maintenance"],
+  },
+  {
+    tab: "Backend",
+    heading: "Backend development",
+    intro:
+      "While frontend is my main focus, I’ve also gained hands-on backend experience through various projects.",
+    detail:
+      "I’ve worked with APIs, data, and connecting frontend and backend to build functional web applications.",
+    tags: ["Python", "Flask", "PHP", "REST APIs", "Frontend-backend integration"],
+  },
+  {
+    tab: "Database",
+    heading: "Databases",
+    intro:
+      "I have experience with relational, document, and graph databases, giving me a good understanding of how data is structured and connected.",
+    detail:
+      "Combined with my frontend and backend experience, this helps me understand how all the different layers of a web application work together.",
+    tags: ["SQL", "MariaDB", "ArangoDB", "Relational Databases", "Document Databases", "Graph Databases", "Database Design"],
+  },
+  {
+    tab: "Tools & DevOps",
+    heading: "Development tools & DevOps",
+    intro:
+      "I’ve worked with tools that help me organize, test, and manage development projects, from writing code to getting applications ready for deployment.",
+    tags: ["Git", "GitHub", "Docker", "CI/CD", "Postman", "Swagger", "Jira"],
   },
 ];
 
