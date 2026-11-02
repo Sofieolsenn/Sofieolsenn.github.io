@@ -166,7 +166,8 @@ export const skills = [
     tab: "Frontend",
     featured: true,
     wideTags: true,
-    heading: "Frontend development",
+    // "\n" starts a new line in the heading
+    heading: "Frontend\ndevelopment",
     intro:
       "I love bringing ideas and designs to life through websites that are both visually appealing and easy to use.",
     detail:

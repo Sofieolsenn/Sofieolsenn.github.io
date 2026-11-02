@@ -198,6 +198,7 @@
 .heading {
   font-family: var(--font-display);
   font-size: var(--fs-title-sm);
+  white-space: pre-line; /* lets "\n" in a heading start a new line */
   font-weight: 500;
   letter-spacing: var(--ls-title);
   line-height: 1.25;
