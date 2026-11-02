@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ProjectTemplate from "@/components/project/ProjectTemplate";
+import ScrollToTop from "@/components/project/ScrollToTop";
 import { projects, site } from "@/data/content";
 
 // One static page per project in data/content.js. Unknown slugs give a 404,
@@ -39,6 +40,7 @@ export default async function ProjectPage({ params }) {
 
   return (
     <>
+      <ScrollToTop key={slug} />
       <Header onHome={false} />
       <main>
         <ProjectTemplate project={project} previousProject={previousProject} nextProject={nextProject} />
