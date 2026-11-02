@@ -1,12 +1,20 @@
-/* Case study page, based on the "Slide 16:9 - 16" frame in Figma and using
-   the same colours, fonts and radii as the front page */
+/* Case study page. Inspired by the Figma slide and the reference case studies,
+   with the same colours, fonts and radii as the front page */
 .project {
+  --wide: min(1200px, 100vw - 2 * var(--gutter));
   padding-block: 120px 96px;
+}
+
+/* Images are wider than the text column, centred on the page */
+.cover,
+.rows {
+  width: var(--wide);
+  margin-inline: calc((100% - var(--wide)) / 2);
 }
 
 .cover {
   position: relative;
-  aspect-ratio: 1236 / 597;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: var(--radius-card);
   background: var(--color-surface);
@@ -17,7 +25,7 @@
 }
 
 .headline {
-  max-width: 1024px;
+  max-width: 900px;
   margin-top: 72px;
   font-family: var(--font-display);
   font-size: var(--fs-hero);
@@ -27,20 +35,25 @@
   color: var(--color-ink);
 }
 
+/* Summary on the left, the facts in two columns on the right */
+.overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px 64px;
+  margin-top: 40px;
+}
+
 .summary {
-  max-width: 595px;
-  margin-top: 24px;
   font-size: var(--fs-lead);
   line-height: 1.5;
   color: var(--color-body);
 }
 
-/* Facts in a row: grey labels with the values (or a list of values) below */
 .facts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 32px 24px;
-  margin: 48px 0 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 32px;
+  margin: 0;
 }
 
 .facts dt {
@@ -50,23 +63,23 @@
 }
 
 .facts dd {
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   font-size: var(--fs-skill);
   line-height: 1.5;
   color: var(--color-muted);
 }
 
-/* Image rows: images sit side by side, sized by their share of the row */
+/* Image rows: one or two big images per row */
 .rows {
   container-type: inline-size;
   display: grid;
-  gap: 32px;
+  gap: 24px;
   margin-top: 64px;
 }
 
 .row {
   display: grid;
-  gap: 32px;
+  gap: 24px;
 }
 
 .row figure {
@@ -88,10 +101,10 @@
 .row figcaption {
   margin-top: 12px;
   font-size: var(--fs-skill);
-  color: var(--color-ink);
+  color: var(--color-muted);
 }
 
-/* Intro, Process and Outcome: big heading left, text from a third across */
+/* Intro, Process and Outcome: heading on the left, text on the right */
 .section {
   margin-top: 120px;
 }
@@ -99,25 +112,32 @@
 .sectionText {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-  gap: 24px 48px;
+  gap: 16px 48px;
 }
 
 .sectionHeading {
   font-family: var(--font-display);
-  font-size: var(--fs-hero);
+  font-size: var(--fs-heading);
   font-weight: 400;
-  letter-spacing: var(--ls-hero);
+  letter-spacing: var(--ls-heading);
   line-height: 1.1;
   color: var(--color-ink);
 }
 
 .sectionBody {
   display: grid;
-  gap: 32px;
+  gap: 1.2em;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--color-body);
 }
 
-.block {
-  max-width: 475px;
+/* Short headed blocks side by side, e.g. client, problem and role */
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px 40px;
+  margin-top: 56px;
 }
 
 .block h3 {
@@ -130,14 +150,8 @@
 }
 
 .block p {
-  margin-top: 8px;
-  font-size: var(--fs-lead);
-  line-height: 1.5;
-  color: var(--color-body);
-}
-
-.paragraph {
-  font-size: var(--fs-lead);
+  margin-top: 10px;
+  font-size: var(--fs-skill);
   line-height: 1.5;
   color: var(--color-body);
 }
@@ -146,7 +160,7 @@
 .pager {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px 16px;
+  gap: 40px 16px;
   margin-top: 96px;
 }
 
@@ -173,22 +187,17 @@
     margin-top: 48px;
   }
 
-  .section {
-    margin-top: 80px;
-  }
-
+  .overview,
   .sectionText {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  /* Previous and next project on their own rows on small screens */
-  .pager {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+  .section {
+    margin-top: 80px;
   }
 
-  .pager > .next {
-    grid-column: 1;
+  .rows {
+    margin-top: 40px;
   }
 
   /* Images stack on small screens, each with the same landscape shape */
@@ -199,5 +208,15 @@
   .image {
     height: auto;
     aspect-ratio: 4 / 3;
+  }
+
+  /* Previous and next project on their own rows */
+  .pager {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .pager > .next {
+    grid-column: 1;
   }
 }

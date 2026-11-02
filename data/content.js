@@ -40,8 +40,9 @@ const imageSlot = (size = 1, caption = "") => ({ src: "", alt: "", size, caption
 // Replace them per project (copy this block into the project and edit it).
 //
 // Images are placed in rows: { height, images }. `height` is the row height as
-// a percentage of the page width (e.g. 32 = about a third as tall as wide), and
-// each image is { src, alt, size, caption }. On phones the images stack.
+// a percentage of the row width (e.g. 56 = a wide 16:9 image), and each image
+// is { src, alt, size, caption }. Use at most two images per row so they stay
+// big. On phones the images stack.
 const caseStudyPlaceholder = {
   headline: "Placeholder: one sentence that sums up what the project is.",
   summary: "Placeholder: who it was for and what it does, in one or two lines.",
@@ -51,8 +52,8 @@ const caseStudyPlaceholder = {
   team: ["Placeholder", "Placeholder", "Placeholder"],
   timeline: "2025",
   client: "Placeholder",
-  // Three images under the facts, the middle one wider
-  gallery: [{ height: 28, images: [imageSlot(2), imageSlot(3), imageSlot(2)] }],
+  // Two large images under the facts
+  gallery: [{ height: 40, images: [imageSlot(), imageSlot()] }],
   introduction: {
     // Short headed blocks before the main text
     blocks: [
@@ -63,20 +64,15 @@ const caseStudyPlaceholder = {
     paragraphs: [
       "Placeholder: Set the scene. Who was the work for? What was the project? What was the problem? What was your involvement?",
     ],
-    rows: [
-      {
-        height: 32,
-        images: [imageSlot(1, "Image description"), imageSlot(2.5, "Image description"), imageSlot(1, "Image description")],
-      },
-    ],
+    rows: [{ height: 56, images: [imageSlot(1, "Image description")] }],
   },
   process: {
     paragraphs: [
       "Placeholder: How did you approach the problem? How did you work, and who did you work with? What were the stages of your process? Did anything not go as planned?",
     ],
     rows: [
-      { height: 32, images: [imageSlot()] },
-      { height: 32, images: [imageSlot(), imageSlot()] },
+      { height: 56, images: [imageSlot()] },
+      { height: 40, images: [imageSlot(1, "Image description"), imageSlot(1, "Image description")] },
     ],
   },
   outcome: {
@@ -84,8 +80,9 @@ const caseStudyPlaceholder = {
       "Placeholder: What was the impact of your work? What did you learn? What are the next steps?",
     ],
     rows: [
-      { height: 48, images: [imageSlot()] },
-      { height: 48, images: [imageSlot()] },
+      { height: 56, images: [imageSlot()] },
+      { height: 40, images: [imageSlot(), imageSlot()] },
+      { height: 56, images: [imageSlot()] },
     ],
   },
 };

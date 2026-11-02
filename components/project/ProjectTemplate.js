@@ -3,9 +3,10 @@ import Button from "@/components/ui/Button";
 import { withBasePath } from "@/lib/paths";
 import styles from "./ProjectTemplate.module.css";
 
-// Reusable case study layout, based on the "Slide 16:9 - 16" frame in Figma:
-// cover, headline and summary, a row of facts, an image row, then Intro,
-// Process and Outcome, and buttons to go back to the top or to another project.
+// Reusable case study layout, inspired by the "Slide 16:9 - 16" frame in Figma
+// and the reference case studies: a big cover, the headline with a summary next
+// to the facts, wide image rows, then Intro, Process and Outcome, and buttons
+// to go back to the top or to another project.
 export default function ProjectTemplate({ project, previousProject, nextProject }) {
   const { headline, title, summary, cover, primaryRole, secondaryRole, tags = [], team = [], timeline, client } = project;
 
@@ -21,22 +22,24 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
   return (
     <article className={`container ${styles.project}`} id="top">
       <div className={styles.cover}>
-        {cover && <Image src={withBasePath(cover.src)} alt={cover.alt} fill sizes="(max-width: 900px) 100vw, 950px" priority />}
+        {cover && <Image src={withBasePath(cover.src)} alt={cover.alt} fill sizes="(max-width: 900px) 100vw, 1200px" priority />}
       </div>
 
       <h1 className={styles.headline}>{headline || title}</h1>
-      {summary && <p className={styles.summary}>{summary}</p>}
 
-      <dl className={styles.facts}>
-        {facts.map((fact) => (
-          <div key={fact.label}>
-            <dt>{fact.label}</dt>
-            {[].concat(fact.value).map((value, index) => (
-              <dd key={index}>{value}</dd>
-            ))}
-          </div>
-        ))}
-      </dl>
+      <div className={styles.overview}>
+        {summary && <p className={styles.summary}>{summary}</p>}
+        <dl className={styles.facts}>
+          {facts.map((fact) => (
+            <div key={fact.label}>
+              <dt>{fact.label}</dt>
+              {[].concat(fact.value).map((value, index) => (
+                <dd key={index}>{value}</dd>
+              ))}
+            </div>
+          ))}
+        </dl>
+      </div>
 
       <ImageRows rows={project.gallery} />
 
@@ -66,8 +69,8 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
   );
 }
 
-// A case study part: a big heading on the left, short blocks and text on the
-// right, and image rows across the full width
+// A case study part: heading on the left and text on the right, short blocks
+// side by side below, then wide image rows
 function Section({ heading, content }) {
   if (!content) return null;
   const { blocks = [], paragraphs = [], rows = [] } = content;
@@ -77,19 +80,23 @@ function Section({ heading, content }) {
       <div className={styles.sectionText}>
         <h2 className={styles.sectionHeading}>{heading}</h2>
         <div className={styles.sectionBody}>
+          {paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
+      {blocks.length > 0 && (
+        <div className={styles.blocks}>
           {blocks.map((block) => (
             <div key={block.heading} className={styles.block}>
               <h3>{block.heading}</h3>
               <p>{block.text}</p>
             </div>
           ))}
-          {paragraphs.map((paragraph) => (
-            <p key={paragraph} className={styles.paragraph}>
-              {paragraph}
-            </p>
-          ))}
         </div>
-      </div>
+      )}
+
       <ImageRows rows={rows} />
     </section>
   );
@@ -115,7 +122,7 @@ function ImageRows({ rows = [] }) {
             <figure key={index}>
               <div className={styles.image}>
                 {image.src && (
-                  <Image src={withBasePath(image.src)} alt={image.alt} fill sizes="(max-width: 900px) 100vw, 950px" />
+                  <Image src={withBasePath(image.src)} alt={image.alt} fill sizes="(max-width: 900px) 100vw, 1200px" />
                 )}
               </div>
               {image.caption && <figcaption>{image.caption}</figcaption>}
