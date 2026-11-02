@@ -14,7 +14,6 @@ export default function About() {
           alt="Sofie Olsen sitting in front of a beige curtain"
           fill
           sizes="(max-width: 900px) 100vw, 672px"
-          priority
         />
       </div>
       <div className={styles.copy}>

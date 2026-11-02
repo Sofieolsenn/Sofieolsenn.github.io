@@ -9,7 +9,7 @@ export default function Projects() {
       <SectionLabel id="projects-label">Latest projects</SectionLabel>
       <div className={styles.grid}>
         {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+          <ProjectCard key={project.slug} {...project} href={`/projects/${project.slug}/`} />
         ))}
       </div>
     </section>

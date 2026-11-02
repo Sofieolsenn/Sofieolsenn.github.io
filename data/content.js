@@ -31,21 +31,33 @@ export const hero = {
   text: "I’m a developer with full-stack experience. I develop and design meaningful digital products.",
 };
 
+// Each project gets its own page at /projects/<slug>/ (built from the
+// ProjectTemplate component). `role` and `description` show on that page.
+// PLACEHOLDER: replace the role and description texts with your own.
 export const projects = [
   {
+    slug: "hack-your-job",
     kind: "Frontend development",
     title: "Hack your job",
+    role: "Placeholder: your role on the project",
+    description: "Placeholder: a short description of the project, what you built and why.",
     tags: ["React", "Vite", "Tailwind", "Umbraco"],
     featured: true,
   },
   {
+    slug: "hack-your-future-website",
     kind: "Web development",
     title: "Hack your future website",
+    role: "Placeholder: your role on the project",
+    description: "Placeholder: a short description of the project, what you built and why.",
     tags: ["Webflow", "Custom code integration"],
   },
   {
+    slug: "stuganibacken-martemeo",
     kind: "Web development",
     title: "Stuganibacken martemeo",
+    role: "Placeholder: your role on the project",
+    description: "Placeholder: a short description of the project, what you built and why.",
     tags: ["UX/UI Design", "React", "Vite"],
   },
 ];

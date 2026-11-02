@@ -1,0 +1,50 @@
+/* Minimal styling for now: the template still needs to be designed */
+.project {
+  padding-block: 140px 96px;
+}
+
+.back {
+  color: var(--color-muted);
+  font-size: var(--fs-field);
+}
+
+.kind {
+  margin-top: 40px;
+  color: var(--color-label);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.title {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-size: var(--fs-heading);
+  font-weight: 400;
+  letter-spacing: var(--ls-heading);
+  line-height: 1.12;
+}
+
+.role {
+  margin-top: 24px;
+  color: var(--color-body);
+}
+
+.label {
+  margin-right: 8px;
+  color: var(--color-muted);
+}
+
+.description {
+  max-width: 640px;
+  margin-top: 24px;
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}

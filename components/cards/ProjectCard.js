@@ -1,12 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import Tag from "@/components/ui/Tag";
 import { withBasePath } from "@/lib/paths";
 import styles from "./ProjectCard.module.css";
 
-// Add `image` (a path in /public) and `href` to a project in data/content.js
-// to show a cover image and make the card a link.
+// Add `image` (a path in /public) to a project in data/content.js to show a
+// cover image. With `href` the card links to that page (Link adds the base path).
 export default function ProjectCard({ kind, title, tags = [], featured = false, image, href }) {
-  const Wrapper = href ? "a" : "article";
+  const Wrapper = href ? Link : "article";
 
   return (
     <Wrapper className={`${styles.card} ${featured ? styles.featured : ""}`} href={href}>
