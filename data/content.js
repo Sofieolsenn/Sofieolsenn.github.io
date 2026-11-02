@@ -105,6 +105,7 @@ const caseStudyPlaceholder = {
 // Each project gets its own case study page at /projects/<slug>/, built from
 // the ProjectTemplate component. Fields:
 // - cover: { src, alt } the large image at the top (grey box until added)
+// - badge: a small label on the card, e.g. "In progress"
 // - comingSoon: true shows a "Coming soon" badge on the card and a short message
 //   on the page instead of the case study (for projects that haven't started yet)
 // - headline, summary: the big sentence and short intro under the cover
@@ -474,10 +475,138 @@ export const projects = [
     kind: "Web development",
     title: "Stuganibacken martemeo",
     tags: ["UX/UI Design", "React", "Vite"],
-    // The project hasn't started yet: the card gets a "Coming soon" badge and
-    // the page shows a short message instead of the case study
-    comingSoon: true,
+    // Shown on the card until the project is done
+    badge: "In progress",
     ...caseStudyPlaceholder,
+    headline: "Creating a digital presence for a new independent professional.",
+    summary:
+      "A website project focused on presenting Stuganibacken Martemeo's expertise, services, and educational materials in a clear and approachable way.",
+    primaryRole: "Web Developer & UX/UI Designer",
+    tools: ["To be decided"],
+    team: ["Independent project"],
+    client: "Stuganibacken Martemeo",
+    timeline: "In progress",
+    introduction: {
+      ...caseStudyPlaceholder.introduction,
+      blocks: [
+        {
+          heading: "Client introduction",
+          text: "Stuganibacken Martemeo is a newly established independent business looking to build its online presence. The website will help introduce the person behind the business, communicate her expertise, and make her services and educational materials accessible to potential clients.",
+        },
+        {
+          heading: "The problem",
+          text: [
+            "As a new business, Stuganibacken Martemeo does not yet have a website that brings together information about her work, qualifications, services, and educational resources.",
+            "She needs a place where potential clients can understand what she offers, learn about her professional background, and find the information they need.",
+          ],
+        },
+        {
+          heading: "The purpose",
+          text: [
+            "To create a professional and welcoming website that clearly communicates her expertise and services while making it easy for visitors to navigate educational materials, explore paid services, and find answers to frequently asked questions.",
+            "The website should also help establish her identity as an independent professional and build trust with potential clients.",
+          ],
+        },
+        {
+          heading: "The outcome",
+          text: [
+            "The goal is to deliver a website that presents her professional identity, showcases her expertise, and brings her services and educational resources together in one place.",
+            "The website will be designed to make information easy to find and support the business as it grows.",
+          ],
+        },
+      ],
+    },
+    process: {
+      steps: [
+      {
+        title: "Understanding the business",
+        parts: [
+          {
+            heading: "Defining her professional identity",
+            paragraphs: [
+              "The first step is understanding how she wants to present herself, her expertise, and her work as an independent professional.",
+              "This includes identifying her target audience, what visitors need to know, and how the website should communicate her skills and experience.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot(1, "Image description")] }],
+      },
+      {
+        title: "Planning the website",
+        parts: [
+          {
+            heading: "Content structure & navigation",
+            paragraphs: [
+              "An important part of the project will be organizing different types of content, including educational materials, paid services, professional information, and frequently asked questions.",
+              "The goal is to create a structure that feels natural to navigate and makes it easy for visitors to find what they are looking for.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot(1, "Image description")] }],
+      },
+      {
+        title: "Designing & developing the website",
+        parts: [
+          {
+            heading: "Creating the digital experience",
+            paragraphs: [
+              "The website will be designed and developed around her professional identity and the needs of her visitors.",
+              "The focus will be on clear communication, accessible content, responsive layouts, and a structure that can grow alongside the business.",
+            ],
+          },
+        ],
+        rows: [{ height: 64, images: [imageSlot(1, "Image description")] }],
+      },
+    ],
+    },
+    outcome: {
+      steps: [
+      {
+        title: "The final result",
+        parts: [
+          {
+            paragraphs: [
+              "In progress — the website has not yet been developed.",
+            ],
+          },
+        ],
+        rows: [],
+      },
+      {
+        title: "The impact",
+        parts: [
+          {
+            paragraphs: [
+              "The intended impact is to give Stuganibacken Martemeo a professional online presence where potential clients can explore her expertise, services, and educational resources.",
+            ],
+          },
+        ],
+        rows: [],
+      },
+      {
+        title: "The details I'm most proud of",
+        parts: [
+          {
+            paragraphs: [
+              "To be added as the project develops.",
+            ],
+          },
+        ],
+        rows: [],
+      },
+    ],
+    },
+    reflections: {
+      ...caseStudyPlaceholder.reflections,
+      blocks: [
+        { heading: "What I learned", text: "To be added." },
+        { heading: "What I would do differently", text: "To be added." },
+        {
+          heading: "Next steps",
+          text: "Define the website's content, structure, and visual direction before moving into design and development.",
+        },
+      ],
+    },
   },
 ];
 

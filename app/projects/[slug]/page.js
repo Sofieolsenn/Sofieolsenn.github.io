@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ProjectTemplate from "@/components/project/ProjectTemplate";
 import ScrollToTop from "@/components/project/ScrollToTop";
+import ScrollReveal from "@/components/layout/ScrollReveal";
 import { projects, site } from "@/data/content";
 
 // One static page per project in data/content.js. Unknown slugs give a 404,
@@ -46,6 +47,8 @@ export default async function ProjectPage({ params }) {
         <ProjectTemplate project={project} previousProject={previousProject} nextProject={nextProject} />
       </main>
       <Footer compact />
+      {/* Content fades and slides in as you scroll; `key` restarts it for each project */}
+      <ScrollReveal key={slug} />
     </>
   );
 }

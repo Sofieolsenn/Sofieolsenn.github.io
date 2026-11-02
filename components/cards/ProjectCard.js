@@ -6,7 +6,9 @@ import styles from "./ProjectCard.module.css";
 
 // Add `image` (a path in /public) to a project in data/content.js to show a
 // cover image. With `href` the card links to that page (Link adds the base path).
-export default function ProjectCard({ kind, title, tags = [], featured = false, comingSoon = false, image, href }) {
+export default function ProjectCard({ kind, title, tags = [], featured = false, comingSoon = false, badge, image, href }) {
+  // A small label in the corner, e.g. "In progress" or "Coming soon"
+  const label = badge || (comingSoon ? "Coming soon" : null);
   const Wrapper = href ? Link : "article";
 
   return (
@@ -14,7 +16,7 @@ export default function ProjectCard({ kind, title, tags = [], featured = false, 
       {image && (
         <Image className={styles.image} src={withBasePath(image)} alt="" fill sizes="(max-width: 800px) 100vw, 1274px" />
       )}
-      {comingSoon && <span className={styles.badge}>Coming soon</span>}
+      {label && <span className={styles.badge}>{label}</span>}
       <div className={styles.content}>
         <p className={styles.kind}>{kind}</p>
         <h3 className={styles.title}>{title}</h3>

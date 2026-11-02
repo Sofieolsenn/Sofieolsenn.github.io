@@ -27,7 +27,7 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
     return (
       <article className={`container ${styles.project}`} id="top">
         <BackLink />
-        <div className={styles.comingSoon}>
+        <div className={styles.comingSoon} data-reveal>
           <p className={styles.comingSoonLabel}>Coming soon</p>
           <h1 className={styles.headline}>{title}</h1>
           <p className={styles.summary}>
@@ -42,7 +42,7 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
   return (
     <article className={`container ${styles.project}`} id="top">
       <BackLink />
-      <figure className={styles.coverFigure}>
+      <figure className={styles.coverFigure} data-reveal>
         <div className={styles.cover}>
           {cover?.src && (
             <Image src={withBasePath(cover.src)} alt={cover.alt} fill sizes="(max-width: 900px) 100vw, 1200px" priority />
@@ -51,9 +51,13 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
         {cover?.caption && <figcaption className={styles.caption}>{cover.caption}</figcaption>}
       </figure>
 
-      <h1 className={styles.headline}>{headline || title}</h1>
+      <h1 className={styles.headline} data-reveal>
+        {headline || title}
+      </h1>
 
-      <div className={styles.overview}>{summary && <p className={styles.summary}>{summary}</p>}</div>
+      <div className={styles.overview} data-reveal>
+        {summary && <p className={styles.summary}>{summary}</p>}
+      </div>
 
       {/* "View site" button fixed in the corner (or a "not published yet" dialog) */}
       <ProjectLink url={project.link} label={project.linkLabel} />
@@ -108,7 +112,7 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
 // "Back to projects" link above the cover, to the project list on the front page
 function BackLink() {
   return (
-    <a href={`${withBasePath("/")}#projects`} className={styles.backLink}>
+    <a href={`${withBasePath("/")}#projects`} className={styles.backLink} data-reveal>
       <ArrowIcon direction="left" />
       Back to projects
     </a>
@@ -118,7 +122,7 @@ function BackLink() {
 // Previous project, back to top and next project
 function Pager({ previousProject, nextProject }) {
   return (
-    <nav className={styles.pager} aria-label="Projects">
+    <nav className={styles.pager} aria-label="Projects" data-reveal>
       {previousProject && (
         <Button href={withBasePath(`/projects/${previousProject.slug}/`)} variant="outline" className={styles.previous}>
           <ArrowIcon direction="left" />
@@ -164,16 +168,20 @@ function Section({ heading, content, aside, wide = false, headingAbove = false }
 
   return (
     <section className={styles.section}>
-      {headingAbove && heading && <h2 className={`${styles.sectionHeading} ${styles.stepsHeading}`}>{heading}</h2>}
+      {headingAbove && heading && (
+        <h2 className={`${styles.sectionHeading} ${styles.stepsHeading}`} data-reveal>
+          {heading}
+        </h2>
+      )}
       {/* With an aside (the facts box) the two columns are centred vertically against each other */}
       <div
         className={`${styles.sectionText} ${wide ? styles.sectionTextWide : ""} ${aside ? styles.sectionTextCentered : ""}`}
       >
-        <div>
+        <div data-reveal>
           {!headingAbove && <h2 className={styles.sectionHeading}>{heading}</h2>}
           {aside}
         </div>
-        <div className={styles.sectionBody}>
+        <div className={styles.sectionBody} data-reveal>
           {paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -182,7 +190,11 @@ function Section({ heading, content, aside, wide = false, headingAbove = false }
         </div>
       </div>
 
-      {!stackBlocks && blocks.length > 0 && <div className={styles.blocks}>{blockList}</div>}
+      {!stackBlocks && blocks.length > 0 && (
+        <div className={styles.blocks} data-reveal>
+          {blockList}
+        </div>
+      )}
 
       <ImageRows rows={rows} />
     </section>
@@ -195,14 +207,16 @@ function Section({ heading, content, aside, wide = false, headingAbove = false }
 function StepSection({ heading, steps, wide }) {
   return (
     <section className={styles.section}>
-      <h2 className={`${styles.sectionHeading} ${styles.stepsHeading}`}>{heading}</h2>
+      <h2 className={`${styles.sectionHeading} ${styles.stepsHeading}`} data-reveal>
+        {heading}
+      </h2>
       {steps.map((step) => (
         <div key={step.title} className={styles.step}>
           <div className={`${styles.sectionText} ${wide ? styles.sectionTextWide : ""}`}>
-            <div>
+            <div data-reveal>
               <p className={styles.stepLabel}>{step.title}</p>
             </div>
-            <div className={styles.sectionBody}>
+            <div className={styles.sectionBody} data-reveal>
               {(step.parts || []).map((part) => (
                 <div key={part.heading || part.paragraphs[0]} className={styles.stepPart}>
                   {part.heading && <h3>{part.heading}</h3>}
@@ -231,6 +245,7 @@ function ImageRows({ rows = [] }) {
         <div
           key={rowIndex}
           className={styles.row}
+          data-reveal
           style={{
             gridTemplateColumns: row.images.map((image) => `${image.size || 1}fr`).join(" "),
             "--row-height": row.height || 32,

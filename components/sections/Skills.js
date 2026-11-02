@@ -123,7 +123,7 @@ export default function Skills() {
 
       {/* A category with only one entry shows no tabs */}
       {skills.length > 1 && (
-        <div ref={tabsRef} className={styles.tabs} role="tablist" aria-label="Skill categories">
+        <div ref={tabsRef} className={styles.tabs} role="tablist" aria-label="Skill categories" data-reveal-group="skill-panel">
           {skills.map((item, index) => (
             <button
               key={item.tab}
@@ -144,6 +144,7 @@ export default function Skills() {
 
       <div
         ref={panelRef}
+        data-reveal-group="skill-panel"
         className={`${styles.panel} ${layout} ${skill.wideTags ? styles.wideTags : ""} ${skill.wideText ? styles.wideText : ""} ${skills.length > 1 ? "" : styles.noTabs}`}
         role={skills.length > 1 ? "tabpanel" : undefined}
         id="skill-panel"

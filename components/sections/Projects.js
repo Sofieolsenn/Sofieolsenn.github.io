@@ -5,9 +5,14 @@ import styles from "./Projects.module.css";
 
 export default function Projects() {
   return (
-    <section className={`container section ${styles.projects}`} id="projects" aria-labelledby="projects-label">
+    <section
+      className={`container section ${styles.projects}`}
+      id="projects"
+      aria-labelledby="projects-label"
+      data-reveal-on-load
+    >
       <SectionLabel id="projects-label">Latest projects</SectionLabel>
-      <div className={styles.grid}>
+      <div className={styles.grid} data-reveal-children>
         {projects.map((project) => (
           <ProjectCard key={project.slug} {...project} href={`/projects/${project.slug}/`} />
         ))}

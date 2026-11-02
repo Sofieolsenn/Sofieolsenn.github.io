@@ -6,6 +6,7 @@ import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import OtherProjects from "@/components/sections/OtherProjects";
 import Contact from "@/components/sections/Contact";
+import ScrollReveal from "@/components/layout/ScrollReveal";
 import { site, skillGroups } from "@/data/content";
 
 // Structured data helps search engines and AI assistants understand who you are.
@@ -33,6 +34,8 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      {/* Sections fade and slide in as you scroll down */}
+      <ScrollReveal />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
