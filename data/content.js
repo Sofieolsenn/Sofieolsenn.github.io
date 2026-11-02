@@ -33,7 +33,7 @@ export const hero = {
 
 // An empty image slot: a grey box until `src` is filled in. `size` sets how
 // wide it is compared to the other images in the same row.
-const imageSlot = (size = 1, caption = "") => ({ src: "", alt: "", size, caption });
+const imageSlot = (size = 1, caption = "Image description") => ({ src: "", alt: "", size, caption });
 
 // Case study content shared by all projects until each gets its own texts.
 // The texts are the questions to answer, so it's clear what goes where.
@@ -46,7 +46,8 @@ const imageSlot = (size = 1, caption = "") => ({ src: "", alt: "", size, caption
 const caseStudyPlaceholder = {
   headline: "Placeholder: one sentence that sums up what the project is.",
   summary: "Placeholder: who it was for and what it does, in one or two lines.",
-  // cover: { src: "/images/projects/your-image.jpg", alt: "…" },
+  // The large image at the top. Fill in `src` (e.g. "/images/projects/…")
+  cover: { src: "", alt: "", caption: "Image description" },
   primaryRole: "Placeholder",
   secondaryRole: "Placeholder",
   team: ["Placeholder", "Placeholder", "Placeholder"],
@@ -64,7 +65,7 @@ const caseStudyPlaceholder = {
     paragraphs: [
       "Placeholder: Set the scene. Who was the work for? What was the project? What was the problem? What was your involvement?",
     ],
-    rows: [{ height: 64, images: [imageSlot(1, "Image description")] }],
+    rows: [{ height: 64, images: [imageSlot()] }],
   },
   process: {
     paragraphs: [
@@ -74,7 +75,7 @@ const caseStudyPlaceholder = {
     ],
     rows: [
       { height: 64, images: [imageSlot()] },
-      { height: 44, images: [imageSlot(1, "Image description"), imageSlot(1, "Image description")] },
+      { height: 44, images: [imageSlot(), imageSlot()] },
     ],
   },
   outcome: {
@@ -93,7 +94,7 @@ const caseStudyPlaceholder = {
 
 // Each project gets its own case study page at /projects/<slug>/, built from
 // the ProjectTemplate component. Fields:
-// - cover: { src, alt } the large image at the top (grey box until added)
+// - cover: { src, alt, caption } the large image at the top (grey box until added)
 // - headline, summary: the big sentence and short intro under the cover
 // - primaryRole, secondaryRole, tags (Tools), team, timeline, client: the facts
 // - gallery: image rows under the facts

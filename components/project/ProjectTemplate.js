@@ -21,9 +21,14 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
 
   return (
     <article className={`container ${styles.project}`} id="top">
-      <div className={styles.cover}>
-        {cover && <Image src={withBasePath(cover.src)} alt={cover.alt} fill sizes="(max-width: 900px) 100vw, 1200px" priority />}
-      </div>
+      <figure className={styles.coverFigure}>
+        <div className={styles.cover}>
+          {cover?.src && (
+            <Image src={withBasePath(cover.src)} alt={cover.alt} fill sizes="(max-width: 900px) 100vw, 1200px" priority />
+          )}
+        </div>
+        {cover?.caption && <figcaption className={styles.caption}>{cover.caption}</figcaption>}
+      </figure>
 
       <h1 className={styles.headline}>{headline || title}</h1>
 
@@ -129,7 +134,7 @@ function ImageRows({ rows = [] }) {
                   <Image src={withBasePath(image.src)} alt={image.alt} fill sizes="(max-width: 900px) 100vw, 1200px" />
                 )}
               </div>
-              {image.caption && <figcaption>{image.caption}</figcaption>}
+              {image.caption && <figcaption className={styles.caption}>{image.caption}</figcaption>}
             </figure>
           ))}
         </div>
