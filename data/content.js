@@ -313,18 +313,14 @@ export const hobbies = [
     // Title above the tags (the skill tabs use "Specific skills")
     tagsHeading: "Personality & fun facts",
     tags: [
-      "Drawing skills",
-      "Creative",
-      "Loves dogs",
-      "Does not like coffee",
-      "Popcorn eater",
-      "Pokémon card collector",
-      "Foodie",
-      "Studio Ghibli fan",
-      "Star Wars nerd",
-      "Harry Potter rewatcher",
-      "Secret Twilight fan",
-      "Loves to travel",
+      "Traditional & digital art",
+      "Drawing & illustration",
+      "Design & creative projects",
+      "Collecting art & cute objects",
+      "Pokémon card collecting",
+      "Exploring new places",
+      "Food & cooking",
+      "Traveling",
     ],
     galleries: [
       {
