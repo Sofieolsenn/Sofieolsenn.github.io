@@ -174,9 +174,11 @@
   margin-top: 28px;
 }
 
-/* Tabs without a picture: the tags sit next to the text, without a line.
-   The text column is narrower so the tags get more room. */
-.side {
+/* Tabs without a picture: the tags sit next to the text, without a line */
+
+/* Tabs with many tags (`wideTags`): narrower text and a smaller gap, so the
+   tags get more room */
+.wideTags {
   grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
   column-gap: 32px;
 }

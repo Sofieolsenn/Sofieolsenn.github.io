@@ -157,13 +157,15 @@ export const skillsText =
 // Development and design skills (one tab each).
 // `featured: true` puts a badge with a tick next to the tab name (my main areas).
 // `picture: true` gives the tab a picture box, with the tags below a line;
-// other tabs show their tags next to the text.
+// other tabs show their tags next to the text. `wideTags: true` gives the tags
+// more room (for tabs with many tags).
 // Each tab has room for a picture next to the text: add
 // `image: { src: "/images/your-file.jpg", alt: "…" }` to show one.
 export const skills = [
   {
     tab: "Frontend",
     featured: true,
+    wideTags: true,
     heading: "Frontend development",
     intro:
       "I love bringing ideas and designs to life through websites that are both visually appealing and easy to use.",
@@ -186,6 +188,7 @@ export const skills = [
   {
     tab: "UX/UI design",
     featured: true,
+    wideTags: true,
     heading: "UX/UI design",
     intro:
       "With my background in Multimedia Design, I have experience with the entire UX/UI process, from understanding users and exploring ideas to designing and testing interactive prototypes.",

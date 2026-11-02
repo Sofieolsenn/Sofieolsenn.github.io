@@ -132,7 +132,7 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className={`${styles.panel} ${layout}`} role="tabpanel" id="skill-panel" aria-labelledby={`skill-tab-${active}`}>
+      <div className={`${styles.panel} ${layout} ${skill.wideTags ? styles.wideTags : ""}`} role="tabpanel" id="skill-panel" aria-labelledby={`skill-tab-${active}`}>
         <div className={styles.text}>
           <h3 className={styles.heading}>{skill.heading}</h3>
           {skill.intro && <p className={styles.intro}>{skill.intro}</p>}
