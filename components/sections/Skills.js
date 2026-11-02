@@ -185,7 +185,12 @@ export default function Skills() {
 
         {skill.galleries?.map((gallery, galleryIndex) => (
           <div key={galleryIndex} className={styles.gallery}>
-            {gallery.heading && <h4 className={styles.tagsTitle}>{gallery.heading}</h4>}
+            {(gallery.heading || gallery.text) && (
+              <div className={styles.galleryIntro}>
+                {gallery.heading && <h4 className={styles.heading}>{gallery.heading}</h4>}
+                {gallery.text && <p className={styles.intro}>{gallery.text}</p>}
+              </div>
+            )}
             <ul className={`${styles.photos} ${gallery.shape === "portrait" ? styles.portraitPhotos : ""}`}>
               {gallery.photos.map((photo, index) => (
                 <li key={index} className={styles.post}>

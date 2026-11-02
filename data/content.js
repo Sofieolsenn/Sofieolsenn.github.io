@@ -301,7 +301,7 @@ export const hobbies = [
     // Several paragraphs, shown one after the other
     detail: [
       "I also collect art books and Pokémon cards, which inspire me to try out different kinds of art. I share some of my drawings on Instagram, so feel free to take a look if you’re curious!",
-      "When I’m not drawing or developing, you’ll probably find me in the kitchen, out on a long walk, or exploring new places when I travel. In winter I go skiing with my family, and I explore new restaurants whenever the monthly budget allows it.",
+      "I’m also a big foodie, so you’ll often find me in the kitchen or exploring new restaurants whenever the monthly budget allows it.",
       "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
     ],
     slideshow: [
@@ -328,6 +328,8 @@ export const hobbies = [
     ],
     galleries: [
       {
+        heading: "Photo library",
+        text: "When I’m not drawing or developing, I love being outside. I spend a lot of time with my family, go on long walks, and usually bring home little things I collect along the way, like wildflowers or mushrooms. In winter we go skiing, and when I travel I take pictures of the pretty things I come across.",
         photos: [
           { src: "/images/hobbies/skiing.jpg", alt: "Sofie lying in deep snow in her ski gear", caption: "Going off-piste (sometimes unintentionally…)", focus: "center 15%" },
           { src: "/images/personal/sweden-hike.jpg", alt: "Hiking on mossy rocks in a Swedish forest", caption: "Getting lost in Swedish forests (on purpose, mostly)" },

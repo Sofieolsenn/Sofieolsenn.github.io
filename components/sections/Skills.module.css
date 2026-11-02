@@ -281,8 +281,10 @@
   border-top: 1px solid var(--color-line);
 }
 
-.gallery .tagsTitle {
-  margin-bottom: 20px;
+/* Heading and a short text above the photos */
+.galleryIntro {
+  max-width: 640px;
+  margin-bottom: 32px;
 }
 
 .photos {
