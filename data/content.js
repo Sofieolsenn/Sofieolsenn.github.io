@@ -47,7 +47,7 @@ const caseStudyPlaceholder = {
   headline: "Placeholder: one sentence that sums up what the project is.",
   summary: "Placeholder: who it was for and what it does, in one or two lines.",
   // The large image at the top. Fill in `src` (e.g. "/images/projects/…")
-  cover: { src: "", alt: "", caption: "Image description" },
+  cover: { src: "", alt: "" },
   primaryRole: "Placeholder",
   secondaryRole: "Placeholder",
   team: ["Placeholder", "Placeholder", "Placeholder"],
@@ -60,7 +60,6 @@ const caseStudyPlaceholder = {
     blocks: [
       { heading: "Client introduction", text: "Placeholder: a short description of the client and why they reached out." },
       { heading: "The problem", text: "Placeholder: a short description of the problem they needed solved." },
-      { heading: "My role", text: "Placeholder: a short description of your role in the process." },
     ],
     paragraphs: [
       "Placeholder: Set the scene. Who was the work for? What was the project? What was the problem? What was your involvement?",
@@ -94,7 +93,7 @@ const caseStudyPlaceholder = {
 
 // Each project gets its own case study page at /projects/<slug>/, built from
 // the ProjectTemplate component. Fields:
-// - cover: { src, alt, caption } the large image at the top (grey box until added)
+// - cover: { src, alt } the large image at the top (grey box until added)
 // - headline, summary: the big sentence and short intro under the cover
 // - primaryRole, secondaryRole, tags (Tools), team, timeline, client: the facts
 // - gallery: image rows under the facts
