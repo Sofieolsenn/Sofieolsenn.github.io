@@ -13,6 +13,8 @@
 
 .cover {
   position: relative;
+  /* Full width always; the height follows 16:9 but stops at 56% of the screen */
+  width: 100%;
   aspect-ratio: 16 / 9;
   max-height: 56vh;
   overflow: hidden;
