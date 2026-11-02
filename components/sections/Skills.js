@@ -141,7 +141,7 @@ export default function Skills() {
 
       <div
         ref={panelRef}
-        className={`${styles.panel} ${layout} ${skill.wideTags ? styles.wideTags : ""} ${skills.length > 1 ? "" : styles.noTabs}`}
+        className={`${styles.panel} ${layout} ${skill.wideTags ? styles.wideTags : ""} ${skill.wideText ? styles.wideText : ""} ${skills.length > 1 ? "" : styles.noTabs}`}
         role={skills.length > 1 ? "tabpanel" : undefined}
         id="skill-panel"
         aria-labelledby={skills.length > 1 ? `skill-tab-${active}` : undefined}

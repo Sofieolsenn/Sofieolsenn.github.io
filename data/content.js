@@ -493,6 +493,7 @@ export const skillsText =
 
 // Development and design skills (one tab each).
 // `featured: true` puts a badge with a tick next to the tab name (my main areas).
+// `wideTags: true` gives many tags more room; `wideText: true` gives a long text more room.
 // `picture: true` gives the tab a picture box, with the tags below a line;
 // other tabs show their tags next to the text. `wideTags: true` gives the tags
 // more room (for tabs with many tags).
@@ -550,6 +551,30 @@ export const skills = [
       "Sitemaps",
       "Style Guides",
       "Design Systems",
+    ],
+  },
+  {
+    tab: "AI",
+    featured: true,
+    wideText: true,
+    heading: "AI-assisted\ndevelopment",
+    intro:
+      "I use AI in my everyday development work to solve problems, learn new technologies, and work more efficiently.",
+    detail: [
+      "I have experience with Claude Code, LLMs, MCP integrations, and creating custom commands and guardrails to improve my workflows.",
+      "I have also experimented with different AI models, learning about their strengths and which tasks they are best suited for. Using Ollama, I have run AI models locally on my computer and built small projects to explore how they work in practice.",
+      "I also have an understanding of prompt engineering, including the three T's: Task, Tone, and Target Audience. I use these principles to write clearer prompts and guide AI towards more relevant results.",
+      "I use AI for debugging, code reviews, and exploring solutions, while always reviewing and understanding the output.",
+    ],
+    tags: [
+      "Claude Code",
+      "LLMs & AI Models",
+      "Ollama (Local AI)",
+      "MCP Integrations",
+      "Custom Commands & Guardrails",
+      "Prompt Engineering (Task, Tone & Target Audience)",
+      "AI-Assisted Debugging",
+      "AI Code Reviews",
     ],
   },
   {
