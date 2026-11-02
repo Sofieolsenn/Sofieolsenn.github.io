@@ -54,9 +54,9 @@ export default function Skills() {
   const tabsRef = useRef(null);
   const skills = skillGroups[group].skills;
   const skill = skills[active];
-  // Only the main areas (and tabs with their own pictures) get a picture box.
+  // Only tabs marked `picture` (or with their own pictures) get a picture box.
   // The other tabs show their tags next to the text instead, with no line.
-  const hasPicture = Boolean(skill.featured || skill.image || skill.slideshow);
+  const hasPicture = Boolean(skill.picture || skill.image || skill.slideshow);
   const layout = hasPicture ? "" : skill.tags ? styles.side : styles.textOnly;
 
   // Links like href="#hobbies" open that category and scroll to it. The address
