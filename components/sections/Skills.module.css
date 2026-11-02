@@ -152,6 +152,11 @@
   color: #8d8982;
 }
 
+/* A category with only one entry has no tabs above its panel */
+.noTabs {
+  margin-top: 72px;
+}
+
 /* Text and a picture side by side, with the tags below a thin line */
 .panel {
   display: grid;
@@ -374,6 +379,10 @@
   .radio svg {
     width: 16px;
     height: 16px;
+  }
+
+  .noTabs {
+    margin-top: 40px;
   }
 
   /* minmax(0, 1fr) lets the column shrink below its content's width */

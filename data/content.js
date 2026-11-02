@@ -283,7 +283,7 @@ export const businessSkills = [
   },
 ];
 
-// Hobbies (one tab each).
+// Hobbies: one long entry (a category with one entry shows no tabs).
 // - `slideshow` shows a set of pictures in the picture slot instead of a single `image`
 // - `link` adds a button under the text
 // - `galleries` are picture sections under the text, each with an optional
@@ -293,31 +293,29 @@ export const businessSkills = [
 //   from 0% (top) to 100% (bottom). Only add photos that are ready.
 export const hobbies = [
   {
-    tab: "Drawing",
-    heading: "My biggest passion is drawing",
+    tab: "Hobbies",
+    heading: "A bit about me",
+    // Drawing comes first, as it's my biggest passion
     intro:
-      "I’ve loved drawing for as long as I can remember, and I find inspiration in everything from Studio Ghibli and Spider-Verse to the Star Wars universe, and pretty much anything in between!",
-    detail:
+      "My biggest passion is drawing. I’ve loved it for as long as I can remember, and I find inspiration in everything from Studio Ghibli and Spider-Verse to the Star Wars universe, and pretty much anything in between!",
+    // Several paragraphs, shown one after the other
+    detail: [
       "I also collect art books and Pokémon cards, which inspire me to try out different kinds of art. I share some of my drawings on Instagram, so feel free to take a look if you’re curious!",
+      "When I’m not drawing or developing, you’ll probably find me in the kitchen, out on a long walk, or exploring new places when I travel. In winter I go skiing with my family, and I explore new restaurants whenever the monthly budget allows it.",
+      "And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
+    ],
     slideshow: [
       { src: "/images/drawings/drawing-cat.jpg", alt: "Pencil drawing of a sitting cat" },
       { src: "/images/drawings/drawing-house.jpg", alt: "Detailed pencil drawing of a timber-framed house" },
       { src: "/images/drawings/drawing-portrait.jpg", alt: "Digital sketch portrait of a woman with her hair blowing" },
     ],
     link: { href: "https://www.instagram.com/sofieevoi/", label: "See my drawings on Instagram ↗" },
-  },
-  {
-    tab: "Other hobbies",
-    heading: "Other hobbies",
     // Title above the tags (the skill tabs use "Specific skills")
-    tagsHeading: "Fun facts about me",
-    intro:
-      "When I’m not developing or drawing, you’ll probably find me in the kitchen, out on a long walk, or adding yet another Pokémon card to my collection.",
-    detail:
-      "I love to travel and explore new places, I go skiing with my family in winter, and I explore new restaurants whenever the monthly budget allows it. And now that it’s getting colder, I’m back to binge-watching Game of Thrones, Harry Potter, and unfortunately... the Twilight saga too. 🧛‍♂️",
+    tagsHeading: "Personality & fun facts",
     tags: [
-      "Loves dogs",
+      "Drawing skills",
       "Creative",
+      "Loves dogs",
       "Does not like coffee",
       "Popcorn eater",
       "Pokémon card collector",

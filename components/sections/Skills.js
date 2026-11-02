@@ -52,8 +52,10 @@ export default function Skills() {
   const [group, setGroup] = useState(0);
   const [active, setActive] = useState(0);
   const tabsRef = useRef(null);
+  const panelRef = useRef(null);
   const skills = skillGroups[group].skills;
-  const skill = skills[active];
+  // Falls back to the first entry if the selected one no longer exists
+  const skill = skills[active] || skills[0];
   // Only tabs marked `picture` (or with their own pictures) get a picture box.
   // The other tabs show their tags next to the text instead, with no line.
   const hasPicture = Boolean(skill.picture || skill.image || skill.slideshow);
@@ -79,7 +81,9 @@ export default function Skills() {
     // Scroll so the tabs sit 40% down the screen: the tabs and the start of
     // the panel are in view, and the category options stay in reach above them
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const tabsTop = tabsRef.current.getBoundingClientRect().top + window.scrollY;
+    // Without tabs (a category with one entry) the panel is the scroll target
+    const target = tabsRef.current || panelRef.current;
+    const tabsTop = target.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({ top: tabsTop - window.innerHeight * 0.4, behavior: reduceMotion ? "auto" : "smooth" });
   }
 
@@ -114,29 +118,42 @@ export default function Skills() {
         </div>
       </div>
 
-      <div ref={tabsRef} className={styles.tabs} role="tablist" aria-label="Skill categories">
-        {skills.map((item, index) => (
-          <button
-            key={item.tab}
-            type="button"
-            role="tab"
-            id={`skill-tab-${index}`}
-            aria-selected={index === active}
-            aria-controls="skill-panel"
-            className={`${styles.tab} ${index === active ? styles.activeTab : ""}`}
-            onClick={() => setActive(index)}
-          >
-            {item.featured && <Badge />}
-            {item.tab}
-          </button>
-        ))}
-      </div>
+      {/* A category with only one entry shows no tabs */}
+      {skills.length > 1 && (
+        <div ref={tabsRef} className={styles.tabs} role="tablist" aria-label="Skill categories">
+          {skills.map((item, index) => (
+            <button
+              key={item.tab}
+              type="button"
+              role="tab"
+              id={`skill-tab-${index}`}
+              aria-selected={index === active}
+              aria-controls="skill-panel"
+              className={`${styles.tab} ${index === active ? styles.activeTab : ""}`}
+              onClick={() => setActive(index)}
+            >
+              {item.featured && <Badge />}
+              {item.tab}
+            </button>
+          ))}
+        </div>
+      )}
 
-      <div className={`${styles.panel} ${layout} ${skill.wideTags ? styles.wideTags : ""}`} role="tabpanel" id="skill-panel" aria-labelledby={`skill-tab-${active}`}>
+      <div
+        ref={panelRef}
+        className={`${styles.panel} ${layout} ${skill.wideTags ? styles.wideTags : ""} ${skills.length > 1 ? "" : styles.noTabs}`}
+        role={skills.length > 1 ? "tabpanel" : undefined}
+        id="skill-panel"
+        aria-labelledby={skills.length > 1 ? `skill-tab-${active}` : undefined}
+      >
         <div className={styles.text}>
           <h3 className={styles.heading}>{skill.heading}</h3>
           {skill.intro && <p className={styles.intro}>{skill.intro}</p>}
-          {skill.detail && <p className={styles.detail}>{skill.detail}</p>}
+          {[].concat(skill.detail || []).map((paragraph) => (
+            <p key={paragraph} className={styles.detail}>
+              {paragraph}
+            </p>
+          ))}
           {skill.link && (
             <Button href={skill.link.href} variant="outline" target="_blank" rel="noopener noreferrer">
               {skill.link.label}
