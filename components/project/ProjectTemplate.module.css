@@ -36,9 +36,16 @@
   color: var(--color-ink);
 }
 
-/* The summary, then all the facts in one row below it */
+/* The summary, then all the facts in one row below it, and a thin line that
+   separates this top part from the Intro */
 .overview {
   margin-top: 24px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.overview + .section {
+  margin-top: 72px;
 }
 
 .summary {
@@ -48,14 +55,11 @@
   color: var(--color-muted);
 }
 
-/* A thin line between the summary and the facts */
 .facts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
   margin: 48px 0 0;
-  padding-top: 40px;
-  border-top: 1px solid var(--color-line);
 }
 
 .factColumn {
