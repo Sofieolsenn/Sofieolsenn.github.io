@@ -174,7 +174,12 @@
   margin-top: 28px;
 }
 
-/* Tabs without a picture: the tags sit next to the text, without a line */
+/* Tabs without a picture: the tags sit next to the text, without a line.
+   The text column is narrower so the tags get more room. */
+.side {
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+}
+
 .side .tagArea {
   grid-column: auto;
   padding-top: 0;
