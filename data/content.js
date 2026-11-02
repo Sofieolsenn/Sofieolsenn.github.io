@@ -204,7 +204,6 @@ export const skills = [
       "Wireframing",
       "Low & High-Fidelity Prototyping",
       "Interactive Prototypes",
-      "Usability Testing",
       "A/B Testing",
       "Guerrilla Testing",
       "Think-Aloud Testing",
@@ -212,8 +211,6 @@ export const skills = [
       "Sitemaps",
       "Style Guides",
       "Design Systems",
-      "Visual Design",
-      "User-Centered Design",
     ],
   },
   {
