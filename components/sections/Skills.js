@@ -183,6 +183,20 @@ export default function Skills() {
           </div>
         )}
 
+        {/* More groups of tags, each with its own title, right below the first */}
+        {skill.moreTags?.map((group) => (
+          <div key={group.heading} className={`${styles.tagArea} ${styles.moreTags}`}>
+            <p className={styles.tagsTitle}>{group.heading}</p>
+            <ul className={styles.tags}>
+              {group.tags.map((tag) => (
+                <li key={tag}>
+                  <Tag size="md">{tag}</Tag>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
         {skill.galleries?.map((gallery, galleryIndex) => (
           <div key={galleryIndex} className={styles.gallery}>
             {(gallery.heading || gallery.text) && (

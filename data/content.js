@@ -320,6 +320,23 @@ export const hobbies = [
       "Food & cooking",
       "Travel & exploring",
     ],
+    // More tag groups below the first, each with its own title
+    moreTags: [
+      {
+        heading: "Current favorite movies & series",
+        tags: [
+          "Harry Potter",
+          "Game of Thrones (seasons 1–6)",
+          "Star Wars (especially the prequels)",
+          "Spider-Verse (still waiting for the third movie)",
+          "Marvel (especially Spider-Man & Iron Man)",
+          "Arcane",
+          "Blue Eye Samurai",
+          "Puss in Boots: The Last Wish (love the animation style)",
+          "Twilight (a rainy-day guilty pleasure)",
+        ],
+      },
+    ],
     galleries: [
       {
         heading: "Photo library",
