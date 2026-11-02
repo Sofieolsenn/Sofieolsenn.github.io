@@ -40,7 +40,7 @@ const imageSlot = (size = 1, caption = "") => ({ src: "", alt: "", size, caption
 // Replace them per project (copy this block into the project and edit it).
 //
 // Images are placed in rows: { height, images }. `height` is the row height as
-// a percentage of the row width (e.g. 56 = a wide 16:9 image), and each image
+// a percentage of the row width (e.g. 64 = a bit taller than 16:9), and each image
 // is { src, alt, size, caption }. Use at most two images per row so they stay
 // big. On phones the images stack.
 const caseStudyPlaceholder = {
@@ -53,7 +53,7 @@ const caseStudyPlaceholder = {
   timeline: "2025",
   client: "Placeholder",
   // Two large images under the facts
-  gallery: [{ height: 40, images: [imageSlot(), imageSlot()] }],
+  gallery: [{ height: 44, images: [imageSlot(), imageSlot()] }],
   introduction: {
     // Short headed blocks before the main text
     blocks: [
@@ -64,7 +64,7 @@ const caseStudyPlaceholder = {
     paragraphs: [
       "Placeholder: Set the scene. Who was the work for? What was the project? What was the problem? What was your involvement?",
     ],
-    rows: [{ height: 56, images: [imageSlot(1, "Image description")] }],
+    rows: [{ height: 64, images: [imageSlot(1, "Image description")] }],
   },
   process: {
     paragraphs: [
@@ -73,8 +73,8 @@ const caseStudyPlaceholder = {
       "Placeholder: Did anything not go as planned? Mention a challenge or a decision that changed the direction of the project, and how you and the team handled it.",
     ],
     rows: [
-      { height: 56, images: [imageSlot()] },
-      { height: 40, images: [imageSlot(1, "Image description"), imageSlot(1, "Image description")] },
+      { height: 64, images: [imageSlot()] },
+      { height: 44, images: [imageSlot(1, "Image description"), imageSlot(1, "Image description")] },
     ],
   },
   outcome: {
@@ -84,9 +84,9 @@ const caseStudyPlaceholder = {
       "Placeholder: What did you learn, and what are the next steps? Reflect on what you would do differently, and what could be improved or added next.",
     ],
     rows: [
-      { height: 56, images: [imageSlot()] },
-      { height: 40, images: [imageSlot(), imageSlot()] },
-      { height: 56, images: [imageSlot()] },
+      { height: 64, images: [imageSlot()] },
+      { height: 44, images: [imageSlot(), imageSlot()] },
+      { height: 64, images: [imageSlot()] },
     ],
   },
 };
