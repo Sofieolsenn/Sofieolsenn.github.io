@@ -4,17 +4,17 @@ import Tag from "@/components/ui/Tag";
 import { withBasePath } from "@/lib/paths";
 import styles from "./ProjectTemplate.module.css";
 
-// Reusable case study layout, inspired by classic portfolio case studies:
-// a big headline and cover image, an overview of facts, then Introduction,
-// Process and Outcome, and a link to the next project.
+// Reusable case study layout, kept simple: a big title, a short summary next
+// to the project facts, a large cover, then Introduction, Process and Outcome,
+// and a link to the next project.
 export default function ProjectTemplate({ project, nextProject }) {
-  const { title, kind, headline, summary, cover, client, role, timeline, team = [], tags = [] } = project;
+  const { title, summary, cover, client, role, timeline, team = [], tags = [] } = project;
 
   const facts = [
     { label: "Client", value: client },
-    { label: "My role", value: role },
-    { label: "Timeline", value: timeline },
+    { label: "Role", value: role },
     { label: "Team", value: team.length > 0 && team.join("\n") },
+    { label: "Date", value: timeline },
   ].filter((fact) => fact.value);
 
   return (
@@ -23,41 +23,38 @@ export default function ProjectTemplate({ project, nextProject }) {
         ← All projects
       </Link>
 
-      <header className={styles.hero}>
-        <p className={styles.eyebrow}>
-          {title}
-          {kind && <span> · {kind}</span>}
-        </p>
-        <h1 className={styles.headline}>{headline || title}</h1>
+      <h1 className={styles.title}>{title}</h1>
+
+      <div className={styles.intro}>
         {summary && <p className={styles.summary}>{summary}</p>}
-      </header>
+
+        <dl className={styles.facts}>
+          {facts.map((fact) => (
+            <div key={fact.label} className={styles.fact}>
+              <dt>{fact.label}</dt>
+              <dd>{fact.value}</dd>
+            </div>
+          ))}
+          {tags.length > 0 && (
+            <div className={styles.fact}>
+              <dt>Tools</dt>
+              <dd>
+                <ul className={styles.tags}>
+                  {tags.map((tag) => (
+                    <li key={tag}>
+                      <Tag>{tag}</Tag>
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+          )}
+        </dl>
+      </div>
 
       <div className={styles.cover}>
         {cover && <Image src={withBasePath(cover.src)} alt={cover.alt} fill sizes="(max-width: 900px) 100vw, 950px" priority />}
       </div>
-
-      <dl className={styles.facts}>
-        {facts.map((fact) => (
-          <div key={fact.label}>
-            <dt>{fact.label}</dt>
-            <dd>{fact.value}</dd>
-          </div>
-        ))}
-        {tags.length > 0 && (
-          <div className={styles.tools}>
-            <dt>Tools</dt>
-            <dd>
-              <ul className={styles.tags}>
-                {tags.map((tag) => (
-                  <li key={tag}>
-                    <Tag>{tag}</Tag>
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </div>
-        )}
-      </dl>
 
       <Section heading="Introduction" content={project.introduction} />
       <Section heading="Process" content={project.process} />
@@ -73,7 +70,7 @@ export default function ProjectTemplate({ project, nextProject }) {
   );
 }
 
-// One case study section: heading on the left, text, steps and images on the right
+// One case study section: heading on the left, text on the right, images below
 function Section({ heading, content }) {
   if (!content) return null;
   const { paragraphs = [], steps = [], images = [], imageColumns = 1 } = content;
