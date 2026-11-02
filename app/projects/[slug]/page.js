@@ -43,7 +43,7 @@ export default async function ProjectPage({ params }) {
       <main>
         <ProjectTemplate project={project} previousProject={previousProject} nextProject={nextProject} />
       </main>
-      <Footer />
+      <Footer compact />
     </>
   );
 }

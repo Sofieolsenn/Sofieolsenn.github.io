@@ -2,19 +2,16 @@
    with the same colours, fonts and radii as the front page */
 .project {
   --wide: min(1200px, 100vw - 2 * var(--gutter));
-  padding-block: 120px 96px;
+  padding-block: 104px 64px;
 }
 
-/* Images are wider than the text column, centred on the page */
-.cover,
-.rows {
-  width: var(--wide);
-  margin-inline: calc((100% - var(--wide)) / 2);
-}
-
+/* Only the cover is wider than the content, and it stays low enough for the
+   headline below it to be visible on the first screen */
 .cover {
   position: relative;
-  aspect-ratio: 16 / 9;
+  width: var(--wide);
+  height: min(48vh, var(--wide) * 9 / 16);
+  margin-inline: calc((100% - var(--wide)) / 2);
   overflow: hidden;
   border-radius: var(--radius-card);
   background: var(--color-surface);
@@ -26,7 +23,7 @@
 
 .headline {
   max-width: 900px;
-  margin-top: 72px;
+  margin-top: 48px;
   font-family: var(--font-display);
   font-size: var(--fs-hero);
   font-weight: 400;
@@ -35,15 +32,13 @@
   color: var(--color-ink);
 }
 
-/* Summary on the left, the facts in two columns on the right */
+/* The summary, then all the facts in one row below it */
 .overview {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 40px 64px;
-  margin-top: 40px;
+  margin-top: 24px;
 }
 
 .summary {
+  max-width: 640px;
   font-size: var(--fs-lead);
   line-height: 1.5;
   color: var(--color-body);
@@ -51,9 +46,9 @@
 
 .facts {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px 32px;
-  margin: 0;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 24px;
+  margin: 40px 0 0;
 }
 
 .facts dt {
@@ -156,25 +151,26 @@
   color: var(--color-body);
 }
 
-/* Back to top in the middle, previous and next project below on each side */
+/* Previous project, back to top and next project on one line */
 .pager {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 16px;
-  margin-top: 96px;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  margin-top: 72px;
 }
 
-.pager > a {
+.pager > .previous {
+  grid-column: 1;
   justify-self: start;
 }
 
 .pager > .toTop {
-  grid-column: 1 / -1;
-  justify-self: center;
+  grid-column: 2;
 }
 
 .pager > .next {
-  grid-column: 2;
+  grid-column: 3;
   justify-self: end;
 }
 
@@ -187,9 +183,12 @@
     margin-top: 48px;
   }
 
-  .overview,
   .sectionText {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .section {
@@ -210,13 +209,31 @@
     aspect-ratio: 4 / 3;
   }
 
-  /* Previous and next project on their own rows */
+  /* Previous and next side by side, back to top centred below */
   .pager {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 12px;
+    margin-top: 56px;
+  }
+
+  .pager > .toTop {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
   }
 
   .pager > .next {
-    grid-column: 1;
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Shorter labels so both buttons fit on narrow phones */
+  .pager .longLabel {
+    display: none;
   }
 }

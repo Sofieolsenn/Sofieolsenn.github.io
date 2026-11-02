@@ -11,6 +11,10 @@
   color: var(--color-heading);
 }
 
+.compact {
+  margin-top: 0;
+}
+
 .footer strong {
   font-weight: 700;
 }

@@ -68,7 +68,9 @@ const caseStudyPlaceholder = {
   },
   process: {
     paragraphs: [
-      "Placeholder: How did you approach the problem? How did you work, and who did you work with? What were the stages of your process? Did anything not go as planned?",
+      "Placeholder: How did you approach the problem? Describe where you started, for example with research, user interviews, workshops or by looking at what already existed, and what you learned from it.",
+      "Placeholder: How did you work, and who did you work with? Explain the stages of your process, such as sketching, wireframes, prototypes, design in Figma and building it, and which tools and methods you used along the way.",
+      "Placeholder: Did anything not go as planned? Mention a challenge or a decision that changed the direction of the project, and how you and the team handled it.",
     ],
     rows: [
       { height: 56, images: [imageSlot()] },
@@ -77,7 +79,9 @@ const caseStudyPlaceholder = {
   },
   outcome: {
     paragraphs: [
-      "Placeholder: What was the impact of your work? What did you learn? What are the next steps?",
+      "Placeholder: What was the final result? Describe what was delivered and how it solves the problem from the introduction.",
+      "Placeholder: What was the impact of your work? Share feedback from the client or users, numbers if you have them, or what changed for the people using it.",
+      "Placeholder: What did you learn, and what are the next steps? Reflect on what you would do differently, and what could be improved or added next.",
     ],
     rows: [
       { height: 56, images: [imageSlot()] },

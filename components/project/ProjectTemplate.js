@@ -48,19 +48,23 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
       <Section heading="Outcome" content={project.outcome} />
 
       <nav className={styles.pager} aria-label="Projects">
+        {previousProject && (
+          <Button href={withBasePath(`/projects/${previousProject.slug}/`)} variant="outline" className={styles.previous}>
+            <ArrowIcon direction="left" />
+            <span>
+              Previous<span className={styles.longLabel}> project</span>
+            </span>
+          </Button>
+        )}
         <Button href="#top" variant="outline" className={styles.toTop}>
           <ArrowIcon direction="up" />
           Back to top
         </Button>
-        {previousProject && (
-          <Button href={withBasePath(`/projects/${previousProject.slug}/`)} variant="outline">
-            <ArrowIcon direction="left" />
-            Previous project
-          </Button>
-        )}
         {nextProject && (
           <Button href={withBasePath(`/projects/${nextProject.slug}/`)} className={styles.next}>
-            Next project
+            <span>
+              Next<span className={styles.longLabel}> project</span>
+            </span>
             <ArrowIcon direction="right" />
           </Button>
         )}

@@ -2,7 +2,9 @@ import { site } from "@/data/content";
 import { withBasePath } from "@/lib/paths";
 import styles from "./Footer.module.css";
 
-export default function Footer() {
+// `compact` drops the large space above the footer, for pages that already
+// end with their own spacing (like the project pages)
+export default function Footer({ compact = false }) {
   const links = [
     { label: site.email, href: site.email && `mailto:${site.email}` },
     { label: "LinkedIn", href: site.linkedin },
@@ -11,7 +13,7 @@ export default function Footer() {
   ].filter((link) => link.href);
 
   return (
-    <footer className={`container ${styles.footer}`}>
+    <footer className={`container ${styles.footer} ${compact ? styles.compact : ""}`}>
       <p>
         <strong>{site.name}</strong> / {new Date().getFullYear()}
       </p>
