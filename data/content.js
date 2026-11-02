@@ -56,13 +56,12 @@ const caseStudyPlaceholder = {
   // Two large images under the facts
   gallery: [{ height: 44, images: [imageSlot(), imageSlot()] }],
   introduction: {
-    // Short headed blocks before the main text
+    // Short headed blocks under each other, next to the "Intro" heading
+    stackBlocks: true,
     blocks: [
       { heading: "Client introduction", text: "Placeholder: a short description of the client and why they reached out." },
-      { heading: "The problem", text: "Placeholder: a short description of the problem they needed solved." },
-    ],
-    paragraphs: [
-      "Placeholder: Set the scene. Who was the work for? What was the project? What was the problem? What was your involvement?",
+      { heading: "The problem", text: "Placeholder: a short description of the problem they needed to have solved." },
+      { heading: "The purpose", text: "Placeholder: a short description of the purpose of the project and what it should achieve." },
     ],
     rows: [{ height: 64, images: [imageSlot()] }],
   },
@@ -113,7 +112,8 @@ const caseStudyPlaceholder = {
 // - primaryRole, secondaryRole, tags (Tools), team, timeline, client: the facts
 // - gallery: image rows under the facts
 // - introduction, process, outcome, reflections: { blocks, paragraphs, rows }, where blocks
-//   are short { heading, text } parts and rows are image rows (see above)
+//   are short { heading, text } parts and rows are image rows (see above).
+//   `stackBlocks: true` shows the blocks under each other next to the heading.
 export const projects = [
   {
     slug: "hack-your-job",

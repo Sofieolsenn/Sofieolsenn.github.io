@@ -151,6 +151,20 @@
   margin-top: 48px;
 }
 
+/* Blocks under each other next to the heading, with larger headings */
+.stackedBlocks {
+  display: grid;
+  gap: 40px;
+}
+
+.stackedBlocks .block h3 {
+  font-size: var(--fs-title-sm);
+}
+
+.stackedBlocks .block p {
+  font-size: var(--fs-lead);
+}
+
 .block h3 {
   font-family: var(--font-display);
   font-size: var(--fs-lead);

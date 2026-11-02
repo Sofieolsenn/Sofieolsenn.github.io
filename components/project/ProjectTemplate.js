@@ -95,7 +95,14 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
 // side by side below, then wide image rows
 function Section({ heading, content }) {
   if (!content) return null;
-  const { blocks = [], paragraphs = [], rows = [] } = content;
+  const { blocks = [], paragraphs = [], rows = [], stackBlocks = false } = content;
+
+  const blockList = blocks.map((block) => (
+    <div key={block.heading} className={styles.block}>
+      <h3>{block.heading}</h3>
+      <p>{block.text}</p>
+    </div>
+  ));
 
   return (
     <section className={styles.section}>
@@ -105,19 +112,12 @@ function Section({ heading, content }) {
           {paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
+          {/* `stackBlocks` puts the blocks under each other next to the heading */}
+          {stackBlocks && <div className={styles.stackedBlocks}>{blockList}</div>}
         </div>
       </div>
 
-      {blocks.length > 0 && (
-        <div className={styles.blocks}>
-          {blocks.map((block) => (
-            <div key={block.heading} className={styles.block}>
-              <h3>{block.heading}</h3>
-              <p>{block.text}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      {!stackBlocks && blocks.length > 0 && <div className={styles.blocks}>{blockList}</div>}
 
       <ImageRows rows={rows} />
     </section>
