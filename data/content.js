@@ -38,7 +38,8 @@ const imageSlot = (caption) => ({ src: "", alt: "", caption: `Placeholder: ${cap
 // The texts are the questions to answer, so it's clear what goes where.
 // Replace them per project (copy this block into the project and edit it).
 const caseStudyPlaceholder = {
-  summary: "Placeholder: a short intro to the project. What is it, who was it for, and what does it do? Two or three sentences.",
+  headline: "Placeholder: one sentence that sums up what the project is.",
+  summary: "Placeholder: who it was for and what it does, in one or two lines.",
   client: "Placeholder",
   role: "Placeholder: your role",
   timeline: "Placeholder: e.g. March – June 2025",
@@ -77,8 +78,8 @@ const caseStudyPlaceholder = {
 
 // Each project gets its own case study page at /projects/<slug>/, built from
 // the ProjectTemplate component. Fields:
-// - summary: the short intro next to the facts at the top (the title is big)
-// - client, role, team, timeline (shown as Date), tags (Tools): the facts
+// - headline, summary: the big sentence and short intro at the top
+// - client, role, timeline, team, tags: the overview facts
 // - cover: { src, alt } the large image at the top (grey box until added)
 // - introduction, process, outcome: { paragraphs, images, imageColumns }, and
 //   process can have `steps` ({ heading, text }) for the stages of the work.
