@@ -316,7 +316,6 @@ export const hobbies = [
       "Drawing & illustration",
       "Design & creative projects",
       "Art books & collecting",
-      "Pokémon cards",
       "Food & cooking",
       "Travel & exploring",
     ],
