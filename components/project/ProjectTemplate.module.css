@@ -1,52 +1,12 @@
-/* Case study layout. Simple first version, still to be designed in detail */
+/* Case study page, based on the "Slide 16:9 - 16" frame in Figma and using
+   the same colours, fonts and radii as the front page */
 .project {
-  padding-block: 132px 96px;
-}
-
-.back {
-  color: var(--color-muted);
-  font-size: var(--fs-field);
-}
-
-.back:hover {
-  color: var(--color-ink);
-}
-
-/* Big headline and short summary, like the reference case studies */
-.hero {
-  margin-top: 48px;
-}
-
-.eyebrow {
-  color: var(--color-label);
-  font-size: var(--fs-label);
-  letter-spacing: var(--ls-label);
-  text-transform: uppercase;
-}
-
-.headline {
-  max-width: 860px;
-  margin-top: 16px;
-  font-family: var(--font-display);
-  font-size: var(--fs-hero);
-  font-weight: 400;
-  letter-spacing: var(--ls-hero);
-  line-height: 1.08;
-  color: var(--color-ink);
-}
-
-.summary {
-  max-width: 620px;
-  margin-top: 24px;
-  font-size: var(--fs-lead);
-  line-height: 1.5;
-  color: var(--color-body);
+  padding-block: 120px 96px;
 }
 
 .cover {
   position: relative;
-  aspect-ratio: 16 / 9;
-  margin-top: 56px;
+  aspect-ratio: 1236 / 597;
   overflow: hidden;
   border-radius: var(--radius-card);
   background: var(--color-surface);
@@ -56,112 +16,68 @@
   object-fit: cover;
 }
 
-/* Overview facts in a row: client, role, timeline, team, tools */
-.facts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 32px 40px;
-  margin: 48px 0 0;
-  padding-bottom: 48px;
-  border-bottom: 1px solid var(--color-line);
-}
-
-.facts dt {
-  color: var(--color-muted);
-  font-size: var(--fs-field);
-}
-
-.facts dd {
-  margin: 8px 0 0;
-  font-size: var(--fs-skill);
-  line-height: 1.5;
-  white-space: pre-line;
+.headline {
+  max-width: 1024px;
+  margin-top: 72px;
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: 400;
+  letter-spacing: var(--ls-hero);
+  line-height: 1.1;
   color: var(--color-ink);
 }
 
-.tools {
-  grid-column: span 2;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-/* Introduction, Process and Outcome: heading on the left, text on the right */
-.section {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-  gap: 24px 56px;
-  padding-block: 64px;
-  border-bottom: 1px solid var(--color-line);
-}
-
-.sectionHeading {
-  font-family: var(--font-display);
-  font-size: var(--fs-title-sm);
-  font-weight: 400;
-  letter-spacing: var(--ls-title);
-  color: var(--color-heading);
-}
-
-.sectionBody {
-  display: grid;
-  gap: 1.2em;
-  line-height: 1.6;
+.summary {
+  max-width: 595px;
+  margin-top: 24px;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
   color: var(--color-body);
 }
 
-.steps {
+/* Facts in a row: grey labels with the values (or a list of values) below */
+.facts {
   display: grid;
-  gap: 24px;
-  margin: 16px 0 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: step;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 32px 24px;
+  margin: 48px 0 0;
 }
 
-.steps li {
-  counter-increment: step;
-}
-
-.steps h3 {
-  font-size: var(--fs-skill);
-  font-weight: 500;
-  color: var(--color-ink);
-}
-
-.steps h3::before {
-  content: counter(step, decimal-leading-zero) "  ";
+.facts dt {
   color: var(--color-label);
+  font-size: var(--fs-skill);
+  line-height: 1.5;
 }
 
-.steps p {
-  margin-top: 6px;
+.facts dd {
+  margin: 6px 0 0;
+  font-size: var(--fs-skill);
+  line-height: 1.5;
+  color: var(--color-muted);
 }
 
-.images {
-  grid-column: 1 / -1;
+/* Image rows: images sit side by side, sized by their share of the row */
+.rows {
+  container-type: inline-size;
   display: grid;
-  gap: 24px;
-  margin-top: 16px;
+  gap: 32px;
+  margin-top: 64px;
 }
 
-/* Two images side by side (one column on small screens) */
-.twoColumns {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.row {
+  display: grid;
+  gap: 32px;
 }
 
-.images figure {
+.row figure {
   margin: 0;
 }
 
 .image {
   position: relative;
-  aspect-ratio: 16 / 10;
+  height: calc(var(--row-height) * 1cqw);
   overflow: hidden;
-  border-radius: var(--radius-panel);
+  border-radius: var(--radius-card);
   background: var(--color-surface);
 }
 
@@ -169,51 +85,119 @@
   object-fit: cover;
 }
 
-.images figcaption {
-  margin-top: 10px;
-  font-size: var(--fs-field);
-  color: var(--color-muted);
-}
-
-/* Link to the next case study */
-.next {
-  display: grid;
-  gap: 8px;
-  margin-top: 64px;
-}
-
-.nextLabel {
-  color: var(--color-muted);
-  font-size: var(--fs-field);
-}
-
-.nextTitle {
-  font-family: var(--font-display);
-  font-size: var(--fs-heading);
-  letter-spacing: var(--ls-heading);
+.row figcaption {
+  margin-top: 12px;
+  font-size: var(--fs-skill);
   color: var(--color-ink);
-  transition: transform 0.2s;
 }
 
-.next:hover .nextTitle {
-  transform: translateX(6px);
+/* Intro, Process and Outcome: big heading left, text from a third across */
+.section {
+  margin-top: 120px;
+}
+
+.sectionText {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 24px 48px;
+}
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: 400;
+  letter-spacing: var(--ls-hero);
+  line-height: 1.1;
+  color: var(--color-ink);
+}
+
+.sectionBody {
+  display: grid;
+  gap: 32px;
+}
+
+.block {
+  max-width: 475px;
+}
+
+.block h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-title-sm);
+  font-weight: 400;
+  letter-spacing: var(--ls-title);
+  line-height: 1.1;
+  color: var(--color-ink);
+}
+
+.block p {
+  margin-top: 8px;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+.paragraph {
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+/* Back to top in the middle, previous and next project below on each side */
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 16px;
+  margin-top: 96px;
+}
+
+.pager > a {
+  justify-self: start;
+}
+
+.pager > .toTop {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.pager > .next {
+  grid-column: 2;
+  justify-self: end;
 }
 
 @media (max-width: 900px) {
   .project {
-    padding-top: 104px;
+    padding-top: 100px;
   }
 
-  .tools {
-    grid-column: 1 / -1;
+  .headline {
+    margin-top: 48px;
   }
 
   .section {
-    grid-template-columns: minmax(0, 1fr);
-    padding-block: 48px;
+    margin-top: 80px;
   }
 
-  .twoColumns {
+  .sectionText {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Previous and next project on their own rows on small screens */
+  .pager {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .pager > .next {
+    grid-column: 1;
+  }
+
+  /* Images stack on small screens, each with the same landscape shape */
+  .row {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .image {
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
 }

@@ -31,59 +31,73 @@ export const hero = {
   text: "I’m a developer with full-stack experience. I develop and design meaningful digital products.",
 };
 
-// An empty image slot: shows as a grey box until `src` is filled in
-const imageSlot = (caption) => ({ src: "", alt: "", caption: `Placeholder: ${caption}` });
+// An empty image slot: a grey box until `src` is filled in. `size` sets how
+// wide it is compared to the other images in the same row.
+const imageSlot = (size = 1, caption = "") => ({ src: "", alt: "", size, caption });
 
 // Case study content shared by all projects until each gets its own texts.
 // The texts are the questions to answer, so it's clear what goes where.
 // Replace them per project (copy this block into the project and edit it).
+//
+// Images are placed in rows: { height, images }. `height` is the row height as
+// a percentage of the page width (e.g. 32 = about a third as tall as wide), and
+// each image is { src, alt, size, caption }. On phones the images stack.
 const caseStudyPlaceholder = {
   headline: "Placeholder: one sentence that sums up what the project is.",
   summary: "Placeholder: who it was for and what it does, in one or two lines.",
-  client: "Placeholder",
-  role: "Placeholder: your role",
-  timeline: "Placeholder: e.g. March – June 2025",
-  team: ["Placeholder: e.g. 1 × designer", "Placeholder: e.g. 2 × developers"],
   // cover: { src: "/images/projects/your-image.jpg", alt: "…" },
+  primaryRole: "Placeholder",
+  secondaryRole: "Placeholder",
+  team: ["Placeholder", "Placeholder", "Placeholder"],
+  timeline: "2025",
+  client: "Placeholder",
+  // Three images under the facts, the middle one wider
+  gallery: [{ height: 28, images: [imageSlot(2), imageSlot(3), imageSlot(2)] }],
   introduction: {
+    // Short headed blocks before the main text
+    blocks: [
+      { heading: "Client introduction", text: "Placeholder: a short description of the client and why they reached out." },
+      { heading: "The problem", text: "Placeholder: a short description of the problem they needed solved." },
+      { heading: "My role", text: "Placeholder: a short description of your role in the process." },
+    ],
     paragraphs: [
       "Placeholder: Set the scene. Who was the work for? What was the project? What was the problem? What was your involvement?",
     ],
-    images: [imageSlot("the finished product, or the problem you started with")],
+    rows: [
+      {
+        height: 32,
+        images: [imageSlot(1, "Image description"), imageSlot(2.5, "Image description"), imageSlot(1, "Image description")],
+      },
+    ],
   },
   process: {
     paragraphs: [
-      "Placeholder: How did you approach the problem? How did you work, and who did you work with? Did anything not go as planned?",
+      "Placeholder: How did you approach the problem? How did you work, and who did you work with? What were the stages of your process? Did anything not go as planned?",
     ],
-    // The stages of your process, each with a short heading and text
-    steps: [
-      { heading: "Placeholder: Research", text: "Placeholder: what you did in this stage." },
-      { heading: "Placeholder: Design", text: "Placeholder: what you did in this stage." },
-      { heading: "Placeholder: Build", text: "Placeholder: what you did in this stage." },
+    rows: [
+      { height: 32, images: [imageSlot()] },
+      { height: 32, images: [imageSlot(), imageSlot()] },
     ],
-    images: [imageSlot("one image from the process, e.g. sketches, wireframes or the design in Figma")],
   },
   outcome: {
     paragraphs: [
       "Placeholder: What was the impact of your work? What did you learn? What are the next steps?",
     ],
-    // Several large images, one per row (`imageColumns: 2` would put them side by side)
-    images: [
-      imageSlot("the final result on desktop"),
-      imageSlot("the final result on mobile"),
-      imageSlot("a key screen or detail you're proud of"),
+    rows: [
+      { height: 48, images: [imageSlot()] },
+      { height: 48, images: [imageSlot()] },
     ],
   },
 };
 
 // Each project gets its own case study page at /projects/<slug>/, built from
 // the ProjectTemplate component. Fields:
-// - headline, summary: the big sentence and short intro at the top
-// - client, role, timeline, team, tags: the overview facts
 // - cover: { src, alt } the large image at the top (grey box until added)
-// - introduction, process, outcome: { paragraphs, images, imageColumns }, and
-//   process can have `steps` ({ heading, text }) for the stages of the work.
-//   Images are { src, alt, caption }; an empty `src` shows a grey box.
+// - headline, summary: the big sentence and short intro under the cover
+// - primaryRole, secondaryRole, tags (Tools), team, timeline, client: the facts
+// - gallery: image rows under the facts
+// - introduction, process, outcome: { blocks, paragraphs, rows }, where blocks
+//   are short { heading, text } parts and rows are image rows (see above)
 export const projects = [
   {
     slug: "hack-your-job",

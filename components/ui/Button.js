@@ -1,18 +1,19 @@
 import styles from "./Button.module.css";
 
-export default function Button({ href, variant = "primary", children, ...props }) {
-  const className = `${styles.button} ${styles[variant]}`;
+// An optional icon can go inside next to the text; `className` adds extra styles
+export default function Button({ href, variant = "primary", className = "", children, ...props }) {
+  const classes = `${styles.button} ${styles[variant]} ${className}`.trim();
 
   if (href) {
     return (
-      <a className={className} href={href} {...props}>
+      <a className={classes} href={href} {...props}>
         {children}
       </a>
     );
   }
 
   return (
-    <button className={className} {...props}>
+    <button className={classes} {...props}>
       {children}
     </button>
   );

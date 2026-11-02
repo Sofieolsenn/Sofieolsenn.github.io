@@ -32,14 +32,16 @@ export default async function ProjectPage({ params }) {
   const { slug } = await params;
   const project = findProject(slug);
   if (!project) notFound();
-  // The next project in the list, going back to the first after the last
-  const nextProject = projects[(projects.indexOf(project) + 1) % projects.length];
+  // The previous and next project in the list, wrapping around at the ends
+  const index = projects.indexOf(project);
+  const previousProject = projects[(index - 1 + projects.length) % projects.length];
+  const nextProject = projects[(index + 1) % projects.length];
 
   return (
     <>
       <Header onHome={false} />
       <main>
-        <ProjectTemplate project={project} nextProject={nextProject} />
+        <ProjectTemplate project={project} previousProject={previousProject} nextProject={nextProject} />
       </main>
       <Footer />
     </>

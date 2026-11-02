@@ -1,123 +1,143 @@
 import Image from "next/image";
-import Link from "next/link";
-import Tag from "@/components/ui/Tag";
+import Button from "@/components/ui/Button";
 import { withBasePath } from "@/lib/paths";
 import styles from "./ProjectTemplate.module.css";
 
-// Reusable case study layout, inspired by classic portfolio case studies:
-// a big headline and cover image, an overview of facts, then Introduction,
-// Process and Outcome, and a link to the next project.
-export default function ProjectTemplate({ project, nextProject }) {
-  const { title, kind, headline, summary, cover, client, role, timeline, team = [], tags = [] } = project;
+// Reusable case study layout, based on the "Slide 16:9 - 16" frame in Figma:
+// cover, headline and summary, a row of facts, an image row, then Intro,
+// Process and Outcome, and buttons to go back to the top or to another project.
+export default function ProjectTemplate({ project, previousProject, nextProject }) {
+  const { headline, title, summary, cover, primaryRole, secondaryRole, tags = [], team = [], timeline, client } = project;
 
   const facts = [
-    { label: "Client", value: client },
-    { label: "My role", value: role },
+    { label: "Primary Role", value: primaryRole },
+    { label: "Secondary Role", value: secondaryRole },
+    { label: "Tools", value: tags },
+    { label: "Team", value: team },
     { label: "Timeline", value: timeline },
-    { label: "Team", value: team.length > 0 && team.join("\n") },
-  ].filter((fact) => fact.value);
+    { label: "Client", value: client },
+  ].filter((fact) => (Array.isArray(fact.value) ? fact.value.length > 0 : fact.value));
 
   return (
-    <article className={`container ${styles.project}`}>
-      <Link className={styles.back} href="/#projects">
-        ← All projects
-      </Link>
-
-      <header className={styles.hero}>
-        <p className={styles.eyebrow}>
-          {title}
-          {kind && <span> · {kind}</span>}
-        </p>
-        <h1 className={styles.headline}>{headline || title}</h1>
-        {summary && <p className={styles.summary}>{summary}</p>}
-      </header>
-
+    <article className={`container ${styles.project}`} id="top">
       <div className={styles.cover}>
         {cover && <Image src={withBasePath(cover.src)} alt={cover.alt} fill sizes="(max-width: 900px) 100vw, 950px" priority />}
       </div>
+
+      <h1 className={styles.headline}>{headline || title}</h1>
+      {summary && <p className={styles.summary}>{summary}</p>}
 
       <dl className={styles.facts}>
         {facts.map((fact) => (
           <div key={fact.label}>
             <dt>{fact.label}</dt>
-            <dd>{fact.value}</dd>
+            {[].concat(fact.value).map((value, index) => (
+              <dd key={index}>{value}</dd>
+            ))}
           </div>
         ))}
-        {tags.length > 0 && (
-          <div className={styles.tools}>
-            <dt>Tools</dt>
-            <dd>
-              <ul className={styles.tags}>
-                {tags.map((tag) => (
-                  <li key={tag}>
-                    <Tag>{tag}</Tag>
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </div>
-        )}
       </dl>
 
-      <Section heading="Introduction" content={project.introduction} />
+      <ImageRows rows={project.gallery} />
+
+      <Section heading="Intro" content={project.introduction} />
       <Section heading="Process" content={project.process} />
       <Section heading="Outcome" content={project.outcome} />
 
-      {nextProject && (
-        <Link className={styles.next} href={`/projects/${nextProject.slug}/`}>
-          <span className={styles.nextLabel}>Next project</span>
-          <span className={styles.nextTitle}>{nextProject.title} →</span>
-        </Link>
-      )}
+      <nav className={styles.pager} aria-label="Projects">
+        <Button href="#top" variant="outline" className={styles.toTop}>
+          <ArrowIcon direction="up" />
+          Back to top
+        </Button>
+        {previousProject && (
+          <Button href={withBasePath(`/projects/${previousProject.slug}/`)} variant="outline">
+            <ArrowIcon direction="left" />
+            Previous project
+          </Button>
+        )}
+        {nextProject && (
+          <Button href={withBasePath(`/projects/${nextProject.slug}/`)} className={styles.next}>
+            Next project
+            <ArrowIcon direction="right" />
+          </Button>
+        )}
+      </nav>
     </article>
   );
 }
 
-// One case study section: heading on the left, text, steps and images on the right
+// A case study part: a big heading on the left, short blocks and text on the
+// right, and image rows across the full width
 function Section({ heading, content }) {
   if (!content) return null;
-  const { paragraphs = [], steps = [], images = [], imageColumns = 1 } = content;
+  const { blocks = [], paragraphs = [], rows = [] } = content;
 
   return (
     <section className={styles.section}>
-      <h2 className={styles.sectionHeading}>{heading}</h2>
-      <div className={styles.sectionBody}>
-        {paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-
-        {steps.length > 0 && (
-          <ol className={styles.steps}>
-            {steps.map((step, index) => (
-              <li key={index}>
-                <h3>{step.heading}</h3>
-                <p>{step.text}</p>
-              </li>
-            ))}
-          </ol>
-        )}
+      <div className={styles.sectionText}>
+        <h2 className={styles.sectionHeading}>{heading}</h2>
+        <div className={styles.sectionBody}>
+          {blocks.map((block) => (
+            <div key={block.heading} className={styles.block}>
+              <h3>{block.heading}</h3>
+              <p>{block.text}</p>
+            </div>
+          ))}
+          {paragraphs.map((paragraph) => (
+            <p key={paragraph} className={styles.paragraph}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
+      <ImageRows rows={rows} />
+    </section>
+  );
+}
 
-      {/* Images without a `src` show as grey placeholder boxes */}
-      {images.length > 0 && (
-        <div className={`${styles.images} ${imageColumns === 2 ? styles.twoColumns : ""}`}>
-          {images.map((image, index) => (
+// Rows of images. Each image's `size` sets its share of the row width, and the
+// row `height` is a percentage of the width. Empty `src` shows a grey box.
+function ImageRows({ rows = [] }) {
+  if (rows.length === 0) return null;
+
+  return (
+    <div className={styles.rows}>
+      {rows.map((row, rowIndex) => (
+        <div
+          key={rowIndex}
+          className={styles.row}
+          style={{
+            gridTemplateColumns: row.images.map((image) => `${image.size || 1}fr`).join(" "),
+            "--row-height": row.height || 32,
+          }}
+        >
+          {row.images.map((image, index) => (
             <figure key={index}>
               <div className={styles.image}>
                 {image.src && (
-                  <Image
-                    src={withBasePath(image.src)}
-                    alt={image.alt}
-                    fill
-                    sizes={imageColumns === 2 ? "(max-width: 900px) 100vw, 475px" : "(max-width: 900px) 100vw, 950px"}
-                  />
+                  <Image src={withBasePath(image.src)} alt={image.alt} fill sizes="(max-width: 900px) 100vw, 950px" />
                 )}
               </div>
               {image.caption && <figcaption>{image.caption}</figcaption>}
             </figure>
           ))}
         </div>
-      )}
-    </section>
+      ))}
+    </div>
+  );
+}
+
+// Arrow icons for the buttons, drawn with the current text colour
+const ARROWS = {
+  up: "M12 19V5M5 12l7-7 7 7",
+  left: "M19 12H5M12 19l-7-7 7-7",
+  right: "M5 12h14M12 5l7 7-7 7",
+};
+
+function ArrowIcon({ direction }) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d={ARROWS[direction]} />
+    </svg>
   );
 }
