@@ -67,7 +67,7 @@ export default function Skills() {
     function openFromHash() {
       const index = skillGroups.findIndex((item) => item.link && `#${item.link}` === window.location.hash);
       if (index === -1) return;
-      selectGroup(index);
+      selectGroup(index, { scroll: true });
       window.history.replaceState(null, "", "#skills");
     }
     openFromHash();
@@ -75,9 +75,12 @@ export default function Skills() {
     return () => window.removeEventListener("hashchange", openFromHash);
   }, []);
 
-  function selectGroup(index) {
+  // Clicking a category keeps the page still. Only links like #hobbies, which
+  // come from elsewhere on the page, scroll down to the skills.
+  function selectGroup(index, { scroll = false } = {}) {
     setGroup(index);
     setActive(0);
+    if (!scroll) return;
     // Scroll so the tabs sit 40% down the screen: the tabs and the start of
     // the panel are in view, and the category options stay in reach above them
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

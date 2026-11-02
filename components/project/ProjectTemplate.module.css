@@ -5,6 +5,22 @@
   padding-block: 16px 64px;
 }
 
+/* "Back to projects" text link above the cover */
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: var(--color-muted);
+  font-size: var(--fs-skill);
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: var(--color-ink);
+}
+
 /* The cover has the same width as the rest of the content, and stays low
    enough for the headline below it to be visible on the first screen */
 .coverFigure {
@@ -35,6 +51,29 @@
   letter-spacing: var(--ls-hero);
   line-height: 1.1;
   color: var(--color-ink);
+}
+
+/* Page for a project that hasn't started yet */
+.comingSoon {
+  padding: 48px 0 72px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.comingSoonLabel {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-button);
+  color: var(--color-white);
+  font-size: var(--fs-tag);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.comingSoon .summary {
+  margin-top: 24px;
 }
 
 /* The summary, and a thin line that separates this top part from the Intro */

@@ -22,8 +22,26 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
     { label: "Client", icon: "client", value: client },
   ].filter(hasValue);
 
+  // A project that hasn't started yet: only its title and a short message
+  if (project.comingSoon) {
+    return (
+      <article className={`container ${styles.project}`} id="top">
+        <BackLink />
+        <div className={styles.comingSoon}>
+          <p className={styles.comingSoonLabel}>Coming soon</p>
+          <h1 className={styles.headline}>{title}</h1>
+          <p className={styles.summary}>
+            This case study is on its way. The project is just getting started, so check back soon to follow the process.
+          </p>
+        </div>
+        <Pager previousProject={previousProject} nextProject={nextProject} />
+      </article>
+    );
+  }
+
   return (
     <article className={`container ${styles.project}`} id="top">
+      <BackLink />
       <figure className={styles.coverFigure}>
         <div className={styles.cover}>
           {cover?.src && (
@@ -82,29 +100,46 @@ export default function ProjectTemplate({ project, previousProject, nextProject 
           put this line back to show them again:
           <Section heading="Reflections" content={project.reflections} /> */}
 
-      <nav className={styles.pager} aria-label="Projects">
-        {previousProject && (
-          <Button href={withBasePath(`/projects/${previousProject.slug}/`)} variant="outline" className={styles.previous}>
-            <ArrowIcon direction="left" />
-            <span>
-              Previous<span className={styles.longLabel}> project</span>
-            </span>
-          </Button>
-        )}
-        <Button href="#top" variant="outline" className={styles.toTop}>
-          <ArrowIcon direction="up" />
-          Back to top
-        </Button>
-        {nextProject && (
-          <Button href={withBasePath(`/projects/${nextProject.slug}/`)} className={styles.next}>
-            <span>
-              Next<span className={styles.longLabel}> project</span>
-            </span>
-            <ArrowIcon direction="right" />
-          </Button>
-        )}
-      </nav>
+      <Pager previousProject={previousProject} nextProject={nextProject} />
     </article>
+  );
+}
+
+// "Back to projects" link above the cover, to the project list on the front page
+function BackLink() {
+  return (
+    <a href={`${withBasePath("/")}#projects`} className={styles.backLink}>
+      <ArrowIcon direction="left" />
+      Back to projects
+    </a>
+  );
+}
+
+// Previous project, back to top and next project
+function Pager({ previousProject, nextProject }) {
+  return (
+    <nav className={styles.pager} aria-label="Projects">
+      {previousProject && (
+        <Button href={withBasePath(`/projects/${previousProject.slug}/`)} variant="outline" className={styles.previous}>
+          <ArrowIcon direction="left" />
+          <span>
+            Previous<span className={styles.longLabel}> project</span>
+          </span>
+        </Button>
+      )}
+      <Button href="#top" variant="outline" className={styles.toTop}>
+        <ArrowIcon direction="up" />
+        Back to top
+      </Button>
+      {nextProject && (
+        <Button href={withBasePath(`/projects/${nextProject.slug}/`)} className={styles.next}>
+          <span>
+            Next<span className={styles.longLabel}> project</span>
+          </span>
+          <ArrowIcon direction="right" />
+        </Button>
+      )}
+    </nav>
   );
 }
 

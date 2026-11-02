@@ -105,6 +105,8 @@ const caseStudyPlaceholder = {
 // Each project gets its own case study page at /projects/<slug>/, built from
 // the ProjectTemplate component. Fields:
 // - cover: { src, alt } the large image at the top (grey box until added)
+// - comingSoon: true shows a "Coming soon" badge on the card and a short message
+//   on the page instead of the case study (for projects that haven't started yet)
 // - headline, summary: the big sentence and short intro under the cover
 // - link: the live site, opened by the "View site" button in the corner. Leave it out and the button
 //   shows a "not published yet" message instead. linkLabel changes the button text.
@@ -472,6 +474,9 @@ export const projects = [
     kind: "Web development",
     title: "Stuganibacken martemeo",
     tags: ["UX/UI Design", "React", "Vite"],
+    // The project hasn't started yet: the card gets a "Coming soon" badge and
+    // the page shows a short message instead of the case study
+    comingSoon: true,
     ...caseStudyPlaceholder,
   },
 ];

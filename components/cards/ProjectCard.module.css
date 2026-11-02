@@ -17,6 +17,30 @@ a.card:hover {
   object-fit: cover;
 }
 
+/* "Coming soon" badge in the top-left corner of the card */
+.badge {
+  position: absolute;
+  top: 32px;
+  left: 40px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-button);
+  color: var(--color-white);
+  font-size: var(--fs-tag);
+  font-weight: 500;
+  line-height: 1;
+}
+
+@media (max-width: 600px) {
+  .badge {
+    top: 24px;
+    left: 24px;
+  }
+}
+
 .content {
   position: relative;
   padding: 0 40px 33px;
