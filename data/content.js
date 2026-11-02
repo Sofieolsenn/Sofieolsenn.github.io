@@ -75,6 +75,8 @@ const caseStudyPlaceholder = {
     rows: [
       { height: 64, images: [imageSlot()] },
       { height: 44, images: [imageSlot(), imageSlot()] },
+      { height: 64, images: [imageSlot()] },
+      { height: 44, images: [imageSlot(), imageSlot()] },
     ],
   },
   outcome: {
@@ -84,6 +86,8 @@ const caseStudyPlaceholder = {
       "Placeholder: What did you learn, and what are the next steps? Reflect on what you would do differently, and what could be improved or added next.",
     ],
     rows: [
+      { height: 64, images: [imageSlot()] },
+      { height: 44, images: [imageSlot(), imageSlot()] },
       { height: 64, images: [imageSlot()] },
       { height: 44, images: [imageSlot(), imageSlot()] },
       { height: 64, images: [imageSlot()] },
