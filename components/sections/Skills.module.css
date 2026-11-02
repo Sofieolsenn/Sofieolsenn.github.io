@@ -373,7 +373,7 @@
     padding: 40px 24px 24px;
   }
 
-  /* Long tags like "Low & High-Fidelity Prototyping" wrap on narrow phones */
+  /* Long tags like "Low & High-Fidelity Sketching" wrap on narrow phones */
   .tags li {
     max-width: 100%;
   }

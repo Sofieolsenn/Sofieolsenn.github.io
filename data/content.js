@@ -202,7 +202,7 @@ export const skills = [
       "User Flows",
       "Wireflows",
       "Wireframing",
-      "Low & High-Fidelity Prototyping",
+      "Low & High-Fidelity Sketching",
       "Interactive Prototypes",
       "A/B Testing",
       "Guerrilla Testing",
