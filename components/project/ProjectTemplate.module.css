@@ -55,11 +55,11 @@
   color: var(--color-muted);
 }
 
-/* Project facts under the Intro heading, two by two */
+/* Project facts under the Intro heading, in one column */
 .facts {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px 24px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
   margin: 40px 0 0;
 }
 
@@ -142,6 +142,7 @@
 
 .sectionBody {
   display: grid;
+  align-content: start;
   gap: 1.2em;
   font-size: var(--fs-lead);
   line-height: 1.5;
@@ -159,6 +160,7 @@
 /* Blocks under each other next to the heading, with larger headings */
 .stackedBlocks {
   display: grid;
+  align-content: start;
   gap: 40px;
 }
 
@@ -218,10 +220,6 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .facts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .section {
     margin-top: 80px;
   }
@@ -259,10 +257,6 @@
 }
 
 @media (max-width: 480px) {
-  .facts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   /* Shorter labels so both buttons fit on narrow phones */
   .pager .longLabel {
     display: none;
