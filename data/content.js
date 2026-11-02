@@ -322,6 +322,6 @@ export const otherProjects = {
 };
 
 export const contact = {
-  heading: "Dont be shy, say hello. Lets create something together.",
-  intro: "Wether its a hello, a project idea or something else I’d love to hear from you.",
+  heading: "Don’t be shy, say hello. Let’s create something together.",
+  intro: "Whether it’s a hello, a project idea or something else, I’d love to hear from you.",
 };
