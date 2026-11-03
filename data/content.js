@@ -471,32 +471,32 @@ export const projects = [
     },
   },
   {
-    slug: "stuganibacken-martemeo",
+    slug: "samspilsuniverset",
     kind: "Web development",
-    title: "Stuganibacken martemeo",
+    title: "Samspilsuniverset",
     tags: ["UX/UI Design", "React", "Vite"],
     // Shown on the card until the project is done
     badge: "In progress",
     ...caseStudyPlaceholder,
     headline: "Creating a digital presence for a new independent professional.",
     summary:
-      "A website project focused on presenting Stuganibacken Martemeo's expertise, services, and educational materials in a clear and approachable way.",
+      "A website project focused on presenting Samspilsuniverset's expertise, services, and educational materials in a clear and approachable way.",
     primaryRole: "Web Developer & UX/UI Designer",
     tools: ["To be decided"],
     team: ["Independent project"],
-    client: "Stuganibacken Martemeo",
+    client: "Samspilsuniverset",
     timeline: "In progress",
     introduction: {
       ...caseStudyPlaceholder.introduction,
       blocks: [
         {
           heading: "Client introduction",
-          text: "Stuganibacken Martemeo is a newly established independent business looking to build its online presence. The website will help introduce the person behind the business, communicate her expertise, and make her services and educational materials accessible to potential clients.",
+          text: "Samspilsuniverset is a newly established independent business looking to build its online presence. The website will help introduce the person behind the business, communicate her expertise, and make her services and educational materials accessible to potential clients.",
         },
         {
           heading: "The problem",
           text: [
-            "As a new business, Stuganibacken Martemeo does not yet have a website that brings together information about her work, qualifications, services, and educational resources.",
+            "As a new business, Samspilsuniverset does not yet have a website that brings together information about her work, qualifications, services, and educational resources.",
             "She needs a place where potential clients can understand what she offers, learn about her professional background, and find the information they need.",
           ],
         },
@@ -577,7 +577,7 @@ export const projects = [
         parts: [
           {
             paragraphs: [
-              "The intended impact is to give Stuganibacken Martemeo a professional online presence where potential clients can explore her expertise, services, and educational resources.",
+              "The intended impact is to give Samspilsuniverset a professional online presence where potential clients can explore her expertise, services, and educational resources.",
             ],
           },
         ],

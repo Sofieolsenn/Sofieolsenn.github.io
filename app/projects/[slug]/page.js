@@ -48,7 +48,7 @@ export default async function ProjectPage({ params }) {
       </main>
       <Footer compact />
       {/* Content fades and slides in as you scroll; `key` restarts it for each project */}
-      <ScrollReveal key={slug} />
+      <ScrollReveal key={`reveal-${slug}`} />
     </>
   );
 }

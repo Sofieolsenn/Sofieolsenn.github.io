@@ -43,7 +43,8 @@ export default function RootLayout({ children }) {
     // suppressHydrationWarning: browser extensions (e.g. LocatorJS) add attributes
     // to <html> before React loads. This only silences that one element.
     <html lang="en" className={`${display.variable} ${text.variable}`} suppressHydrationWarning>
-      <head>
+      {/* The same extensions also add attributes to <head>, so it's silenced too */}
+      <head suppressHydrationWarning>
         <script dangerouslySetInnerHTML={{ __html: revealScript }} />
       </head>
       <body>{children}</body>
